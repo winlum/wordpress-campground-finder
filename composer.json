@@ -1,0 +1,26 @@
+{
+    "name": "winlum/wordpress-campground-search",
+    "description": "see readme.txt",
+    "homepage": "https://github.com/winlum/wordpress-campground-search/",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "WinLum Inc."
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/winlum/wordpress-campground-search/issues",
+        "source": "https://github.com/winlum/wordpress-campground-search"
+    },
+    "require": {},
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.4.4",
+        "squizlabs/php_codesniffer": "^3.2",
+        "wp-coding-standards/wpcs": "^0.14.1"
+    },
+    "scripts": {
+        "format": "\"vendor/bin/phpcbf\" --standard=phpcs.xml.dist --report-summary --report-source",
+        "lint": "\"vendor/bin/phpcs\" --standard=phpcs.xml.dist --report-summary --report-source"
+    }
+}
