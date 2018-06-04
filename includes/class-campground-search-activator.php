@@ -27,18 +27,18 @@ class Campground_Search_Activator {
 	 * @since    1.0.0
 	 */
 	public static function activate() {
-        if ( ! current_user_can( CAMPGROUND_SEARCH__CAPABILITY_ACTIVATE ) ) {
+        if ( ! current_user_can( Campground_Search_Const::CAPABILITY_ACTIVATE ) ) {
             return;
         }
 
         // TODO: should notify of the requirement and exit, not just die
-        if ( version_compare( $GLOBALS['wp_version'], CAMPGROUND_SEARCH__MIN_WP_VERSION, '<' ) ) {
+        if ( version_compare( $GLOBALS['wp_version'], Campground_Search_Const::MIN_WP_VERSION, '<' ) ) {
             $message = sprintf(
                 esc_html__(
                     'This plugin requires at least version %s of WordPress.',
-                    CAMPGROUND_SEARCH__I18N_NAME_SPACE
+                    Campground_Search_Const::TEXT_DOMAIN
                 ),
-                CAMPGROUND_SEARCH__MIN_WP_VERSION
+                Campground_Search_Const::MIN_WP_VERSION
             );
 
             die( $message );

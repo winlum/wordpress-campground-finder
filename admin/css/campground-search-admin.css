@@ -2,3 +2,45 @@
  * All of the CSS for your admin-specific functionality should be
  * included in this file.
  */
+.wl-camps-meta-box {
+}
+
+.wl-camps-meta-box fieldset {
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    margin-bottom: 0.5rem;
+    padding: 0.5rem 0.2rem;
+}
+
+.wl-camps-meta-box fieldset legend {
+    font-weight: bold;
+    margin: 0.5rem auto;
+    size: 1.2rem;
+}
+
+.wl-camps-meta-box .field {
+    align-items: stretch;
+    align-content: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.wl-camps-meta-box .field label {
+    background-color: rgba(0, 0, 0, 0.25);
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+    margin: 0.2rem;
+    padding: 0.2rem;
+    white-space: nowrap;
+}
+
+.wl-camps-meta-box .field input,
+.wl-camps-meta-box .field select {
+    display: inline-block; /* for safari */
+    flex: 1 1 auto;
+}
+
+/* .wl-camps-meta-box .field input[type="radio"],
+.wl-camps-meta-box .field input[type="checkbox"] {
+    height: inherit;
+} */

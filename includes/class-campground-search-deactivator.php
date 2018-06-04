@@ -28,7 +28,7 @@ class Campground_Search_Deactivator {
 	 * @since    1.0.0
 	 */
 	public static function deactivate() {
-        if ( ! current_user_can( CAMPGROUND_SEARCH__CAPABILITY_ACTIVATE ) ) {
+        if ( ! current_user_can( Campground_Search_Const::CAPABILITY_ACTIVATE ) ) {
             return;
         }
 
@@ -39,16 +39,18 @@ class Campground_Search_Deactivator {
 
         // not really necessary to unregister, but just in case
         // TODO: notify the CPT, taxonomies, etc are unavailable, not deleted
-        if ( post_type_exists( CAMPGROUND_SEARCH__POST_TYPE ) ) {
-            unregister_post_type( CAMPGROUND_SEARCH__POST_TYPE );
+        if ( post_type_exists( Campground_Search_Const::POST_TYPE ) ) {
+            unregister_post_type( Campground_Search_Const::POST_TYPE );
 		}
 
-        if ( taxonomy_exists( CAMPGROUND_SEARCH__TAXONOMY )) {
-            unregister_taxonomy( CAMPGROUND_SEARCH__TAXONOMY );
+        foreach ( Campground_Search_Const::TAXONOMIES as $key => $val ) {
+            if ( taxonomy_exists( $key )) {
+                unregister_taxonomy( $key );
+            }
         }
 		
-		if ( shortcode_exists( CAMPGROUND_SEARCH__FORM_SHORT_CODE )) {
-            remove_shortcode( CAMPGROUND_SEARCH__FORM_SHORT_CODE );
+		if ( shortcode_exists( Campground_Search_Const::SHORT_CODE )) {
+            remove_shortcode( Campground_Search_Const::SHORT_CODE );
 		}
 
         flush_rewrite_rules();

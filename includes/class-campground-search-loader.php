@@ -91,7 +91,7 @@ class Campground_Search_Loader {
 	 * @param    string               $callback         The name of the function that defines the shortcode.
 	 */
 	public function add_shortcode( $tag, $component, $callback ) {
-		$this->shortcodes = $this->add( $this->shortcodes, $tag, $component, $callback);
+		$this->shortcodes = $this->add( $this->shortcodes, $tag, $component, $callback, 10, 1 );
 	}
 	
 	/**

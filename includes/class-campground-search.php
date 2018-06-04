@@ -157,7 +157,10 @@ class Campground_Search {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
-		$this->loader->add_action( 'init', $plugin_admin, 'create_taxonomy', 10 );
+		$this->loader->add_action( 'admin_menu', $plugin_admin, 'create_menu' );
+		$this->loader->add_action( 'admin_init', $plugin_admin, 'create_settings' );
+
+		$this->loader->add_action( 'init', $plugin_admin, 'create_taxonomies', 10 );
         $this->loader->add_action( 'init', $plugin_admin, 'create_post_type', 11 );
 
 		$this->loader->add_action( 'save_post', $plugin_admin, 'save_meta_boxes_data' );
@@ -178,9 +181,10 @@ class Campground_Search {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 
+		$this->loader->add_action( 'pre_get_posts', $plugin_public, 'pre_get_posts', 1 );
 		$this->loader->add_action( 'query_vars', $plugin_public, 'register_query_vars' );
 		
-		$this->loader->add_shortcode( CAMPGROUND_SEARCH__FORM_SHORT_CODE, $plugin_public, 'display_search_form' );
+		$this->loader->add_shortcode( Campground_Search_Const::SHORT_CODE, $plugin_public, 'display_search_form' );
 
 	}
 

@@ -6,7 +6,7 @@
  
 # top-most EditorConfig file 
 root = true 
-  
+ 
 # Global 
 # UTF-8, Unix-style newlines, newline ending every file, trim trailing whitespace 
 [*] 
@@ -19,7 +19,7 @@ trim_trailing_whitespace = true
 # HTML http://make.wordpress.org/core/handbook/coding-standards/html/ 
 # CSS http://make.wordpress.org/core/handbook/coding-standards/css/ 
 # JavaScript http://make.wordpress.org/core/handbook/coding-standards/javascript/ 
-[*.php, *.css,*.scss, *.html, *.js]  
+[*.php,*.css,*.scss,*.html,*.js]  
 indent_style = tab 
 indent_size = 4 
 

@@ -109,20 +109,6 @@ class Campground_Search_Public {
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/campground-search-public.js', array( 'jquery' ), $this->version, false );
 
 	}
-	
-	/**
-	 * Register the query variables for the search form.
-	 *
-	 * @since    1.0.0
-	 * @param    array     $vars           An array of registered query vars.
-	 */
-	public function register_query_vars( $vars ) {
-		$query_vars = array(
-			'wlcs_location',
-		);
-
-		return array_merge( $vars, $query_vars );
-	}
 
 	/**
 	 * Renders the search form shortcode.
@@ -132,8 +118,10 @@ class Campground_Search_Public {
 	 * @param    string    $content        Any text provided in the shortcode "body".
 	 */
 	public function display_search_form( $atts, $content = null ) {
-		$model = array(
-			'TEXT_DOMAIN' => CAMPGROUND_SEARCH__I18N_NAME_SPACE,
+		$options = get_option( Campground_Search_Const::SETTINGS );
+		$near_to_choices = array_map(
+			'trim',
+			explode( "\n", $options[Campground_Search_Const::PREFIX . '_near_to'] )
 		);
 
 		ob_start();
@@ -142,6 +130,39 @@ class Campground_Search_Public {
 		ob_end_clean();
 
 		return $output;
+	}
+
+	public function pre_get_posts( $query ) {
+		// return if request is for an admin page or not part of the main query
+		if ( is_admin() || ! $query->is_main_query() ) {
+			return;
+		}
+
+		// do not modify the query if it's not the post type
+		if ( ! is_post_type_archive( Campground_Search_Const::POST_TYPE ) ) {
+			return;
+		}
+
+		// get the relevant query vars, which default to an wmpty string
+		$meta_query = array();
+
+		// if ( ! empty() ) {
+
+		// }
+	}
+	
+	/**
+	 * Register the query variables for the search form.
+	 *
+	 * @since    1.0.0
+	 * @param    array     $vars           An array of registered query vars.
+	 */
+	public function register_query_vars( $vars ) {
+		$query_vars = array_map( function ( $item ) {
+			return Campground_Search_Const::PREFIX . '_' . $item;
+		}, Campground_Search_Const::QUERY_VARS );
+
+		return array_merge( $vars, $query_vars );
 	}
 
 }

@@ -4,6 +4,7 @@ Donate link: https://winlum.com/
 Tags: comments, campground, search
 Requires at least: 4.9
 Tested up to: 4.9.5
+Requires PHP: 5.4
 Stable tag: master
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -24,7 +25,7 @@ Upload the Akismet plugin to your blog, Activate it.
 == TODO ==
 
 1. ~~create Post Type~~
-1. ~~create Taxonomy~~
+1. create Taxonomy
 1. create Meta Boxes
 1. create Query vars
 1. create search form

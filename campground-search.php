@@ -36,14 +36,15 @@ if ( ! defined( 'WPINC' ) ) {
  */
 define( 'CAMPGROUND_SEARCH_VERSION', '1.0.0' );
 
-define( 'CAMPGROUND_SEARCH__CAPABILITY_ACTIVATE', 'activate_plugins' );
-define( 'CAMPGROUND_SEARCH__I18N_NAME_SPACE', 'campground-search' );
-define( 'CAMPGROUND_SEARCH__MIN_WP_VERSION', '4.6' );
-define( 'CAMPGROUND_SEARCH__MIN_PHP_VERSION', '5.4' );
-define( 'CAMPGROUND_SEARCH__POST_TYPE', 'campground' );
-define( 'CAMPGROUND_SEARCH__PREFIX', 'wl_camps' );
-define( 'CAMPGROUND_SEARCH__TAXONOMY', 'campground_location' );
-define( 'CAMPGROUND_SEARCH__FORM_SHORT_CODE', 'campground_search_form' );
+/**
+ * The class responsible for providing constants.
+ */
+require_once plugin_dir_path( __FILE__ ) . 'includes/class-campground-search-constants.php';
+
+/**
+ * The static class responsible for providing utility methods.
+ */
+require_once plugin_dir_path( __FILE__ ) . 'includes/class-campground-search-utils.php';
 
 /**
  * The code that runs during plugin activation.

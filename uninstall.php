@@ -56,9 +56,9 @@ function uninstall() {
 	}
 
 	try {
-		unregister_taxonomy( CAMPGROUND_SEARCH__TAXONOMY );
-		unregister_post_type( CAMPGROUND_SEARCH__POST_TYPE );
-		remove_shortcode( CAMPGROUND_SEARCH__FORM_SHORT_CODE );
+		unregister_taxonomy( Campground_Search_Const::TAXONOMY );
+		unregister_post_type( Campground_Search_Const::POST_TYPE );
+		remove_shortcode( Campground_Search_Const::SHORT_CODE );
 	} catch (WP_Error $error) {
 
 	}
