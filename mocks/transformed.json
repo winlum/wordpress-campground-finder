@@ -1,39 +1,650 @@
 {
   "settings": {
-    "nearToChoices": [
-      "Lewiston Lake",
-      "Shasta Lake",
-      "Trinity Lake"
+    "nearTo": [
+      null
     ]
   },
   "campgrounds": [
     {
-      "name": "Ackerman",
-      "elevation": 2000,
-      "nearTo": "Lewiston Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                609.6
-              ]
+      "title": "Ackerman",
+      "meta": {
+        "elevation": 2000,
+        "nearTo": "Lewiston Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  609.6
+                ]
+              }
             }
+          ]
+        },
+        "dateRange": {
+          "start": null,
+          "end": null
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": {
+              "month": 4,
+              "day": 1
+            },
+            "end": {
+              "month": 10,
+              "day": 31
+            }
+          },
+          "type": null
+        },
+        "maxLength": 40,
+        "fees": 20,
+        "numSites": 51
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": false
+        },
+        "feature": {
+          "bearBoxes": false,
+          "boatRamps": false,
+          "campHost": true,
+          "dumpStation": true,
+          "groups": false,
+          "hookups": false,
+          "reservable": true,
+          "restrooms": [
+            "flush"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Alpine View (Singles)",
+      "meta": {
+        "elevation": 2400,
+        "nearTo": "Trinity Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  731.52
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": {
+            "month": 5,
+            "day": 15
+          },
+          "end": {
+            "month": 9,
+            "day": 15
           }
-        ]
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": {
+              "month": 5,
+              "day": 15
+            },
+            "end": {
+              "month": 9,
+              "day": 15
+            }
+          },
+          "type": null
+        },
+        "maxLength": 32,
+        "fees": 20,
+        "numSites": 52
       },
-      "dateRange": {
-        "start": null,
-        "end": null
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": true,
+          "restrooms": [
+            "flush"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": true
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Alpine View (Doubles)",
+      "meta": {
+        "elevation": 2400,
+        "nearTo": "Trinity Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  731.52
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": {
+            "month": 5,
+            "day": 15
+          },
+          "end": {
+            "month": 9,
+            "day": 15
+          }
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": {
+              "month": 5,
+              "day": 15
+            },
+            "end": {
+              "month": 9,
+              "day": 15
+            }
+          },
+          "type": null
+        },
+        "maxLength": 32,
+        "fees": 35,
+        "numSites": 1
       },
-      "water": {
-        "available": true,
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": true,
+          "restrooms": [
+            "flush"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": true
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Big Flat",
+      "meta": {
+        "elevation": 5000,
+        "nearTo": "Trinity Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  1524
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": null,
+          "end": null
+        },
+        "water": {
+          "available": false,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 16,
+        "fees": 0,
+        "numSites": 5
+      },
+      "terms": {
+        "activity": {
+          "hiking": false,
+          "shoreline": false,
+          "swimming": false
+        },
+        "feature": {
+          "bearBoxes": false,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": false,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Bridge Camp",
+      "meta": {
+        "elevation": 2700,
+        "nearTo": "Trinity Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  822.96
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": null,
+          "end": null
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": {
+              "month": 5,
+              "day": 15
+            },
+            "end": {
+              "month": 10,
+              "day": 31
+            }
+          },
+          "type": null
+        },
+        "maxLength": 20,
+        "fees": 10,
+        "numSites": 10
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": false
+        },
+        "feature": {
+          "bearBoxes": false,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": false,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Bushytail (Singles)",
+      "meta": {
+        "elevation": 2500,
+        "nearTo": "Trinity Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  762
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": {
+            "month": 5,
+            "day": 15
+          },
+          "end": {
+            "month": 9,
+            "day": 30
+          }
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 40,
+        "fees": 25,
+        "numSites": 9
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": false
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": false,
+          "campHost": true,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": true,
+          "reservable": true,
+          "restrooms": [
+            "flush"
+          ],
+          "showers": true,
+          "tents": false,
+          "wheelchairAccess": true
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Bushytail (Doubles)",
+      "meta": {
+        "elevation": 2500,
+        "nearTo": "Trinity Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  762
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": {
+            "month": 5,
+            "day": 15
+          },
+          "end": {
+            "month": 9,
+            "day": 30
+          }
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 40,
+        "fees": 35,
+        "numSites": 1
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": false
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": false,
+          "campHost": true,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": true,
+          "reservable": true,
+          "restrooms": [
+            "flush"
+          ],
+          "showers": true,
+          "tents": false,
+          "wheelchairAccess": true
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Bushytail (Triples)",
+      "meta": {
+        "elevation": 2500,
+        "nearTo": "Trinity Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  762
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": {
+            "month": 5,
+            "day": 15
+          },
+          "end": {
+            "month": 9,
+            "day": 30
+          }
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 40,
+        "fees": 45,
+        "numSites": 1
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": false
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": false,
+          "campHost": true,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": true,
+          "reservable": true,
+          "restrooms": [
+            "flush"
+          ],
+          "showers": true,
+          "tents": false,
+          "wheelchairAccess": true
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Bushytail (Quad)",
+      "meta": {
+        "elevation": 2500,
+        "nearTo": "Trinity Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  762
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": {
+            "month": 5,
+            "day": 15
+          },
+          "end": {
+            "month": 9,
+            "day": 30
+          }
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 40,
+        "fees": 80,
+        "numSites": 1
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": false
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": false,
+          "campHost": true,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": true,
+          "reservable": true,
+          "restrooms": [
+            "flush"
+          ],
+          "showers": true,
+          "tents": false,
+          "wheelchairAccess": true
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Clark Springs",
+      "meta": {
+        "elevation": 2400,
+        "nearTo": "Trinity Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  731.52
+                ]
+              }
+            }
+          ]
+        },
         "dateRange": {
           "start": {
             "month": 4,
@@ -44,575 +655,132 @@
             "day": 31
           }
         },
-        "type": null
-      },
-      "maxLength": 40,
-      "fees": 20,
-      "numSites": 51,
-      "features": {
-        "bearBoxes": false,
-        "boatRamps": false,
-        "campHost": true,
-        "dumpStation": true,
-        "groups": false,
-        "hookups": false,
-        "reservable": true,
-        "restrooms": [
-          "flush"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": false
-      }
-    },
-    {
-      "name": "Alpine View (Singles)",
-      "elevation": 2400,
-      "nearTo": "Trinity Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                731.52
-              ]
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": {
+              "month": 4,
+              "day": 1
+            },
+            "end": {
+              "month": 10,
+              "day": 31
             }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 5,
-          "day": 15
-        },
-        "end": {
-          "month": 9,
-          "day": 15
-        }
-      },
-      "water": {
-        "available": true,
-        "dateRange": {
-          "start": {
-            "month": 5,
-            "day": 15
           },
-          "end": {
-            "month": 9,
-            "day": 15
-          }
+          "type": null
         },
-        "type": null
+        "maxLength": 25,
+        "fees": 15,
+        "numSites": 21
       },
-      "maxLength": 32,
-      "fees": 20,
-      "numSites": 52,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": true,
-        "restrooms": [
-          "flush"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": true
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": true
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": true,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": false,
+          "restrooms": [
+            "flush"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
       }
     },
     {
-      "name": "Alpine View (Doubles)",
-      "elevation": 2400,
-      "nearTo": "Trinity Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                731.52
-              ]
+      "title": "Clear Creek",
+      "meta": {
+        "elevation": 3400,
+        "nearTo": "Trinity Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  1036.3200000000002
+                ]
+              }
             }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 5,
-          "day": 15
+          ]
         },
-        "end": {
-          "month": 9,
-          "day": 15
-        }
-      },
-      "water": {
-        "available": true,
         "dateRange": {
-          "start": {
-            "month": 5,
-            "day": 15
+          "start": null,
+          "end": null
+        },
+        "water": {
+          "available": false,
+          "dateRange": {
+            "start": null,
+            "end": null
           },
-          "end": {
-            "month": 9,
-            "day": 15
-          }
+          "type": null
         },
-        "type": null
+        "maxLength": 22,
+        "fees": 0,
+        "numSites": 8
       },
-      "maxLength": 32,
-      "fees": 35,
-      "numSites": 1,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": true,
-        "restrooms": [
-          "flush"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": true
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": true
+      "terms": {
+        "activity": {
+          "hiking": false,
+          "shoreline": false,
+          "swimming": false
+        },
+        "feature": {
+          "bearBoxes": false,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": false,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
       }
     },
     {
-      "name": "Big Flat",
-      "elevation": 5000,
-      "nearTo": "Trinity Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                1524
-              ]
+      "title": "Cooper Gulch",
+      "meta": {
+        "elevation": 2000,
+        "nearTo": "Lewiston Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  609.6
+                ]
+              }
             }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": null,
-        "end": null
-      },
-      "water": {
-        "available": false,
-        "dateRange": {
-          "start": null,
-          "end": null
+          ]
         },
-        "type": null
-      },
-      "maxLength": 16,
-      "fees": 0,
-      "numSites": 5,
-      "features": {
-        "bearBoxes": false,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": false,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": false,
-        "shoreline": false,
-        "swimming": false
-      }
-    },
-    {
-      "name": "Bridge Camp",
-      "elevation": 2700,
-      "nearTo": "Trinity Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                822.96
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": null,
-        "end": null
-      },
-      "water": {
-        "available": true,
-        "dateRange": {
-          "start": {
-            "month": 5,
-            "day": 15
-          },
-          "end": {
-            "month": 10,
-            "day": 31
-          }
-        },
-        "type": null
-      },
-      "maxLength": 20,
-      "fees": 10,
-      "numSites": 10,
-      "features": {
-        "bearBoxes": false,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": false,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": false
-      }
-    },
-    {
-      "name": "Bushytail (Singles)",
-      "elevation": 2500,
-      "nearTo": "Trinity Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                762
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 5,
-          "day": 15
-        },
-        "end": {
-          "month": 9,
-          "day": 30
-        }
-      },
-      "water": {
-        "available": true,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 40,
-      "fees": 25,
-      "numSites": 9,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": false,
-        "campHost": true,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": true,
-        "reservable": true,
-        "restrooms": [
-          "flush"
-        ],
-        "showers": true,
-        "tents": false,
-        "wheelchairAccess": true
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": false
-      }
-    },
-    {
-      "name": "Bushytail (Doubles)",
-      "elevation": 2500,
-      "nearTo": "Trinity Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                762
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 5,
-          "day": 15
-        },
-        "end": {
-          "month": 9,
-          "day": 30
-        }
-      },
-      "water": {
-        "available": true,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 40,
-      "fees": 35,
-      "numSites": 1,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": false,
-        "campHost": true,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": true,
-        "reservable": true,
-        "restrooms": [
-          "flush"
-        ],
-        "showers": true,
-        "tents": false,
-        "wheelchairAccess": true
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": false
-      }
-    },
-    {
-      "name": "Bushytail (Triples)",
-      "elevation": 2500,
-      "nearTo": "Trinity Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                762
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 5,
-          "day": 15
-        },
-        "end": {
-          "month": 9,
-          "day": 30
-        }
-      },
-      "water": {
-        "available": true,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 40,
-      "fees": 45,
-      "numSites": 1,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": false,
-        "campHost": true,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": true,
-        "reservable": true,
-        "restrooms": [
-          "flush"
-        ],
-        "showers": true,
-        "tents": false,
-        "wheelchairAccess": true
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": false
-      }
-    },
-    {
-      "name": "Bushytail (Quad)",
-      "elevation": 2500,
-      "nearTo": "Trinity Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                762
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 5,
-          "day": 15
-        },
-        "end": {
-          "month": 9,
-          "day": 30
-        }
-      },
-      "water": {
-        "available": true,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 40,
-      "fees": 80,
-      "numSites": 1,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": false,
-        "campHost": true,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": true,
-        "reservable": true,
-        "restrooms": [
-          "flush"
-        ],
-        "showers": true,
-        "tents": false,
-        "wheelchairAccess": true
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": false
-      }
-    },
-    {
-      "name": "Clark Springs",
-      "elevation": 2400,
-      "nearTo": "Trinity Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                731.52
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 4,
-          "day": 1
-        },
-        "end": {
-          "month": 10,
-          "day": 31
-        }
-      },
-      "water": {
-        "available": true,
         "dateRange": {
           "start": {
             "month": 4,
@@ -623,122 +791,2339 @@
             "day": 31
           }
         },
-        "type": null
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": {
+              "month": 4,
+              "day": 1
+            },
+            "end": {
+              "month": 10,
+              "day": 31
+            }
+          },
+          "type": null
+        },
+        "maxLength": 16,
+        "fees": 15,
+        "numSites": 5
       },
-      "maxLength": 25,
-      "fees": 15,
-      "numSites": 21,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": true,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": false,
-        "restrooms": [
-          "flush"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": true
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": false,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": true
+        },
+        "toilet": {}
       }
     },
     {
-      "name": "Clear Creek",
-      "elevation": 3400,
-      "nearTo": "Trinity Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                1036.3200000000002
-              ]
+      "title": "Eagle Creek",
+      "meta": {
+        "elevation": 2800,
+        "nearTo": "Trinity Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  853.44
+                ]
+              }
             }
+          ]
+        },
+        "dateRange": {
+          "start": {
+            "month": 5,
+            "day": 15
+          },
+          "end": {
+            "month": 10,
+            "day": 15
           }
-        ]
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": {
+              "month": 5,
+              "day": 15
+            },
+            "end": {
+              "month": 10,
+              "day": 15
+            }
+          },
+          "type": null
+        },
+        "maxLength": 35,
+        "fees": 15,
+        "numSites": 17
       },
-      "dateRange": {
-        "start": null,
-        "end": null
-      },
-      "water": {
-        "available": false,
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": false
+        },
+        "feature": {
+          "bearBoxes": false,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": false,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "East Weaver",
+      "meta": {
+        "elevation": 2500,
+        "nearTo": "Trinity Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  762
+                ]
+              }
+            }
+          ]
+        },
         "dateRange": {
           "start": null,
           "end": null
         },
-        "type": null
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": {
+              "month": 4,
+              "day": 1
+            },
+            "end": {
+              "month": 10,
+              "day": 31
+            }
+          },
+          "type": null
+        },
+        "maxLength": 25,
+        "fees": 15,
+        "numSites": 11
       },
-      "maxLength": 22,
-      "fees": 0,
-      "numSites": 8,
-      "features": {
-        "bearBoxes": false,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": false,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": false,
-        "shoreline": false,
-        "swimming": false
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": false
+        },
+        "feature": {
+          "bearBoxes": false,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": false,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
       }
     },
     {
-      "name": "Cooper Gulch",
-      "elevation": 2000,
-      "nearTo": "Lewiston Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                609.6
-              ]
+      "title": "Fawn Group (Loop B)",
+      "meta": {
+        "elevation": 2500,
+        "nearTo": "Trinity Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  762
+                ]
+              }
             }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 4,
-          "day": 1
+          ]
         },
-        "end": {
-          "month": 10,
-          "day": 31
-        }
+        "dateRange": {
+          "start": {
+            "month": 5,
+            "day": 1
+          },
+          "end": {
+            "month": 9,
+            "day": 30
+          }
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": {
+              "month": 5,
+              "day": 1
+            },
+            "end": {
+              "month": 9,
+              "day": 30
+            }
+          },
+          "type": null
+        },
+        "maxLength": 37,
+        "fees": 120,
+        "numSites": 60
       },
-      "water": {
-        "available": true,
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": true,
+          "hookups": false,
+          "reservable": true,
+          "restrooms": [
+            "flush"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Fawn Group (Loop C)",
+      "meta": {
+        "elevation": 2500,
+        "nearTo": "Trinity Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  762
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": {
+            "month": 5,
+            "day": 1
+          },
+          "end": {
+            "month": 9,
+            "day": 30
+          }
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": {
+              "month": 5,
+              "day": 1
+            },
+            "end": {
+              "month": 9,
+              "day": 30
+            }
+          },
+          "type": null
+        },
+        "maxLength": 37,
+        "fees": 120,
+        "numSites": 60
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": true,
+          "hookups": false,
+          "reservable": true,
+          "restrooms": [
+            "flush"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Goldfield",
+      "meta": {
+        "elevation": 3000,
+        "nearTo": "Trinity Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  914.4000000000001
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": null,
+          "end": null
+        },
+        "water": {
+          "available": false,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 16,
+        "fees": 0,
+        "numSites": 6
+      },
+      "terms": {
+        "activity": {
+          "hiking": false,
+          "shoreline": false,
+          "swimming": false
+        },
+        "feature": {
+          "bearBoxes": false,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": false,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Hayward Flat (Singles)",
+      "meta": {
+        "elevation": 2400,
+        "nearTo": "Trinity Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  731.52
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": {
+            "month": 5,
+            "day": 15
+          },
+          "end": {
+            "month": 9,
+            "day": 15
+          }
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": {
+              "month": 5,
+              "day": 15
+            },
+            "end": {
+              "month": 9,
+              "day": 15
+            }
+          },
+          "type": null
+        },
+        "maxLength": 40,
+        "fees": 20,
+        "numSites": 76
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": false,
+          "campHost": true,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": true,
+          "restrooms": [
+            "flush"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Hayward Flat (Doubles)",
+      "meta": {
+        "elevation": 2400,
+        "nearTo": "Trinity Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  731.52
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": {
+            "month": 5,
+            "day": 15
+          },
+          "end": {
+            "month": 9,
+            "day": 15
+          }
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": {
+              "month": 5,
+              "day": 15
+            },
+            "end": {
+              "month": 9,
+              "day": 15
+            }
+          },
+          "type": null
+        },
+        "maxLength": 40,
+        "fees": 35,
+        "numSites": 6
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": false,
+          "campHost": true,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": true,
+          "restrooms": [
+            "flush"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Horse Flat",
+      "meta": {
+        "elevation": 3200,
+        "nearTo": "Trinity Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  975.36
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": {
+            "month": 5,
+            "day": 15
+          },
+          "end": {
+            "month": 10,
+            "day": 31
+          }
+        },
+        "water": {
+          "available": false,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 16,
+        "fees": 0,
+        "numSites": 16
+      },
+      "terms": {
+        "activity": {
+          "hiking": false,
+          "shoreline": false,
+          "swimming": false
+        },
+        "feature": {
+          "bearBoxes": false,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": false,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Jackass Springs",
+      "meta": {
+        "elevation": 2600,
+        "nearTo": "Trinity Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  792.48
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": null,
+          "end": null
+        },
+        "water": {
+          "available": false,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 32,
+        "fees": 0,
+        "numSites": 21
+      },
+      "terms": {
+        "activity": {
+          "hiking": false,
+          "shoreline": false,
+          "swimming": false
+        },
+        "feature": {
+          "bearBoxes": false,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": false,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Mary Smith",
+      "meta": {
+        "elevation": 2000,
+        "nearTo": "Lewiston Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  609.6
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": {
+            "month": 5,
+            "day": 1
+          },
+          "end": {
+            "month": 9,
+            "day": 15
+          }
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": {
+              "month": 5,
+              "day": 1
+            },
+            "end": {
+              "month": 9,
+              "day": 15
+            }
+          },
+          "type": null
+        },
+        "maxLength": 0,
+        "fees": 20,
+        "numSites": 17
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": false,
+          "campHost": true,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": true,
+          "restrooms": [
+            "flush",
+            "vault"
+          ],
+          "showers": false,
+          "tents": true,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Minersville (Singles)",
+      "meta": {
+        "elevation": 2400,
+        "nearTo": "Trinity Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  731.52
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": null,
+          "end": null
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": {
+              "month": 5,
+              "day": 31
+            },
+            "end": {
+              "month": 10,
+              "day": 31
+            }
+          },
+          "type": null
+        },
+        "maxLength": 36,
+        "fees": 8,
+        "numSites": 9
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": true,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": true,
+          "restrooms": [
+            "flush",
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Minersville (Doubles)",
+      "meta": {
+        "elevation": 2400,
+        "nearTo": "Trinity Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  731.52
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": null,
+          "end": null
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": {
+              "month": 5,
+              "day": 31
+            },
+            "end": {
+              "month": 10,
+              "day": 31
+            }
+          },
+          "type": null
+        },
+        "maxLength": 36,
+        "fees": 16,
+        "numSites": 5
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": true,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": true,
+          "restrooms": [
+            "flush",
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Preacher Meadow",
+      "meta": {
+        "elevation": 2900,
+        "nearTo": "Trinity Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  883.9200000000001
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": null,
+          "end": null
+        },
+        "water": {
+          "available": false,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 40,
+        "fees": 15,
+        "numSites": 45
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": false
+        },
+        "feature": {
+          "bearBoxes": false,
+          "boatRamps": true,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": false,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Rush Creek",
+      "meta": {
+        "elevation": 2400,
+        "nearTo": "Trinity Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  731.52
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": {
+            "month": 5,
+            "day": 15
+          },
+          "end": {
+            "month": 9,
+            "day": 15
+          }
+        },
+        "water": {
+          "available": false,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 20,
+        "fees": 10,
+        "numSites": 10
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": false
+        },
+        "feature": {
+          "bearBoxes": false,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": false,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Scott Mountain",
+      "meta": {
+        "elevation": 5400,
+        "nearTo": "Trinity Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  1645.92
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": null,
+          "end": null
+        },
+        "water": {
+          "available": false,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 15,
+        "fees": 0,
+        "numSites": 7
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": false
+        },
+        "feature": {
+          "bearBoxes": false,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": false,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Stoney Creek",
+      "meta": {
+        "elevation": 2400,
+        "nearTo": "Trinity Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  731.52
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": null,
+          "end": null
+        },
+        "water": {
+          "available": false,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 0,
+        "fees": 100,
+        "numSites": 10
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": true,
+          "hookups": false,
+          "reservable": true,
+          "restrooms": [
+            "flush"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Stoney Point",
+      "meta": {
+        "elevation": 2400,
+        "nearTo": "Trinity Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  731.52
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": null,
+          "end": null
+        },
+        "water": {
+          "available": false,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 0,
+        "fees": 20,
+        "numSites": 21
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": false,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": false,
+          "restrooms": [
+            "flush"
+          ],
+          "showers": false,
+          "tents": true,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Tannery Gulch (Singles)",
+      "meta": {
+        "elevation": 2400,
+        "nearTo": "Trinity Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  731.52
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": {
+            "month": 5,
+            "day": 1
+          },
+          "end": {
+            "month": 9,
+            "day": 30
+          }
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": {
+              "month": 5,
+              "day": 1
+            },
+            "end": {
+              "month": 9,
+              "day": 30
+            }
+          },
+          "type": null
+        },
+        "maxLength": 40,
+        "fees": 20,
+        "numSites": 56
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": true,
+          "campHost": true,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": true,
+          "restrooms": [
+            "flush"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Tannery Gulch (Doubles)",
+      "meta": {
+        "elevation": 2400,
+        "nearTo": "Trinity Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  731.52
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": {
+            "month": 5,
+            "day": 1
+          },
+          "end": {
+            "month": 9,
+            "day": 30
+          }
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": {
+              "month": 5,
+              "day": 1
+            },
+            "end": {
+              "month": 9,
+              "day": 30
+            }
+          },
+          "type": null
+        },
+        "maxLength": 40,
+        "fees": 35,
+        "numSites": 5
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": true,
+          "campHost": true,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": true,
+          "restrooms": [
+            "flush"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Trinity River",
+      "meta": {
+        "elevation": 3000,
+        "nearTo": "Trinity Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  914.4000000000001
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": {
+            "month": 5,
+            "day": 15
+          },
+          "end": {
+            "month": 10,
+            "day": 31
+          }
+        },
+        "water": {
+          "available": false,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 35,
+        "fees": 10,
+        "numSites": 7
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": false
+        },
+        "feature": {
+          "bearBoxes": false,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": false,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Tunnel Rock",
+      "meta": {
+        "elevation": 2000,
+        "nearTo": "Lewiston Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  609.6
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": null,
+          "end": null
+        },
+        "water": {
+          "available": false,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 15,
+        "fees": 10,
+        "numSites": 6
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": false
+        },
+        "feature": {
+          "bearBoxes": false,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": false,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Antlers (Singles)",
+      "meta": {
+        "elevation": 1100,
+        "nearTo": "Shasta Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  335.28000000000003
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": {
+            "month": 4,
+            "day": 2
+          },
+          "end": {
+            "month": 9,
+            "day": 15
+          }
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 30,
+        "fees": 20,
+        "numSites": 41
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": false
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": true,
+          "campHost": true,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": true,
+          "restrooms": [
+            "flush",
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": true
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Antlers (Doubles)",
+      "meta": {
+        "elevation": 1100,
+        "nearTo": "Shasta Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  335.28000000000003
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": {
+            "month": 4,
+            "day": 2
+          },
+          "end": {
+            "month": 9,
+            "day": 15
+          }
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 30,
+        "fees": 35,
+        "numSites": 18
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": false
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": true,
+          "campHost": true,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": true,
+          "restrooms": [
+            "flush",
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": true
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Bailey Cove (Singles)",
+      "meta": {
+        "elevation": 1085,
+        "nearTo": "Shasta Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  330.708
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": null,
+          "end": null
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 30,
+        "fees": 20,
+        "numSites": 5
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": false
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": true,
+          "campHost": true,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": true,
+          "restrooms": [
+            "flush"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Bailey Cove (Doubles)",
+      "meta": {
+        "elevation": 1085,
+        "nearTo": "Shasta Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  330.708
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": null,
+          "end": null
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 30,
+        "fees": 35,
+        "numSites": 2
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": false
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": true,
+          "campHost": true,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": true,
+          "restrooms": [
+            "flush"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Ellery Creek",
+      "meta": {
+        "elevation": 1085,
+        "nearTo": "Shasta Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  330.708
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": {
+            "month": 4,
+            "day": 1
+          },
+          "end": {
+            "month": 9,
+            "day": 12
+          }
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 30,
+        "fees": 20,
+        "numSites": 19
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": true,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": true,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Gregory Creek",
+      "meta": {
+        "elevation": 1085,
+        "nearTo": "Shasta Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  330.708
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": {
+            "month": 7,
+            "day": 1
+          },
+          "end": {
+            "month": 9,
+            "day": 1
+          }
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 16,
+        "fees": 10,
+        "numSites": 18
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": false,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": false,
+          "restrooms": [
+            "flush"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Hirz Bay (Singles)",
+      "meta": {
+        "elevation": 1100,
+        "nearTo": "Shasta Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  335.28000000000003
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": null,
+          "end": null
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 30,
+        "fees": 20,
+        "numSites": 37
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": true,
+          "campHost": true,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": true,
+          "restrooms": [
+            "flush"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": true
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Hirz Bay (Doubles)",
+      "meta": {
+        "elevation": 1100,
+        "nearTo": "Shasta Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  335.28000000000003
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": null,
+          "end": null
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 30,
+        "fees": 35,
+        "numSites": 11
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": true,
+          "campHost": true,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": true,
+          "restrooms": [
+            "flush"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": true
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Lakeshore East (Singles)",
+      "meta": {
+        "elevation": 1100,
+        "nearTo": "Shasta Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  335.28000000000003
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": null,
+          "end": null
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 30,
+        "fees": 20,
+        "numSites": 17
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": false,
+          "campHost": true,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": true,
+          "restrooms": [
+            "flush"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": true
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Lakeshore East (Doubles)",
+      "meta": {
+        "elevation": 1100,
+        "nearTo": "Shasta Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  335.28000000000003
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": null,
+          "end": null
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 30,
+        "fees": 35,
+        "numSites": 6
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": false,
+          "campHost": true,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": true,
+          "restrooms": [
+            "flush"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": true
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Lakeshore East (Yurts)",
+      "meta": {
+        "elevation": 1100,
+        "nearTo": "Shasta Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  335.28000000000003
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": null,
+          "end": null
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 30,
+        "fees": 65,
+        "numSites": 3
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": false,
+          "campHost": true,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": true,
+          "restrooms": [
+            "flush"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": true
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Lower Jones Valley (Singles)",
+      "meta": {
+        "elevation": 1085,
+        "nearTo": "Shasta Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  330.708
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": null,
+          "end": null
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 16,
+        "fees": 20,
+        "numSites": 8
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": false,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": true
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Lower Jones Valley (Doubles)",
+      "meta": {
+        "elevation": 1085,
+        "nearTo": "Shasta Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  330.708
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": null,
+          "end": null
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 16,
+        "fees": 35,
+        "numSites": 3
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": false,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": true
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "McCloud Bridge (Singles)",
+      "meta": {
+        "elevation": 1085,
+        "nearTo": "Shasta Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  330.708
+                ]
+              }
+            }
+          ]
+        },
         "dateRange": {
           "start": {
             "month": 4,
@@ -746,131 +3131,67 @@
           },
           "end": {
             "month": 10,
-            "day": 31
+            "day": 24
           }
         },
-        "type": null
-      },
-      "maxLength": 16,
-      "fees": 15,
-      "numSites": 5,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": false,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": true
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": true
-      }
-    },
-    {
-      "name": "Eagle Creek",
-      "elevation": 2800,
-      "nearTo": "Trinity Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                853.44
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 5,
-          "day": 15
-        },
-        "end": {
-          "month": 10,
-          "day": 15
-        }
-      },
-      "water": {
-        "available": true,
-        "dateRange": {
-          "start": {
-            "month": 5,
-            "day": 15
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": null,
+            "end": null
           },
-          "end": {
-            "month": 10,
-            "day": 15
-          }
+          "type": null
         },
-        "type": null
+        "maxLength": 16,
+        "fees": 20,
+        "numSites": 11
       },
-      "maxLength": 35,
-      "fees": 15,
-      "numSites": 17,
-      "features": {
-        "bearBoxes": false,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": false,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": false
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": false,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": true
+        },
+        "toilet": {}
       }
     },
     {
-      "name": "East Weaver",
-      "elevation": 2500,
-      "nearTo": "Trinity Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                762
-              ]
+      "title": "McCloud Bridge (Doubles)",
+      "meta": {
+        "elevation": 1085,
+        "nearTo": "Shasta Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  330.708
+                ]
+              }
             }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": null,
-        "end": null
-      },
-      "water": {
-        "available": true,
+          ]
+        },
         "dateRange": {
           "start": {
             "month": 4,
@@ -878,263 +3199,439 @@
           },
           "end": {
             "month": 10,
-            "day": 31
+            "day": 24
           }
         },
-        "type": null
-      },
-      "maxLength": 25,
-      "fees": 15,
-      "numSites": 11,
-      "features": {
-        "bearBoxes": false,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": false,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": false
-      }
-    },
-    {
-      "name": "Fawn Group (Loop B)",
-      "elevation": 2500,
-      "nearTo": "Trinity Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                762
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 5,
-          "day": 1
-        },
-        "end": {
-          "month": 9,
-          "day": 30
-        }
-      },
-      "water": {
-        "available": true,
-        "dateRange": {
-          "start": {
-            "month": 5,
-            "day": 1
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": null,
+            "end": null
           },
-          "end": {
-            "month": 9,
-            "day": 30
-          }
+          "type": null
         },
-        "type": null
+        "maxLength": 16,
+        "fees": 35,
+        "numSites": 3
       },
-      "maxLength": 37,
-      "fees": 120,
-      "numSites": 60,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": true,
-        "hookups": false,
-        "reservable": true,
-        "restrooms": [
-          "flush"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": true
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": false,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": true
+        },
+        "toilet": {}
       }
     },
     {
-      "name": "Fawn Group (Loop C)",
-      "elevation": 2500,
-      "nearTo": "Trinity Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                762
-              ]
+      "title": "Moore Creek",
+      "meta": {
+        "elevation": 1085,
+        "nearTo": "Shasta Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  330.708
+                ]
+              }
             }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 5,
-          "day": 1
+          ]
         },
-        "end": {
-          "month": 9,
-          "day": 30
-        }
-      },
-      "water": {
-        "available": true,
-        "dateRange": {
-          "start": {
-            "month": 5,
-            "day": 1
-          },
-          "end": {
-            "month": 9,
-            "day": 30
-          }
-        },
-        "type": null
-      },
-      "maxLength": 37,
-      "fees": 120,
-      "numSites": 60,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": true,
-        "hookups": false,
-        "reservable": true,
-        "restrooms": [
-          "flush"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": true
-      }
-    },
-    {
-      "name": "Goldfield",
-      "elevation": 3000,
-      "nearTo": "Trinity Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                914.4000000000001
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": null,
-        "end": null
-      },
-      "water": {
-        "available": false,
         "dateRange": {
           "start": null,
           "end": null
         },
-        "type": null
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 16,
+        "fees": 20,
+        "numSites": 12
       },
-      "maxLength": 16,
-      "fees": 0,
-      "numSites": 6,
-      "features": {
-        "bearBoxes": false,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": false,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": false,
-        "shoreline": false,
-        "swimming": false
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": false,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
       }
     },
     {
-      "name": "Hayward Flat (Singles)",
-      "elevation": 2400,
-      "nearTo": "Trinity Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                731.52
-              ]
+      "title": "Nelson Point",
+      "meta": {
+        "elevation": 1085,
+        "nearTo": "Shasta Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  330.708
+                ]
+              }
             }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 5,
-          "day": 15
+          ]
         },
-        "end": {
-          "month": 9,
-          "day": 15
-        }
+        "dateRange": {
+          "start": null,
+          "end": null
+        },
+        "water": {
+          "available": false,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 16,
+        "fees": 10,
+        "numSites": 8
       },
-      "water": {
-        "available": true,
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": false,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Pine Point",
+      "meta": {
+        "elevation": 1090,
+        "nearTo": "Shasta Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  332.232
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": null,
+          "end": null
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 24,
+        "fees": 20,
+        "numSites": 14
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": false,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Upper Jones Valley",
+      "meta": {
+        "elevation": 1100,
+        "nearTo": "Shasta Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  335.28000000000003
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": null,
+          "end": null
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 16,
+        "fees": 20,
+        "numSites": 8
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": false
+        },
+        "feature": {
+          "bearBoxes": false,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": false,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Deadlun",
+      "meta": {
+        "elevation": 2750,
+        "nearTo": "Shasta Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  838.2
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": null,
+          "end": null
+        },
+        "water": {
+          "available": false,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 24,
+        "fees": 0,
+        "numSites": 25
+      },
+      "terms": {
+        "activity": {
+          "hiking": false,
+          "shoreline": false,
+          "swimming": false
+        },
+        "feature": {
+          "bearBoxes": false,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": false,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Madrone",
+      "meta": {
+        "elevation": 1500,
+        "nearTo": "Shasta Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  457.20000000000005
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": null,
+          "end": null
+        },
+        "water": {
+          "available": false,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 16,
+        "fees": 0,
+        "numSites": 10
+      },
+      "terms": {
+        "activity": {
+          "hiking": false,
+          "shoreline": false,
+          "swimming": false
+        },
+        "feature": {
+          "bearBoxes": false,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": false,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Beehive",
+      "meta": {
+        "elevation": 1067,
+        "nearTo": "Shasta Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  325.2216
+                ]
+              }
+            }
+          ]
+        },
         "dateRange": {
           "start": {
             "month": 5,
@@ -1142,68 +3639,67 @@
           },
           "end": {
             "month": 9,
-            "day": 15
+            "day": 12
           }
         },
-        "type": null
+        "water": {
+          "available": false,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 0,
+        "fees": 10,
+        "numSites": 0
       },
-      "maxLength": 40,
-      "fees": 20,
-      "numSites": 76,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": false,
-        "campHost": true,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": true,
-        "restrooms": [
-          "flush"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": true
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": true,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": false,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": false,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
       }
     },
     {
-      "name": "Hayward Flat (Doubles)",
-      "elevation": 2400,
-      "nearTo": "Trinity Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                731.52
-              ]
+      "title": "Gregory Beach",
+      "meta": {
+        "elevation": 1067,
+        "nearTo": "Shasta Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  325.2216
+                ]
+              }
             }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 5,
-          "day": 15
+          ]
         },
-        "end": {
-          "month": 9,
-          "day": 15
-        }
-      },
-      "water": {
-        "available": true,
         "dateRange": {
           "start": {
             "month": 5,
@@ -1211,680 +3707,336 @@
           },
           "end": {
             "month": 9,
-            "day": 15
+            "day": 12
           }
         },
-        "type": null
+        "water": {
+          "available": false,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 30,
+        "fees": 10,
+        "numSites": 0
       },
-      "maxLength": 40,
-      "fees": 35,
-      "numSites": 6,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": false,
-        "campHost": true,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": true,
-        "restrooms": [
-          "flush"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": true
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": true,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": false,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": false,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
       }
     },
     {
-      "name": "Horse Flat",
-      "elevation": 3200,
-      "nearTo": "Trinity Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                975.36
-              ]
+      "title": "Jones Valley Inlet",
+      "meta": {
+        "elevation": 1067,
+        "nearTo": "Shasta Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  325.2216
+                ]
+              }
             }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 5,
-          "day": 15
+          ]
         },
-        "end": {
-          "month": 10,
-          "day": 31
-        }
-      },
-      "water": {
-        "available": false,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 16,
-      "fees": 0,
-      "numSites": 16,
-      "features": {
-        "bearBoxes": false,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": false,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": false,
-        "shoreline": false,
-        "swimming": false
-      }
-    },
-    {
-      "name": "Jackass Springs",
-      "elevation": 2600,
-      "nearTo": "Trinity Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                792.48
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": null,
-        "end": null
-      },
-      "water": {
-        "available": false,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 32,
-      "fees": 0,
-      "numSites": 21,
-      "features": {
-        "bearBoxes": false,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": false,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": false,
-        "shoreline": false,
-        "swimming": false
-      }
-    },
-    {
-      "name": "Mary Smith",
-      "elevation": 2000,
-      "nearTo": "Lewiston Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                609.6
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 5,
-          "day": 1
-        },
-        "end": {
-          "month": 9,
-          "day": 15
-        }
-      },
-      "water": {
-        "available": true,
         "dateRange": {
           "start": {
-            "month": 5,
+            "month": 3,
             "day": 1
-          },
-          "end": {
-            "month": 9,
-            "day": 15
-          }
-        },
-        "type": null
-      },
-      "maxLength": 0,
-      "fees": 20,
-      "numSites": 17,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": false,
-        "campHost": true,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": true,
-        "restrooms": [
-          "flush",
-          "vault"
-        ],
-        "showers": false,
-        "tents": true,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": true
-      }
-    },
-    {
-      "name": "Minersville (Singles)",
-      "elevation": 2400,
-      "nearTo": "Trinity Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                731.52
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": null,
-        "end": null
-      },
-      "water": {
-        "available": true,
-        "dateRange": {
-          "start": {
-            "month": 5,
-            "day": 31
           },
           "end": {
             "month": 10,
             "day": 31
           }
         },
-        "type": null
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 30,
+        "fees": 10,
+        "numSites": 0
       },
-      "maxLength": 36,
-      "fees": 8,
-      "numSites": 9,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": true,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": true,
-        "restrooms": [
-          "flush",
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": true
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": true,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": false,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": false,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
       }
     },
     {
-      "name": "Minersville (Doubles)",
-      "elevation": 2400,
-      "nearTo": "Trinity Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                731.52
-              ]
+      "title": "Lower Salt Creek",
+      "meta": {
+        "elevation": 1085,
+        "nearTo": "Shasta Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  330.708
+                ]
+              }
             }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": null,
-        "end": null
-      },
-      "water": {
-        "available": true,
+          ]
+        },
         "dateRange": {
           "start": {
             "month": 5,
-            "day": 31
+            "day": 15
           },
           "end": {
-            "month": 10,
-            "day": 31
+            "month": 9,
+            "day": 12
           }
         },
-        "type": null
+        "water": {
+          "available": false,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 0,
+        "fees": 10,
+        "numSites": 0
       },
-      "maxLength": 36,
-      "fees": 16,
-      "numSites": 5,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": true,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": true,
-        "restrooms": [
-          "flush",
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": true
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": true,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": false,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": false,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": true,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
       }
     },
     {
-      "name": "Preacher Meadow",
-      "elevation": 2900,
-      "nearTo": "Trinity Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                883.9200000000001
-              ]
+      "title": "Mariners Point",
+      "meta": {
+        "elevation": 1085,
+        "nearTo": "Shasta Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  330.708
+                ]
+              }
             }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": null,
-        "end": null
-      },
-      "water": {
-        "available": false,
-        "dateRange": {
-          "start": null,
-          "end": null
+          ]
         },
-        "type": null
-      },
-      "maxLength": 40,
-      "fees": 15,
-      "numSites": 45,
-      "features": {
-        "bearBoxes": false,
-        "boatRamps": true,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": false,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": false
-      }
-    },
-    {
-      "name": "Rush Creek",
-      "elevation": 2400,
-      "nearTo": "Trinity Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                731.52
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 5,
-          "day": 15
-        },
-        "end": {
-          "month": 9,
-          "day": 15
-        }
-      },
-      "water": {
-        "available": false,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 20,
-      "fees": 10,
-      "numSites": 10,
-      "features": {
-        "bearBoxes": false,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": false,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": false
-      }
-    },
-    {
-      "name": "Scott Mountain",
-      "elevation": 5400,
-      "nearTo": "Trinity Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                1645.92
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": null,
-        "end": null
-      },
-      "water": {
-        "available": false,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 15,
-      "fees": 0,
-      "numSites": 7,
-      "features": {
-        "bearBoxes": false,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": false,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": false
-      }
-    },
-    {
-      "name": "Stoney Creek",
-      "elevation": 2400,
-      "nearTo": "Trinity Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                731.52
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": null,
-        "end": null
-      },
-      "water": {
-        "available": false,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 0,
-      "fees": 100,
-      "numSites": 10,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": true,
-        "hookups": false,
-        "reservable": true,
-        "restrooms": [
-          "flush"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": true
-      }
-    },
-    {
-      "name": "Stoney Point",
-      "elevation": 2400,
-      "nearTo": "Trinity Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                731.52
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": null,
-        "end": null
-      },
-      "water": {
-        "available": false,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 0,
-      "fees": 20,
-      "numSites": 21,
-      "features": {
-        "bearBoxes": false,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": false,
-        "restrooms": [
-          "flush"
-        ],
-        "showers": false,
-        "tents": true,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": true
-      }
-    },
-    {
-      "name": "Tannery Gulch (Singles)",
-      "elevation": 2400,
-      "nearTo": "Trinity Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                731.52
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 5,
-          "day": 1
-        },
-        "end": {
-          "month": 9,
-          "day": 30
-        }
-      },
-      "water": {
-        "available": true,
         "dateRange": {
           "start": {
             "month": 5,
+            "day": 15
+          },
+          "end": {
+            "month": 9,
+            "day": 12
+          }
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 16,
+        "fees": 15,
+        "numSites": 0
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": true,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": false,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": false,
+          "hookups": false,
+          "reservable": false,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Dekkas Rock",
+      "meta": {
+        "elevation": 1085,
+        "nearTo": "Shasta Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  330.708
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": null,
+          "end": null
+        },
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 16,
+        "fees": 130,
+        "numSites": 60
+      },
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": true,
+          "hookups": false,
+          "reservable": true,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
+      }
+    },
+    {
+      "title": "Hirz Bay #1",
+      "meta": {
+        "elevation": 1100,
+        "nearTo": "Shasta Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  335.28000000000003
+                ]
+              }
+            }
+          ]
+        },
+        "dateRange": {
+          "start": {
+            "month": 4,
             "day": 1
           },
           "end": {
@@ -1892,68 +4044,67 @@
             "day": 30
           }
         },
-        "type": null
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 30,
+        "fees": 130,
+        "numSites": 120
       },
-      "maxLength": 40,
-      "fees": 20,
-      "numSites": 56,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": true,
-        "campHost": true,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": true,
-        "restrooms": [
-          "flush"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": true
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": true,
+          "campHost": true,
+          "dumpStation": false,
+          "groups": true,
+          "hookups": false,
+          "reservable": true,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
       }
     },
     {
-      "name": "Tannery Gulch (Doubles)",
-      "elevation": 2400,
-      "nearTo": "Trinity Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                731.52
-              ]
+      "title": "Hirz Bay #2",
+      "meta": {
+        "elevation": 1100,
+        "nearTo": "Shasta Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  335.28000000000003
+                ]
+              }
             }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 5,
-          "day": 1
+          ]
         },
-        "end": {
-          "month": 9,
-          "day": 30
-        }
-      },
-      "water": {
-        "available": true,
         "dateRange": {
           "start": {
-            "month": 5,
+            "month": 4,
             "day": 1
           },
           "end": {
@@ -1961,2072 +4112,244 @@
             "day": 30
           }
         },
-        "type": null
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 30,
+        "fees": 100,
+        "numSites": 80
       },
-      "maxLength": 40,
-      "fees": 35,
-      "numSites": 5,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": true,
-        "campHost": true,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": true,
-        "restrooms": [
-          "flush"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": true
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": true,
+          "campHost": true,
+          "dumpStation": false,
+          "groups": true,
+          "hookups": false,
+          "reservable": true,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
       }
     },
     {
-      "name": "Trinity River",
-      "elevation": 3000,
-      "nearTo": "Trinity Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                914.4000000000001
-              ]
+      "title": "Moore Creek",
+      "meta": {
+        "elevation": 1085,
+        "nearTo": "Shasta Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  330.708
+                ]
+              }
             }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 5,
-          "day": 15
+          ]
         },
-        "end": {
-          "month": 10,
-          "day": 31
-        }
-      },
-      "water": {
-        "available": false,
         "dateRange": {
-          "start": null,
-          "end": null
+          "start": {
+            "month": 5,
+            "day": 15
+          },
+          "end": {
+            "month": 9,
+            "day": 10
+          }
         },
-        "type": null
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 16,
+        "fees": 130,
+        "numSites": 90
       },
-      "maxLength": 35,
-      "fees": 10,
-      "numSites": 7,
-      "features": {
-        "bearBoxes": false,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": false,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": false
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": true,
+          "hookups": false,
+          "reservable": true,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
       }
     },
     {
-      "name": "Tunnel Rock",
-      "elevation": 2000,
-      "nearTo": "Lewiston Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                609.6
-              ]
+      "title": "Nelson Point",
+      "meta": {
+        "elevation": 1085,
+        "nearTo": "Shasta Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  330.708
+                ]
+              }
             }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": null,
-        "end": null
-      },
-      "water": {
-        "available": false,
-        "dateRange": {
-          "start": null,
-          "end": null
+          ]
         },
-        "type": null
+        "dateRange": {
+          "start": {
+            "month": 6,
+            "day": 3
+          },
+          "end": {
+            "month": 9,
+            "day": 10
+          }
+        },
+        "water": {
+          "available": false,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
+        },
+        "maxLength": 16,
+        "fees": 100,
+        "numSites": 60
       },
-      "maxLength": 15,
-      "fees": 10,
-      "numSites": 6,
-      "features": {
-        "bearBoxes": false,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": false,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": false
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": true
+        },
+        "feature": {
+          "bearBoxes": false,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": true,
+          "hookups": false,
+          "reservable": true,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
+        },
+        "toilet": {}
       }
     },
     {
-      "name": "Antlers (Singles)",
-      "elevation": 1100,
-      "nearTo": "Shasta Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                335.28000000000003
-              ]
+      "title": "Pine Point",
+      "meta": {
+        "elevation": 1090,
+        "nearTo": "Shasta Lake",
+        "geo": {
+          "type": "FeatureCollection",
+          "features": [
+            {
+              "type": "Feature",
+              "properties": {},
+              "geometry": {
+                "type": "Point",
+                "coordinates": [
+                  -122.80448913574219,
+                  40.7202010588415,
+                  332.232
+                ]
+              }
             }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 4,
-          "day": 2
+          ]
         },
-        "end": {
-          "month": 9,
-          "day": 15
-        }
-      },
-      "water": {
-        "available": true,
         "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 30,
-      "fees": 20,
-      "numSites": 41,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": true,
-        "campHost": true,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": true,
-        "restrooms": [
-          "flush",
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": true
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": false
-      }
-    },
-    {
-      "name": "Antlers (Doubles)",
-      "elevation": 1100,
-      "nearTo": "Shasta Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                335.28000000000003
-              ]
-            }
+          "start": {
+            "month": 6,
+            "day": 3
+          },
+          "end": {
+            "month": 9,
+            "day": 10
           }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 4,
-          "day": 2
         },
-        "end": {
-          "month": 9,
-          "day": 15
-        }
-      },
-      "water": {
-        "available": true,
-        "dateRange": {
-          "start": null,
-          "end": null
+        "water": {
+          "available": true,
+          "dateRange": {
+            "start": null,
+            "end": null
+          },
+          "type": null
         },
-        "type": null
+        "maxLength": 24,
+        "fees": 130,
+        "numSites": 100
       },
-      "maxLength": 30,
-      "fees": 35,
-      "numSites": 18,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": true,
-        "campHost": true,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": true,
-        "restrooms": [
-          "flush",
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": true
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": false
-      }
-    },
-    {
-      "name": "Bailey Cove (Singles)",
-      "elevation": 1085,
-      "nearTo": "Shasta Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                330.708
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": null,
-        "end": null
-      },
-      "water": {
-        "available": true,
-        "dateRange": {
-          "start": null,
-          "end": null
+      "terms": {
+        "activity": {
+          "hiking": true,
+          "shoreline": false,
+          "swimming": true
         },
-        "type": null
-      },
-      "maxLength": 30,
-      "fees": 20,
-      "numSites": 5,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": true,
-        "campHost": true,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": true,
-        "restrooms": [
-          "flush"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": false
-      }
-    },
-    {
-      "name": "Bailey Cove (Doubles)",
-      "elevation": 1085,
-      "nearTo": "Shasta Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                330.708
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": null,
-        "end": null
-      },
-      "water": {
-        "available": true,
-        "dateRange": {
-          "start": null,
-          "end": null
+        "feature": {
+          "bearBoxes": true,
+          "boatRamps": false,
+          "campHost": false,
+          "dumpStation": false,
+          "groups": true,
+          "hookups": false,
+          "reservable": true,
+          "restrooms": [
+            "vault"
+          ],
+          "showers": false,
+          "tents": false,
+          "wheelchairAccess": false
         },
-        "type": null
-      },
-      "maxLength": 30,
-      "fees": 35,
-      "numSites": 2,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": true,
-        "campHost": true,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": true,
-        "restrooms": [
-          "flush"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": false
-      }
-    },
-    {
-      "name": "Ellery Creek",
-      "elevation": 1085,
-      "nearTo": "Shasta Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                330.708
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 4,
-          "day": 1
-        },
-        "end": {
-          "month": 9,
-          "day": 12
-        }
-      },
-      "water": {
-        "available": true,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 30,
-      "fees": 20,
-      "numSites": 19,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": true,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": true,
-        "swimming": true
-      }
-    },
-    {
-      "name": "Gregory Creek",
-      "elevation": 1085,
-      "nearTo": "Shasta Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                330.708
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 7,
-          "day": 1
-        },
-        "end": {
-          "month": 9,
-          "day": 1
-        }
-      },
-      "water": {
-        "available": true,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 16,
-      "fees": 10,
-      "numSites": 18,
-      "features": {
-        "bearBoxes": false,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": false,
-        "restrooms": [
-          "flush"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": true
-      }
-    },
-    {
-      "name": "Hirz Bay (Singles)",
-      "elevation": 1100,
-      "nearTo": "Shasta Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                335.28000000000003
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": null,
-        "end": null
-      },
-      "water": {
-        "available": true,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 30,
-      "fees": 20,
-      "numSites": 37,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": true,
-        "campHost": true,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": true,
-        "restrooms": [
-          "flush"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": true
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": true
-      }
-    },
-    {
-      "name": "Hirz Bay (Doubles)",
-      "elevation": 1100,
-      "nearTo": "Shasta Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                335.28000000000003
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": null,
-        "end": null
-      },
-      "water": {
-        "available": true,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 30,
-      "fees": 35,
-      "numSites": 11,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": true,
-        "campHost": true,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": true,
-        "restrooms": [
-          "flush"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": true
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": true
-      }
-    },
-    {
-      "name": "Lakeshore East (Singles)",
-      "elevation": 1100,
-      "nearTo": "Shasta Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                335.28000000000003
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": null,
-        "end": null
-      },
-      "water": {
-        "available": true,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 30,
-      "fees": 20,
-      "numSites": 17,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": false,
-        "campHost": true,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": true,
-        "restrooms": [
-          "flush"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": true
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": true
-      }
-    },
-    {
-      "name": "Lakeshore East (Doubles)",
-      "elevation": 1100,
-      "nearTo": "Shasta Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                335.28000000000003
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": null,
-        "end": null
-      },
-      "water": {
-        "available": true,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 30,
-      "fees": 35,
-      "numSites": 6,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": false,
-        "campHost": true,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": true,
-        "restrooms": [
-          "flush"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": true
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": true
-      }
-    },
-    {
-      "name": "Lakeshore East (Yurts)",
-      "elevation": 1100,
-      "nearTo": "Shasta Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                335.28000000000003
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": null,
-        "end": null
-      },
-      "water": {
-        "available": true,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 30,
-      "fees": 65,
-      "numSites": 3,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": false,
-        "campHost": true,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": true,
-        "restrooms": [
-          "flush"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": true
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": true
-      }
-    },
-    {
-      "name": "Lower Jones Valley (Singles)",
-      "elevation": 1085,
-      "nearTo": "Shasta Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                330.708
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": null,
-        "end": null
-      },
-      "water": {
-        "available": true,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 16,
-      "fees": 20,
-      "numSites": 8,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": false,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": true
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": true
-      }
-    },
-    {
-      "name": "Lower Jones Valley (Doubles)",
-      "elevation": 1085,
-      "nearTo": "Shasta Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                330.708
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": null,
-        "end": null
-      },
-      "water": {
-        "available": true,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 16,
-      "fees": 35,
-      "numSites": 3,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": false,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": true
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": true
-      }
-    },
-    {
-      "name": "McCloud Bridge (Singles)",
-      "elevation": 1085,
-      "nearTo": "Shasta Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                330.708
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 4,
-          "day": 1
-        },
-        "end": {
-          "month": 10,
-          "day": 24
-        }
-      },
-      "water": {
-        "available": true,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 16,
-      "fees": 20,
-      "numSites": 11,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": false,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": true
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": true
-      }
-    },
-    {
-      "name": "McCloud Bridge (Doubles)",
-      "elevation": 1085,
-      "nearTo": "Shasta Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                330.708
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 4,
-          "day": 1
-        },
-        "end": {
-          "month": 10,
-          "day": 24
-        }
-      },
-      "water": {
-        "available": true,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 16,
-      "fees": 35,
-      "numSites": 3,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": false,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": true
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": true
-      }
-    },
-    {
-      "name": "Moore Creek",
-      "elevation": 1085,
-      "nearTo": "Shasta Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                330.708
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": null,
-        "end": null
-      },
-      "water": {
-        "available": true,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 16,
-      "fees": 20,
-      "numSites": 12,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": false,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": true
-      }
-    },
-    {
-      "name": "Nelson Point",
-      "elevation": 1085,
-      "nearTo": "Shasta Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                330.708
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": null,
-        "end": null
-      },
-      "water": {
-        "available": false,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 16,
-      "fees": 10,
-      "numSites": 8,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": false,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": true
-      }
-    },
-    {
-      "name": "Pine Point",
-      "elevation": 1090,
-      "nearTo": "Shasta Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                332.232
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": null,
-        "end": null
-      },
-      "water": {
-        "available": true,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 24,
-      "fees": 20,
-      "numSites": 14,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": false,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": true
-      }
-    },
-    {
-      "name": "Upper Jones Valley",
-      "elevation": 1100,
-      "nearTo": "Shasta Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                335.28000000000003
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": null,
-        "end": null
-      },
-      "water": {
-        "available": true,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 16,
-      "fees": 20,
-      "numSites": 8,
-      "features": {
-        "bearBoxes": false,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": false,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": false
-      }
-    },
-    {
-      "name": "Deadlun",
-      "elevation": 2750,
-      "nearTo": "Shasta Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                838.2
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": null,
-        "end": null
-      },
-      "water": {
-        "available": false,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 24,
-      "fees": 0,
-      "numSites": 25,
-      "features": {
-        "bearBoxes": false,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": false,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": false,
-        "shoreline": false,
-        "swimming": false
-      }
-    },
-    {
-      "name": "Madrone",
-      "elevation": 1500,
-      "nearTo": "Shasta Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                457.20000000000005
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": null,
-        "end": null
-      },
-      "water": {
-        "available": false,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 16,
-      "fees": 0,
-      "numSites": 10,
-      "features": {
-        "bearBoxes": false,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": false,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": false,
-        "shoreline": false,
-        "swimming": false
-      }
-    },
-    {
-      "name": "Beehive",
-      "elevation": 1067,
-      "nearTo": "Shasta Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                325.2216
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 5,
-          "day": 15
-        },
-        "end": {
-          "month": 9,
-          "day": 12
-        }
-      },
-      "water": {
-        "available": false,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 0,
-      "fees": 10,
-      "numSites": 0,
-      "features": {
-        "bearBoxes": false,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": false,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": true,
-        "swimming": true
-      }
-    },
-    {
-      "name": "Gregory Beach",
-      "elevation": 1067,
-      "nearTo": "Shasta Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                325.2216
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 5,
-          "day": 15
-        },
-        "end": {
-          "month": 9,
-          "day": 12
-        }
-      },
-      "water": {
-        "available": false,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 30,
-      "fees": 10,
-      "numSites": 0,
-      "features": {
-        "bearBoxes": false,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": false,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": true,
-        "swimming": true
-      }
-    },
-    {
-      "name": "Jones Valley Inlet",
-      "elevation": 1067,
-      "nearTo": "Shasta Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                325.2216
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 3,
-          "day": 1
-        },
-        "end": {
-          "month": 10,
-          "day": 31
-        }
-      },
-      "water": {
-        "available": true,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 30,
-      "fees": 10,
-      "numSites": 0,
-      "features": {
-        "bearBoxes": false,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": false,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": true,
-        "swimming": true
-      }
-    },
-    {
-      "name": "Lower Salt Creek",
-      "elevation": 1085,
-      "nearTo": "Shasta Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                330.708
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 5,
-          "day": 15
-        },
-        "end": {
-          "month": 9,
-          "day": 12
-        }
-      },
-      "water": {
-        "available": false,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 0,
-      "fees": 10,
-      "numSites": 0,
-      "features": {
-        "bearBoxes": false,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": false,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": true,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": true,
-        "swimming": true
-      }
-    },
-    {
-      "name": "Mariners Point",
-      "elevation": 1085,
-      "nearTo": "Shasta Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                330.708
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 5,
-          "day": 15
-        },
-        "end": {
-          "month": 9,
-          "day": 12
-        }
-      },
-      "water": {
-        "available": true,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 16,
-      "fees": 15,
-      "numSites": 0,
-      "features": {
-        "bearBoxes": false,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": false,
-        "hookups": false,
-        "reservable": false,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": true,
-        "swimming": true
-      }
-    },
-    {
-      "name": "Dekkas Rock",
-      "elevation": 1085,
-      "nearTo": "Shasta Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                330.708
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": null,
-        "end": null
-      },
-      "water": {
-        "available": true,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 16,
-      "fees": 130,
-      "numSites": 60,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": true,
-        "hookups": false,
-        "reservable": true,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": true
-      }
-    },
-    {
-      "name": "Hirz Bay #1",
-      "elevation": 1100,
-      "nearTo": "Shasta Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                335.28000000000003
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 4,
-          "day": 1
-        },
-        "end": {
-          "month": 9,
-          "day": 30
-        }
-      },
-      "water": {
-        "available": true,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 30,
-      "fees": 130,
-      "numSites": 120,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": true,
-        "campHost": true,
-        "dumpStation": false,
-        "groups": true,
-        "hookups": false,
-        "reservable": true,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": true
-      }
-    },
-    {
-      "name": "Hirz Bay #2",
-      "elevation": 1100,
-      "nearTo": "Shasta Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                335.28000000000003
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 4,
-          "day": 1
-        },
-        "end": {
-          "month": 9,
-          "day": 30
-        }
-      },
-      "water": {
-        "available": true,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 30,
-      "fees": 100,
-      "numSites": 80,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": true,
-        "campHost": true,
-        "dumpStation": false,
-        "groups": true,
-        "hookups": false,
-        "reservable": true,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": true
-      }
-    },
-    {
-      "name": "Moore Creek",
-      "elevation": 1085,
-      "nearTo": "Shasta Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                330.708
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 5,
-          "day": 15
-        },
-        "end": {
-          "month": 9,
-          "day": 10
-        }
-      },
-      "water": {
-        "available": true,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 16,
-      "fees": 130,
-      "numSites": 90,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": true,
-        "hookups": false,
-        "reservable": true,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": true
-      }
-    },
-    {
-      "name": "Nelson Point",
-      "elevation": 1085,
-      "nearTo": "Shasta Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                330.708
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 6,
-          "day": 3
-        },
-        "end": {
-          "month": 9,
-          "day": 10
-        }
-      },
-      "water": {
-        "available": false,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 16,
-      "fees": 100,
-      "numSites": 60,
-      "features": {
-        "bearBoxes": false,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": true,
-        "hookups": false,
-        "reservable": true,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": true
-      }
-    },
-    {
-      "name": "Pine Point",
-      "elevation": 1090,
-      "nearTo": "Shasta Lake",
-      "geo": {
-        "type": "FeatureCollection",
-        "features": [
-          {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
-              "type": "Point",
-              "coordinates": [
-                -122.80448913574219,
-                40.7202010588415,
-                332.232
-              ]
-            }
-          }
-        ]
-      },
-      "dateRange": {
-        "start": {
-          "month": 6,
-          "day": 3
-        },
-        "end": {
-          "month": 9,
-          "day": 10
-        }
-      },
-      "water": {
-        "available": true,
-        "dateRange": {
-          "start": null,
-          "end": null
-        },
-        "type": null
-      },
-      "maxLength": 24,
-      "fees": 130,
-      "numSites": 100,
-      "features": {
-        "bearBoxes": true,
-        "boatRamps": false,
-        "campHost": false,
-        "dumpStation": false,
-        "groups": true,
-        "hookups": false,
-        "reservable": true,
-        "restrooms": [
-          "vault"
-        ],
-        "showers": false,
-        "tents": false,
-        "wheelchairAccess": false
-      },
-      "activities": {
-        "hiking": true,
-        "shoreline": false,
-        "swimming": true
+        "toilet": {}
       }
     }
   ]

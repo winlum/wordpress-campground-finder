@@ -182,7 +182,9 @@ class Campground_Search {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 
 		$this->loader->add_action( 'pre_get_posts', $plugin_public, 'pre_get_posts', 1 );
-		$this->loader->add_action( 'query_vars', $plugin_public, 'register_query_vars' );
+		$this->loader->add_action( 'template_include', $plugin_public, 'template_include' );
+
+		$this->loader->add_filter( 'query_vars', $plugin_public, 'register_query_vars' );
 		
 		$this->loader->add_shortcode( Campground_Search_Const::SHORT_CODE, $plugin_public, 'display_search_form' );
 

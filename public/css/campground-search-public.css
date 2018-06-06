@@ -2,3 +2,37 @@
  * All of the CSS for your public-facing functionality should be
  * included in this file.
  */
+.wl-camps-searchform .field {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.wl-camps-searchform .field label {
+    flex: 1;
+    order: 1;
+}
+
+.wl-camps-searchform .field input,
+.wl-camps-searchform .field select {
+    flex: 3;
+    order: 2;
+}
+
+.wl-camps-searchform .field input[type=checkbox] {
+    flex: initial;
+}
+
+.wl-camps-searchform .field input:invalid,
+.wl-camps-searchform .field select:invalid {
+    border-color: red;
+}
+
+.wl-camps-searchform .field select[multiple] {
+    height: initial;
+}
+
+.wl-camps-searchform .field input:invalid+label,
+.wl-camps-searchform .field select:invalid+label {
+    color: rgba(255, 0, 0, 0.5);
+}

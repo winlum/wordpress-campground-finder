@@ -28,33 +28,73 @@ final class Campground_Search_Const {
     const PREFIX = 'wl_camps';
     const PREFIX_CSS = 'wl-camps';
 
-    const QUERY_VARS = array(
-        'near_to',
-        'elevation',
-        'max_length',
-        'fees',
-
-        // 'restrooms',
-        // 'bear_boxes',
-        // 'boat_ramps',
-        // 'camp_host',
-        // 'dump_station',
-        // 'groups',
-        // 'hookups',
-        // 'reservable',
-        // 'shoreline',
-        // 'showers',
-        // 'wheelchair_access',
-
-        // 'fishing',
-        // 'hiking',
-        // 'swimming',
-    );
-
     const SETTINGS = Campground_Search_Const::PREFIX . '_settings';
     const SHORT_CODE = 'campground_search_form';
 
-    const TAXONOMIES = array(
+    public static $query_vars = array(
+        array(
+            'compare' => '>=',
+            'key' => 'elevation',
+            'type' => 'NUMERIC',
+        ),
+        array(
+            'compare' => '<=',
+            'key' => 'fees',
+            'type' => 'NUMERIC',
+        ),
+        array(
+            'compare' => '>=',
+            'key' => 'max_length',
+            'type' => 'NUMERIC',
+        ),
+        array(
+            'compare' => '=',
+            'key' => 'near_to',
+            'type' => 'CHAR',
+        ),
+        array(
+            'compare' => '>=',
+            'key' => 'start_month',
+            'type' => 'NUMERIC',
+        ),
+        array(
+            'compare' => '>=',
+            'key' => 'start_day',
+            'type' => 'NUMERIC',
+        ),
+        array(
+            'compare' => '<=',
+            'key' => 'end_month',
+            'type' => 'NUMERIC',
+        ),
+        array(
+            'compare' => '<=',
+            'key' => 'end_day',
+            'type' => 'NUMERIC',
+        ),
+        array(
+            'compare' => '>=',
+            'key' => 'water_start_month',
+            'type' => 'NUMERIC',
+        ),
+        array(
+            'compare' => '>=',
+            'key' => 'water_start_day',
+            'type' => 'NUMERIC',
+        ),
+        array(
+            'compare' => '<=',
+            'key' => 'water_end_month',
+            'type' => 'NUMERIC',
+        ),
+        array(
+            'compare' => '<=',
+            'key' => 'water_end_day',
+            'type' => 'NUMERIC',
+        ),
+    );
+
+    public static $taxonomies = array(
         'activity' => array(
             'singular' => 'Activity',
             'plural' => 'Activities',

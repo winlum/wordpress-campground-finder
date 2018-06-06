@@ -10,40 +10,6 @@
  * @subpackage Campground_Search/admin/partials
  */
 
-$field_key = Campground_Search_Const::PREFIX . '[general]';
-
-$near_to = isset( $model->near_to ) ? $model->near_to : '';
-$elevation = isset( $model->elevation ) ? $model->elevation : '';
-
-$start_month = isset( $model->date_range->start->month ) ? $model->date_range->start->month : '';
-$start_day = isset( $model->date_range->start->day ) ? $model->date_range->start->day : '';
-$end_month = isset( $model->date_range->end->month ) ? $model->date_range->end->month : '';
-$end_day = isset( $model->date_range->end->day ) ? $model->date_range->end->day : '';
-
-// $model->water is an array, so box to an object
-$model->water = (object) $model->water;
-
-// (de)serialized as "on", so use loose type checking
-$water_available = isset( $model->water->available )
-    ? ( $model->water->available == true )
-    : false;
-$water_start_month = isset( $model->water->date_range->start->month )
-    ? $model->water->date_range->start->month
-    : '';
-$water_start_day = isset( $model->water->date_range->start->day )
-    ? $model->water->date_range->start->day
-    : '';
-$water_end_month = isset( $model->water->date_range->end->month )
-    ? $model->water->date_range->end->month
-    : '';
-$water_end_day = isset( $model->water->date_range->end->day )
-    ? $model->water->date_range->end->day
-    : '';
-
-$max_length = isset( $model->max_length ) ? $model->max_length : '';
-$fees = isset( $model->fees ) ? $model->fees : '';
-$num_sites = isset( $model->num_sites ) ? $model->num_sites : '';
-
 $options = get_option( Campground_Search_Const::SETTINGS );
 $near_to_choices = array_map(
     'trim',
@@ -52,12 +18,12 @@ $near_to_choices = array_map(
 ?>
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
-<div class="general <?php echo Campground_Search_Const::PREFIX_CSS; ?>-meta-box">
+<div class="general <?php echo Campground_Search_Util::prefix_css_string('meta-box'); ?>">
     <div class="field">
-        <label for="<?php echo $field_key; ?>[near_to]">
-            <?php _e( 'Nearest To', Campground_Search_Const::TEXT_DOMAIN ); ?>
-        </label>
-        <select name="<?php echo $field_key; ?>[near_to]">
+        <select
+            id="<?php echo Campground_Search_Util::prefix_css_string( 'near_to' ); ?>"
+            name="<?php echo $field_key; ?>[near_to]"
+        >
             <option
                 <?php if ( ! in_array( $near_to, $near_to_choices ) ) echo 'selected'; ?>
                 value=""
@@ -73,200 +39,219 @@ $near_to_choices = array_map(
             </option>
             <?php endforeach; ?>
         </select>
+        <label for="<?php echo Campground_Search_Util::prefix_css_string( 'near_to' ); ?>">
+            <?php _e( 'Near To', Campground_Search_Const::TEXT_DOMAIN ); ?>
+        </label>
     </div>
 
     <div class="field">
-        <label for="<?php echo $field_key; ?>[elevation]">
-			<?php _e( 'Elevation', Campground_Search_Const::TEXT_DOMAIN ); ?>
-		</label>
         <input
+            id="<?php echo Campground_Search_Util::prefix_css_string( 'elevation' ); ?>"
             name="<?php echo $field_key; ?>[elevation]"
             placeholder=""
             type="number"
             value="<?php echo esc_attr( $elevation ); ?>"
         >
+        <label for="<?php echo Campground_Search_Util::prefix_css_string( 'elevation' ); ?>">
+			<?php _e( 'Elevation', Campground_Search_Const::TEXT_DOMAIN ); ?>
+		</label>
     </div>
 
     <fieldset class="date-range">
-        <legend><?php _e( 'Camp Open', Campground_Search_Const::TEXT_DOMAIN ); ?></legend>
+        <legend><?php _e( 'Open', Campground_Search_Const::TEXT_DOMAIN ); ?></legend>
 
         <div>
             <div class="field">
-                <label for="<?php echo $field_key; ?>[date_range][start][month]">
-                    <?php _e( 'Start Month', Campground_Search_Const::TEXT_DOMAIN ); ?>
-                </label>
                 <input
-                    name="<?php echo $field_key; ?>[date_range][start][month]"
-                    value="<?php echo esc_attr( $start_month ); ?>"
+                    id="<?php echo Campground_Search_Util::prefix_css_string( 'start_month' ); ?>"
                     min="1"
                     max="12"
+                    name="<?php echo $field_key; ?>[start_month]"
                     placeholder="1-12"
                     step="1"
                     type="number"
+                    value="<?php echo esc_attr( $start_month ); ?>"
                 >
+                <label for="<?php echo Campground_Search_Util::prefix_css_string( 'start_month' ); ?>">
+                    <?php _e( 'Start Month', Campground_Search_Const::TEXT_DOMAIN ); ?>
+                </label>
             </div>
 
             <div class="field">
-                <label for="<?php echo $field_key; ?>[date_range][start][day]">
+                <label for="<?php echo Campground_Search_Util::prefix_css_string( 'start_day' ); ?>">
                     <?php _e( 'Start Day', Campground_Search_Const::TEXT_DOMAIN ); ?>
                 </label>
                 <input
-                    name="<?php echo $field_key; ?>[date_range][start][day]"
-                    value="<?php echo esc_attr( $start_day ); ?>"
+                    id="<?php echo Campground_Search_Util::prefix_css_string( 'start_day' ); ?>"
                     min="1"
                     max="31"
+                    name="<?php echo $field_key; ?>[start_day]"
                     placeholder="1-31"
                     step="1"
                     type="number"
+                    value="<?php echo esc_attr( $start_day ); ?>"
                 >
             </div>
         </div>
 
         <div>
             <div class="field">
-                <label for="<?php echo $field_key; ?>[date_range][end][month]">
+                <label for="<?php echo Campground_Search_Util::prefix_css_string( 'end_month' ); ?>">
                     <?php _e( 'End Month', Campground_Search_Const::TEXT_DOMAIN ); ?>
                 </label>
                 <input
-                    name="<?php echo $field_key; ?>[date_range][end][month]"
-                    value="<?php echo esc_attr( $end_month ); ?>"
+                    id="<?php echo Campground_Search_Util::prefix_css_string( 'end_month' ); ?>"
                     min="1"
                     max="12"
+                    name="<?php echo $field_key; ?>[end_month]"
                     placeholder="1-12"
                     step="1"
                     type="number"
+                    value="<?php echo esc_attr( $end_month ); ?>"
                 >
             </div>
 
             <div class="field">
-                <label for="<?php echo $field_key; ?>[date_range][end][day]">
+                <label for="<?php echo Campground_Search_Util::prefix_css_string( 'end_day' ); ?>">
                     <?php _e( 'End Day', Campground_Search_Const::TEXT_DOMAIN ); ?>
                 </label>
                 <input
-                    name="<?php echo $field_key; ?>[date_range][end][day]"
-                    value="<?php echo esc_attr( $end_day ); ?>"
+                    id="<?php echo Campground_Search_Util::prefix_css_string( 'end_day' ); ?>"
                     min="1"
                     max="31"
+                    name="<?php echo $field_key; ?>[end_day]"
                     placeholder="1-31"
                     step="1"
                     type="number"
+                    value="<?php echo esc_attr( $end_day ); ?>"
                 >
             </div>
         </div>
     </fieldset>
 
     <fieldset class="date-range">
-        <legend><?php _e( 'Water Available', Campground_Search_Const::TEXT_DOMAIN ); ?></legend>
+        <legend><?php _e( 'Water', Campground_Search_Const::TEXT_DOMAIN ); ?></legend>
 
         <div class="field">
-            <label for="<?php echo $field_key; ?>[water][available]">
-                <?php _e( 'Available?', Campground_Search_Const::TEXT_DOMAIN ); ?>
-            </label>
             <input
                 <?php if ( $water_available ) echo 'checked'; ?>
-                name="<?php echo $field_key; ?>[water][available]"
+                id="<?php echo Campground_Search_Util::prefix_css_string( 'water_available' ); ?>"
+                name="<?php echo $field_key; ?>[water_available]"
                 type="checkbox"
             >
+            <label for="<?php echo Campground_Search_Util::prefix_css_string( 'water_available' ); ?>">
+                <?php _e( 'Available?', Campground_Search_Const::TEXT_DOMAIN ); ?>
+            </label>
         </div>
 
         <div>
             <div class="field">
-                <label for="<?php echo $field_key; ?>[water][date_range][start][month]">
+                <input
+                    id="<?php echo Campground_Search_Util::prefix_css_string( 'water_start_month' ); ?>"
+                    min="1"
+                    max="12"
+                    name="<?php echo $field_key; ?>[water_start_month]"
+                    placeholder="1-12"
+                    step="1"
+                    type="number"
+                    value="<?php echo esc_attr( $water_start_month ); ?>"
+                >
+                <label for="<?php echo Campground_Search_Util::prefix_css_string( 'water_start_month' ); ?>">
                     <?php _e( 'Start Month', Campground_Search_Const::TEXT_DOMAIN ); ?>
                 </label>
-                <input
-                    name="<?php echo $field_key; ?>[water][date_range][start][month]"
-                    value="<?php echo esc_attr( $water_start_month ); ?>"
-                    min="1"
-                    max="12"
-                    placeholder="1-12"
-                    step="1"
-                    type="number"
-                >
             </div>
 
             <div class="field">
-                <label for="<?php echo $field_key; ?>[water][date_range][start][day]">
-                    <?php _e( 'Start Day', Campground_Search_Const::TEXT_DOMAIN ); ?>
-                </label>
                 <input
-                    name="<?php echo $field_key; ?>[water][date_range][start][day]"
-                    value="<?php echo esc_attr( $water_start_day ); ?>"
+                    id="<?php echo Campground_Search_Util::prefix_css_string( 'water_start_day' ); ?>"
                     min="1"
                     max="31"
+                    name="<?php echo $field_key; ?>[water_start_day]"
                     placeholder="1-31"
                     step="1"
                     type="number"
+                    value="<?php echo esc_attr( $water_start_day ); ?>"
                 >
+                <label for="<?php echo Campground_Search_Util::prefix_css_string( 'water_start_day' ); ?>">
+                    <?php _e( 'Start Day', Campground_Search_Const::TEXT_DOMAIN ); ?>
+                </label>
             </div>
         </div>
 
         <div>
             <div class="field">
-                <label for="<?php echo $field_key; ?>[water][date_range][end][month]">
-                    <?php _e( 'End Month', Campground_Search_Const::TEXT_DOMAIN ); ?>
-                </label>
                 <input
-                    name="<?php echo $field_key; ?>[water][date_range][end][month]"
-                    value="<?php echo esc_attr( $water_end_month ); ?>"
+                    id="<?php echo Campground_Search_Util::prefix_css_string( 'water_end_month' ); ?>"
                     min="1"
                     max="12"
+                    name="<?php echo $field_key; ?>[water_end_month]"
                     placeholder="1-12"
                     step="1"
                     type="number"
+                    value="<?php echo esc_attr( $water_end_month ); ?>"
                 >
+                <label for="<?php echo Campground_Search_Util::prefix_css_string( 'water_end_month' ); ?>">
+                    <?php _e( 'End Month', Campground_Search_Const::TEXT_DOMAIN ); ?>
+                </label>
             </div>
 
             <div class="field">
-                <label for="<?php echo $field_key; ?>[water][date_range][end][day]">
-                    <?php _e( 'End Day', Campground_Search_Const::TEXT_DOMAIN ); ?>
-                </label>
                 <input
-                    name="<?php echo $field_key; ?>[water][date_range][end][day]"
-                    value="<?php echo esc_attr( $water_end_day ); ?>"
+                    id="<?php echo Campground_Search_Util::prefix_css_string( 'water_end_day' ); ?>"
                     min="1"
                     max="31"
+                    name="<?php echo $field_key; ?>[water_end_day]"
                     placeholder="1-31"
                     step="1"
                     type="number"
+                    value="<?php echo esc_attr( $water_end_day ); ?>"
                 >
+                <label for="<?php echo Campground_Search_Util::prefix_css_string( 'water_end_day' ); ?>">
+                    <?php _e( 'End Day', Campground_Search_Const::TEXT_DOMAIN ); ?>
+                </label>
             </div>
         </div>
     </fieldset>
 
     <div class="field">
-        <label for="<?php echo $field_key; ?>[max_length]">
-			<?php _e( 'Average Max Length', Campground_Search_Const::TEXT_DOMAIN ); ?>
-		</label>
         <input
+            id="<?php echo Campground_Search_Util::prefix_css_string( 'max_length' ); ?>"
+            min="0"
             name="<?php echo $field_key; ?>[max_length]"
             placeholder=""
             type="number"
             value="<?php echo esc_attr( $max_length ); ?>"
         >
+        <label for="<?php echo Campground_Search_Util::prefix_css_string( 'max_length' ); ?>">
+			<?php _e( 'Average Max Length', Campground_Search_Const::TEXT_DOMAIN ); ?>
+		</label>
     </div>
 
     <div class="field">
-        <label for="<?php echo $field_key; ?>[fees]">
-			<?php _e( 'Fees', Campground_Search_Const::TEXT_DOMAIN ); ?>
-		</label>
         <input
+            id="<?php echo Campground_Search_Util::prefix_css_string( 'fees' ); ?>"
+            min="0"
             name="<?php echo $field_key; ?>[fees]"
             placeholder=""
             type="number"
             value="<?php echo esc_attr( $fees ); ?>"
         >
+        <label for="<?php echo Campground_Search_Util::prefix_css_string( 'fees' ); ?>">
+			<?php _e( 'Fees', Campground_Search_Const::TEXT_DOMAIN ); ?>
+		</label>
     </div>
 
     <div class="field">
-        <label for="<?php echo $field_key; ?>[num_sites]">
-			<?php _e( 'Number of Sites', Campground_Search_Const::TEXT_DOMAIN ); ?>
-		</label>
         <input
+            id="<?php echo Campground_Search_Util::prefix_css_string( 'num_sites' ); ?>"
+            min="0"
             name="<?php echo $field_key; ?>[num_sites]"
             placeholder=""
             type="number"
             value="<?php echo esc_attr( $num_sites ); ?>"
         >
+        <label for="<?php echo Campground_Search_Util::prefix_css_string( 'num_sites' ); ?>">
+			<?php _e( 'Number of Sites', Campground_Search_Const::TEXT_DOMAIN ); ?>
+		</label>
     </div>
 </div>

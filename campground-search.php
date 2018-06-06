@@ -44,7 +44,7 @@ require_once plugin_dir_path( __FILE__ ) . 'includes/class-campground-search-con
 /**
  * The static class responsible for providing utility methods.
  */
-require_once plugin_dir_path( __FILE__ ) . 'includes/class-campground-search-utils.php';
+require_once plugin_dir_path( __FILE__ ) . 'includes/class-campground-search-util.php';
 
 /**
  * The code that runs during plugin activation.

@@ -25,9 +25,9 @@ Upload the Akismet plugin to your blog, Activate it.
 == TODO ==
 
 1. ~~create Post Type~~
-1. create Taxonomy
-1. create Meta Boxes
-1. create Query vars
+1. ~~create Taxonomies~~
+1. ~~create Meta Boxes~~
+1. ~~create Query vars~~
 1. create search form
 1. display search results
 1. cleanup on deactivate/uninstall

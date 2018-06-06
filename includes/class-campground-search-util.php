@@ -17,7 +17,7 @@
  * @subpackage Campground_Search/includes
  * @author     WinLum Inc.
  */
-final class Campground_Search_Utils {
+final class Campground_Search_Util {
 
 	/**
 	 * Recursively converts associative array(s) into an object.
@@ -26,7 +26,7 @@ final class Campground_Search_Utils {
 	 * @since    1.0.0
 	 * @param    mixed     $array          The item to convert to an object.
 	 */
-	public static function arrayToObject( $array ) {
+	public static function array_to_object( $array ) {
 		return is_array( $array ) && self::array_type( $array ) !== 'index'
 			? (object) array_map( array( __CLASS__, __METHOD__ ), $array)
 			: $array;
@@ -113,14 +113,39 @@ final class Campground_Search_Utils {
 	}
 
 	/**
+	 * Prepends the provided prefix and separator to the string.
+	 *
+	 * @author   WinLum Inc.
+	 * @since    1.0.0
+	 * @param    string    $string         The string to update.
+	 * @param    string    $prefix         The string to prepend. Default is @see Campground_Search_Const::PREFIX.
+	 * @param    string    $separator      The separator to use. Default is "_".
+	 */
+	public static function prefix_string( $string, $prefix = Campground_Search_Const::PREFIX, $separator = '_' ) {
+		return $prefix . $separator . $string;
+	}
+
+	/**
+	 * Convenience method to @see self::prefix_string.
+	 * Prepends the prefix (@see Campground_Search_Const::PREFIX_CSS) and separator ("-") to the string.
+	 *
+	 * @author   WinLum Inc.
+	 * @since    1.0.0
+	 * @param    string    $string         The string to update.
+	 */
+	public static function prefix_css_string( $string ) {
+		return self::prefix_string( $string, Campground_Search_Const::PREFIX_CSS, '-' );
+	}
+
+	/**
 	 * Sanitizes the provided field (Can be recursive).
 	 *
 	 * @author   WinLum Inc.
 	 * @since    1.0.0
 	 * @param    mixed     $field          The field to sanitize.
 	 */
-	public static function sanitizeField( $field = '' ) {
-		// check if bidimensional array, and sanitize fields
+	public static function sanitizeField( $field ) {
+		// check if associative array, and sanitize fields
 		return is_array( $field )
 			? array_map( array( __CLASS__, __METHOD__ ), $field )
 			: sanitize_text_field( $field );

@@ -43,7 +43,7 @@ class Campground_Search_Deactivator {
             unregister_post_type( Campground_Search_Const::POST_TYPE );
 		}
 
-        foreach ( Campground_Search_Const::TAXONOMIES as $key => $val ) {
+        foreach ( Campground_Search_Const::$taxonomies as $key => $val ) {
             if ( taxonomy_exists( $key )) {
                 unregister_taxonomy( $key );
             }

@@ -54,68 +54,74 @@ const parseDateRange = s => {
 
 const campgrounds = seed.campground_finder_updated.map(campground => ({
 	// id: parseAsInt(campground.id),
-	name: campground.camp_name.trim(),
-	elevation: parseAsInt(campground.elevation),
-	nearTo: campground.location.trim(),
+	title: campground.camp_name.trim(),
+	meta: {
+		elevation: parseAsInt(campground.elevation),
+		nearTo: campground.location.trim(),
 
-	// conform to GeoJSON http://geojson.org/
-	geo: {
-		type: 'FeatureCollection',
-		features: [
-			{
-				type: 'Feature',
-				properties: {},
-				geometry: {
-					type: 'Point',
-					coordinates: [
-						-122.80448913574219,
-						40.7202010588415,
-						(parseAsInt(campground.elevation) === null)
-						? null
-						: parseAsInt(campground.elevation) * 0.3048 // convert to meters
-					],
-				}
-			},
-		],
+		// conform to GeoJSON http://geojson.org/
+		geo: {
+			type: 'FeatureCollection',
+			features: [
+				{
+					type: 'Feature',
+					properties: {},
+					geometry: {
+						type: 'Point',
+						coordinates: [
+							-122.80448913574219,
+							40.7202010588415,
+							(parseAsInt(campground.elevation) === null)
+							? null
+							: parseAsInt(campground.elevation) * 0.3048 // convert to meters
+						],
+					}
+				},
+			],
+		},
+
+		dateRange: parseDateRange(campground.camp_open),
+		water: {
+			available: (campground.water.trim().toLowerCase() !== 'no water'),
+			dateRange: parseDateRange(campground.water),
+			type: null,
+		},
+
+		maxLength: parseAsInt(campground.length),
+		fees: parseAsInt(campground.fees),
+		numSites: parseAsInt(campground.num_sites),
 	},
 
-	dateRange: parseDateRange(campground.camp_open),
-	water: {
-		available: (campground.water.trim().toLowerCase() !== 'no water'),
-		dateRange: parseDateRange(campground.water),
-		type: null,
-	},
+	terms: {
+		activity: {
+			hiking: parseAsBool(campground.hiking),
+			shoreline: parseAsBool(campground.shoreline),
+			swimming: parseAsBool(campground.swimming),
+		},
 
-	maxLength: parseAsInt(campground.length),
-	fees: parseAsInt(campground.fees),
-	numSites: parseAsInt(campground.num_sites),
+		feature: {
+			bearBoxes: parseAsBool(campground.bear_boxes),
+			boatRamps: parseAsBool(campground.ramps),
+			campHost: parseAsBool(campground.camphost),
+			dumpStation: parseAsBool(campground.dump),
+			groups: parseAsBool(campground.groups),
+			hookups: parseAsBool(campground.hookups),
+			reservable: parseAsBool(campground.reservations),
+			restrooms: campground.toilets
+			.split('/')
+			.map(s => s.trim().toLowerCase()),
+			showers: parseAsBool(campground.showers),
+			tents: parseAsBool(campground.tents),
+			wheelchairAccess: parseAsBool(campground.wheelchair),
+		},
 
-	features: {
-		bearBoxes: parseAsBool(campground.bear_boxes),
-		boatRamps: parseAsBool(campground.ramps),
-		campHost: parseAsBool(campground.camphost),
-		dumpStation: parseAsBool(campground.dump),
-		groups: parseAsBool(campground.groups),
-		hookups: parseAsBool(campground.hookups),
-		reservable: parseAsBool(campground.reservations),
-		restrooms: campground.toilets
-		.split('/')
-		.map(s => s.trim().toLowerCase()),
-		showers: parseAsBool(campground.showers),
-		tents: parseAsBool(campground.tents),
-		wheelchairAccess: parseAsBool(campground.wheelchair),
-	},
-
-	activities: {
-		hiking: parseAsBool(campground.hiking),
-		shoreline: parseAsBool(campground.shoreline),
-		swimming: parseAsBool(campground.swimming),
-	},
+		toilet: {},
+	}
 }))
 
 const json = {
 	settings: {
-		nearToChoices: campgrounds.reduce((acc, val) => {
+		nearTo: campgrounds.reduce((acc, val) => {
 			if (acc.indexOf(val.nearTo) === -1) acc.push(val.nearTo)
 			return acc
 		}, []).sort()
