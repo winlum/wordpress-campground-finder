@@ -21,29 +21,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  609.6
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": null,
-          "end": null
+        "open": {
+          "from": null,
+          "to": null
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": {
-              "month": 4,
-              "day": 1
-            },
-            "end": {
-              "month": 10,
-              "day": 31
-            }
-          },
-          "type": null
+          "from": "1901-04-01T06:00:00.000Z",
+          "to": "9999-10-31T06:00:00.000Z"
         },
         "maxLength": 40,
         "fees": 20,
@@ -89,35 +80,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  731.52
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 5,
-            "day": 15
-          },
-          "end": {
-            "month": 9,
-            "day": 15
-          }
+        "open": {
+          "from": "1901-05-15T06:00:00.000Z",
+          "to": "9999-09-15T06:00:00.000Z"
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": {
-              "month": 5,
-              "day": 15
-            },
-            "end": {
-              "month": 9,
-              "day": 15
-            }
-          },
-          "type": null
+          "from": "1901-05-15T06:00:00.000Z",
+          "to": "9999-09-15T06:00:00.000Z"
         },
         "maxLength": 32,
         "fees": 20,
@@ -163,35 +139,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  731.52
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 5,
-            "day": 15
-          },
-          "end": {
-            "month": 9,
-            "day": 15
-          }
+        "open": {
+          "from": "1901-05-15T06:00:00.000Z",
+          "to": "9999-09-15T06:00:00.000Z"
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": {
-              "month": 5,
-              "day": 15
-            },
-            "end": {
-              "month": 9,
-              "day": 15
-            }
-          },
-          "type": null
+          "from": "1901-05-15T06:00:00.000Z",
+          "to": "9999-09-15T06:00:00.000Z"
         },
         "maxLength": 32,
         "fees": 35,
@@ -237,23 +198,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  1524
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": null,
-          "end": null
+        "open": {
+          "from": null,
+          "to": null
         },
         "water": {
           "available": false,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 16,
         "fees": 0,
@@ -299,29 +257,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  822.96
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": null,
-          "end": null
+        "open": {
+          "from": null,
+          "to": null
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": {
-              "month": 5,
-              "day": 15
-            },
-            "end": {
-              "month": 10,
-              "day": 31
-            }
-          },
-          "type": null
+          "from": "1901-05-15T06:00:00.000Z",
+          "to": "9999-10-31T06:00:00.000Z"
         },
         "maxLength": 20,
         "fees": 10,
@@ -367,29 +316,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  762
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 5,
-            "day": 15
-          },
-          "end": {
-            "month": 9,
-            "day": 30
-          }
+        "open": {
+          "from": "1901-05-15T06:00:00.000Z",
+          "to": "9999-09-30T06:00:00.000Z"
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 40,
         "fees": 25,
@@ -435,29 +375,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  762
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 5,
-            "day": 15
-          },
-          "end": {
-            "month": 9,
-            "day": 30
-          }
+        "open": {
+          "from": "1901-05-15T06:00:00.000Z",
+          "to": "9999-09-30T06:00:00.000Z"
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 40,
         "fees": 35,
@@ -503,29 +434,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  762
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 5,
-            "day": 15
-          },
-          "end": {
-            "month": 9,
-            "day": 30
-          }
+        "open": {
+          "from": "1901-05-15T06:00:00.000Z",
+          "to": "9999-09-30T06:00:00.000Z"
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 40,
         "fees": 45,
@@ -571,29 +493,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  762
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 5,
-            "day": 15
-          },
-          "end": {
-            "month": 9,
-            "day": 30
-          }
+        "open": {
+          "from": "1901-05-15T06:00:00.000Z",
+          "to": "9999-09-30T06:00:00.000Z"
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 40,
         "fees": 80,
@@ -639,35 +552,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  731.52
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 4,
-            "day": 1
-          },
-          "end": {
-            "month": 10,
-            "day": 31
-          }
+        "open": {
+          "from": "1901-04-01T06:00:00.000Z",
+          "to": "9999-10-31T06:00:00.000Z"
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": {
-              "month": 4,
-              "day": 1
-            },
-            "end": {
-              "month": 10,
-              "day": 31
-            }
-          },
-          "type": null
+          "from": "1901-04-01T06:00:00.000Z",
+          "to": "9999-10-31T06:00:00.000Z"
         },
         "maxLength": 25,
         "fees": 15,
@@ -713,23 +611,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  1036.3200000000002
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": null,
-          "end": null
+        "open": {
+          "from": null,
+          "to": null
         },
         "water": {
           "available": false,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 22,
         "fees": 0,
@@ -775,35 +670,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  609.6
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 4,
-            "day": 1
-          },
-          "end": {
-            "month": 10,
-            "day": 31
-          }
+        "open": {
+          "from": "1901-04-01T06:00:00.000Z",
+          "to": "9999-10-31T06:00:00.000Z"
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": {
-              "month": 4,
-              "day": 1
-            },
-            "end": {
-              "month": 10,
-              "day": 31
-            }
-          },
-          "type": null
+          "from": "1901-04-01T06:00:00.000Z",
+          "to": "9999-10-31T06:00:00.000Z"
         },
         "maxLength": 16,
         "fees": 15,
@@ -849,35 +729,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  853.44
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 5,
-            "day": 15
-          },
-          "end": {
-            "month": 10,
-            "day": 15
-          }
+        "open": {
+          "from": "1901-05-15T06:00:00.000Z",
+          "to": "9999-10-15T06:00:00.000Z"
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": {
-              "month": 5,
-              "day": 15
-            },
-            "end": {
-              "month": 10,
-              "day": 15
-            }
-          },
-          "type": null
+          "from": "1901-05-15T06:00:00.000Z",
+          "to": "9999-10-15T06:00:00.000Z"
         },
         "maxLength": 35,
         "fees": 15,
@@ -923,29 +788,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  762
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": null,
-          "end": null
+        "open": {
+          "from": null,
+          "to": null
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": {
-              "month": 4,
-              "day": 1
-            },
-            "end": {
-              "month": 10,
-              "day": 31
-            }
-          },
-          "type": null
+          "from": "1901-04-01T06:00:00.000Z",
+          "to": "9999-10-31T06:00:00.000Z"
         },
         "maxLength": 25,
         "fees": 15,
@@ -991,35 +847,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  762
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 5,
-            "day": 1
-          },
-          "end": {
-            "month": 9,
-            "day": 30
-          }
+        "open": {
+          "from": "1901-05-01T06:00:00.000Z",
+          "to": "9999-09-30T06:00:00.000Z"
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": {
-              "month": 5,
-              "day": 1
-            },
-            "end": {
-              "month": 9,
-              "day": 30
-            }
-          },
-          "type": null
+          "from": "1901-05-01T06:00:00.000Z",
+          "to": "9999-09-30T06:00:00.000Z"
         },
         "maxLength": 37,
         "fees": 120,
@@ -1065,35 +906,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  762
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 5,
-            "day": 1
-          },
-          "end": {
-            "month": 9,
-            "day": 30
-          }
+        "open": {
+          "from": "1901-05-01T06:00:00.000Z",
+          "to": "9999-09-30T06:00:00.000Z"
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": {
-              "month": 5,
-              "day": 1
-            },
-            "end": {
-              "month": 9,
-              "day": 30
-            }
-          },
-          "type": null
+          "from": "1901-05-01T06:00:00.000Z",
+          "to": "9999-09-30T06:00:00.000Z"
         },
         "maxLength": 37,
         "fees": 120,
@@ -1139,23 +965,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  914.4000000000001
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": null,
-          "end": null
+        "open": {
+          "from": null,
+          "to": null
         },
         "water": {
           "available": false,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 16,
         "fees": 0,
@@ -1201,35 +1024,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  731.52
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 5,
-            "day": 15
-          },
-          "end": {
-            "month": 9,
-            "day": 15
-          }
+        "open": {
+          "from": "1901-05-15T06:00:00.000Z",
+          "to": "9999-09-15T06:00:00.000Z"
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": {
-              "month": 5,
-              "day": 15
-            },
-            "end": {
-              "month": 9,
-              "day": 15
-            }
-          },
-          "type": null
+          "from": "1901-05-15T06:00:00.000Z",
+          "to": "9999-09-15T06:00:00.000Z"
         },
         "maxLength": 40,
         "fees": 20,
@@ -1275,35 +1083,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  731.52
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 5,
-            "day": 15
-          },
-          "end": {
-            "month": 9,
-            "day": 15
-          }
+        "open": {
+          "from": "1901-05-15T06:00:00.000Z",
+          "to": "9999-09-15T06:00:00.000Z"
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": {
-              "month": 5,
-              "day": 15
-            },
-            "end": {
-              "month": 9,
-              "day": 15
-            }
-          },
-          "type": null
+          "from": "1901-05-15T06:00:00.000Z",
+          "to": "9999-09-15T06:00:00.000Z"
         },
         "maxLength": 40,
         "fees": 35,
@@ -1349,29 +1142,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  975.36
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 5,
-            "day": 15
-          },
-          "end": {
-            "month": 10,
-            "day": 31
-          }
+        "open": {
+          "from": "1901-05-15T06:00:00.000Z",
+          "to": "9999-10-31T06:00:00.000Z"
         },
         "water": {
           "available": false,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 16,
         "fees": 0,
@@ -1417,23 +1201,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  792.48
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": null,
-          "end": null
+        "open": {
+          "from": null,
+          "to": null
         },
         "water": {
           "available": false,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 32,
         "fees": 0,
@@ -1479,35 +1260,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  609.6
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 5,
-            "day": 1
-          },
-          "end": {
-            "month": 9,
-            "day": 15
-          }
+        "open": {
+          "from": "1901-05-01T06:00:00.000Z",
+          "to": "9999-09-15T06:00:00.000Z"
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": {
-              "month": 5,
-              "day": 1
-            },
-            "end": {
-              "month": 9,
-              "day": 15
-            }
-          },
-          "type": null
+          "from": "1901-05-01T06:00:00.000Z",
+          "to": "9999-09-15T06:00:00.000Z"
         },
         "maxLength": 0,
         "fees": 20,
@@ -1554,29 +1320,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  731.52
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": null,
-          "end": null
+        "open": {
+          "from": null,
+          "to": null
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": {
-              "month": 5,
-              "day": 31
-            },
-            "end": {
-              "month": 10,
-              "day": 31
-            }
-          },
-          "type": null
+          "from": "1901-05-31T06:00:00.000Z",
+          "to": "9999-10-31T06:00:00.000Z"
         },
         "maxLength": 36,
         "fees": 8,
@@ -1623,29 +1380,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  731.52
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": null,
-          "end": null
+        "open": {
+          "from": null,
+          "to": null
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": {
-              "month": 5,
-              "day": 31
-            },
-            "end": {
-              "month": 10,
-              "day": 31
-            }
-          },
-          "type": null
+          "from": "1901-05-31T06:00:00.000Z",
+          "to": "9999-10-31T06:00:00.000Z"
         },
         "maxLength": 36,
         "fees": 16,
@@ -1692,23 +1440,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  883.9200000000001
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": null,
-          "end": null
+        "open": {
+          "from": null,
+          "to": null
         },
         "water": {
           "available": false,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 40,
         "fees": 15,
@@ -1754,29 +1499,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  731.52
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 5,
-            "day": 15
-          },
-          "end": {
-            "month": 9,
-            "day": 15
-          }
+        "open": {
+          "from": "1901-05-15T06:00:00.000Z",
+          "to": "9999-09-15T06:00:00.000Z"
         },
         "water": {
           "available": false,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 20,
         "fees": 10,
@@ -1822,23 +1558,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  1645.92
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": null,
-          "end": null
+        "open": {
+          "from": null,
+          "to": null
         },
         "water": {
           "available": false,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 15,
         "fees": 0,
@@ -1884,23 +1617,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  731.52
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": null,
-          "end": null
+        "open": {
+          "from": null,
+          "to": null
         },
         "water": {
           "available": false,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 0,
         "fees": 100,
@@ -1946,23 +1676,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  731.52
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": null,
-          "end": null
+        "open": {
+          "from": null,
+          "to": null
         },
         "water": {
           "available": false,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 0,
         "fees": 20,
@@ -2008,35 +1735,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  731.52
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 5,
-            "day": 1
-          },
-          "end": {
-            "month": 9,
-            "day": 30
-          }
+        "open": {
+          "from": "1901-05-01T06:00:00.000Z",
+          "to": "9999-09-30T06:00:00.000Z"
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": {
-              "month": 5,
-              "day": 1
-            },
-            "end": {
-              "month": 9,
-              "day": 30
-            }
-          },
-          "type": null
+          "from": "1901-05-01T06:00:00.000Z",
+          "to": "9999-09-30T06:00:00.000Z"
         },
         "maxLength": 40,
         "fees": 20,
@@ -2082,35 +1794,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  731.52
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 5,
-            "day": 1
-          },
-          "end": {
-            "month": 9,
-            "day": 30
-          }
+        "open": {
+          "from": "1901-05-01T06:00:00.000Z",
+          "to": "9999-09-30T06:00:00.000Z"
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": {
-              "month": 5,
-              "day": 1
-            },
-            "end": {
-              "month": 9,
-              "day": 30
-            }
-          },
-          "type": null
+          "from": "1901-05-01T06:00:00.000Z",
+          "to": "9999-09-30T06:00:00.000Z"
         },
         "maxLength": 40,
         "fees": 35,
@@ -2156,29 +1853,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  914.4000000000001
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 5,
-            "day": 15
-          },
-          "end": {
-            "month": 10,
-            "day": 31
-          }
+        "open": {
+          "from": "1901-05-15T06:00:00.000Z",
+          "to": "9999-10-31T06:00:00.000Z"
         },
         "water": {
           "available": false,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 35,
         "fees": 10,
@@ -2224,23 +1912,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  609.6
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": null,
-          "end": null
+        "open": {
+          "from": null,
+          "to": null
         },
         "water": {
           "available": false,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 15,
         "fees": 10,
@@ -2286,29 +1971,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  335.28000000000003
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 4,
-            "day": 2
-          },
-          "end": {
-            "month": 9,
-            "day": 15
-          }
+        "open": {
+          "from": "1901-04-02T06:00:00.000Z",
+          "to": "9999-09-15T06:00:00.000Z"
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 30,
         "fees": 20,
@@ -2355,29 +2031,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  335.28000000000003
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 4,
-            "day": 2
-          },
-          "end": {
-            "month": 9,
-            "day": 15
-          }
+        "open": {
+          "from": "1901-04-02T06:00:00.000Z",
+          "to": "9999-09-15T06:00:00.000Z"
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 30,
         "fees": 35,
@@ -2424,23 +2091,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  330.708
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": null,
-          "end": null
+        "open": {
+          "from": null,
+          "to": null
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 30,
         "fees": 20,
@@ -2486,23 +2150,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  330.708
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": null,
-          "end": null
+        "open": {
+          "from": null,
+          "to": null
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 30,
         "fees": 35,
@@ -2548,29 +2209,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  330.708
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 4,
-            "day": 1
-          },
-          "end": {
-            "month": 9,
-            "day": 12
-          }
+        "open": {
+          "from": "1901-04-01T06:00:00.000Z",
+          "to": "9999-09-12T06:00:00.000Z"
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 30,
         "fees": 20,
@@ -2616,29 +2268,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  330.708
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 7,
-            "day": 1
-          },
-          "end": {
-            "month": 9,
-            "day": 1
-          }
+        "open": {
+          "from": "1901-07-01T06:00:00.000Z",
+          "to": "9999-09-01T06:00:00.000Z"
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 16,
         "fees": 10,
@@ -2684,23 +2327,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  335.28000000000003
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": null,
-          "end": null
+        "open": {
+          "from": null,
+          "to": null
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 30,
         "fees": 20,
@@ -2746,23 +2386,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  335.28000000000003
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": null,
-          "end": null
+        "open": {
+          "from": null,
+          "to": null
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 30,
         "fees": 35,
@@ -2808,23 +2445,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  335.28000000000003
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": null,
-          "end": null
+        "open": {
+          "from": null,
+          "to": null
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 30,
         "fees": 20,
@@ -2870,23 +2504,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  335.28000000000003
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": null,
-          "end": null
+        "open": {
+          "from": null,
+          "to": null
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 30,
         "fees": 35,
@@ -2932,23 +2563,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  335.28000000000003
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": null,
-          "end": null
+        "open": {
+          "from": null,
+          "to": null
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 30,
         "fees": 65,
@@ -2994,23 +2622,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  330.708
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": null,
-          "end": null
+        "open": {
+          "from": null,
+          "to": null
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 16,
         "fees": 20,
@@ -3056,23 +2681,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  330.708
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": null,
-          "end": null
+        "open": {
+          "from": null,
+          "to": null
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 16,
         "fees": 35,
@@ -3118,29 +2740,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  330.708
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 4,
-            "day": 1
-          },
-          "end": {
-            "month": 10,
-            "day": 24
-          }
+        "open": {
+          "from": "1901-04-01T06:00:00.000Z",
+          "to": "9999-10-24T06:00:00.000Z"
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 16,
         "fees": 20,
@@ -3186,29 +2799,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  330.708
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 4,
-            "day": 1
-          },
-          "end": {
-            "month": 10,
-            "day": 24
-          }
+        "open": {
+          "from": "1901-04-01T06:00:00.000Z",
+          "to": "9999-10-24T06:00:00.000Z"
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 16,
         "fees": 35,
@@ -3254,23 +2858,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  330.708
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": null,
-          "end": null
+        "open": {
+          "from": null,
+          "to": null
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 16,
         "fees": 20,
@@ -3316,23 +2917,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  330.708
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": null,
-          "end": null
+        "open": {
+          "from": null,
+          "to": null
         },
         "water": {
           "available": false,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 16,
         "fees": 10,
@@ -3378,23 +2976,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  332.232
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": null,
-          "end": null
+        "open": {
+          "from": null,
+          "to": null
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 24,
         "fees": 20,
@@ -3440,23 +3035,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  335.28000000000003
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": null,
-          "end": null
+        "open": {
+          "from": null,
+          "to": null
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 16,
         "fees": 20,
@@ -3502,23 +3094,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  838.2
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": null,
-          "end": null
+        "open": {
+          "from": null,
+          "to": null
         },
         "water": {
           "available": false,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 24,
         "fees": 0,
@@ -3564,23 +3153,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  457.20000000000005
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": null,
-          "end": null
+        "open": {
+          "from": null,
+          "to": null
         },
         "water": {
           "available": false,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 16,
         "fees": 0,
@@ -3626,29 +3212,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  325.2216
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 5,
-            "day": 15
-          },
-          "end": {
-            "month": 9,
-            "day": 12
-          }
+        "open": {
+          "from": "1901-05-15T06:00:00.000Z",
+          "to": "9999-09-12T06:00:00.000Z"
         },
         "water": {
           "available": false,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 0,
         "fees": 10,
@@ -3694,29 +3271,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  325.2216
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 5,
-            "day": 15
-          },
-          "end": {
-            "month": 9,
-            "day": 12
-          }
+        "open": {
+          "from": "1901-05-15T06:00:00.000Z",
+          "to": "9999-09-12T06:00:00.000Z"
         },
         "water": {
           "available": false,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 30,
         "fees": 10,
@@ -3762,29 +3330,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  325.2216
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 3,
-            "day": 1
-          },
-          "end": {
-            "month": 10,
-            "day": 31
-          }
+        "open": {
+          "from": "1901-03-01T07:00:00.000Z",
+          "to": "9999-10-31T06:00:00.000Z"
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 30,
         "fees": 10,
@@ -3830,29 +3389,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  330.708
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 5,
-            "day": 15
-          },
-          "end": {
-            "month": 9,
-            "day": 12
-          }
+        "open": {
+          "from": "1901-05-15T06:00:00.000Z",
+          "to": "9999-09-12T06:00:00.000Z"
         },
         "water": {
           "available": false,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 0,
         "fees": 10,
@@ -3898,29 +3448,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  330.708
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 5,
-            "day": 15
-          },
-          "end": {
-            "month": 9,
-            "day": 12
-          }
+        "open": {
+          "from": "1901-05-15T06:00:00.000Z",
+          "to": "9999-09-12T06:00:00.000Z"
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 16,
         "fees": 15,
@@ -3966,23 +3507,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  330.708
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": null,
-          "end": null
+        "open": {
+          "from": null,
+          "to": null
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 16,
         "fees": 130,
@@ -4028,29 +3566,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  335.28000000000003
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 4,
-            "day": 1
-          },
-          "end": {
-            "month": 9,
-            "day": 30
-          }
+        "open": {
+          "from": "1901-04-01T06:00:00.000Z",
+          "to": "9999-09-30T06:00:00.000Z"
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 30,
         "fees": 130,
@@ -4096,29 +3625,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  335.28000000000003
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 4,
-            "day": 1
-          },
-          "end": {
-            "month": 9,
-            "day": 30
-          }
+        "open": {
+          "from": "1901-04-01T06:00:00.000Z",
+          "to": "9999-09-30T06:00:00.000Z"
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 30,
         "fees": 100,
@@ -4164,29 +3684,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  330.708
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 5,
-            "day": 15
-          },
-          "end": {
-            "month": 9,
-            "day": 10
-          }
+        "open": {
+          "from": "1901-05-15T06:00:00.000Z",
+          "to": "9999-09-10T06:00:00.000Z"
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 16,
         "fees": 130,
@@ -4232,29 +3743,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  330.708
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 6,
-            "day": 3
-          },
-          "end": {
-            "month": 9,
-            "day": 10
-          }
+        "open": {
+          "from": "1901-06-03T06:00:00.000Z",
+          "to": "9999-09-10T06:00:00.000Z"
         },
         "water": {
           "available": false,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 16,
         "fees": 100,
@@ -4300,29 +3802,20 @@
                 "coordinates": [
                   -122.80448913574219,
                   40.7202010588415,
-                  332.232
+                  null
                 ]
               }
             }
           ]
         },
-        "dateRange": {
-          "start": {
-            "month": 6,
-            "day": 3
-          },
-          "end": {
-            "month": 9,
-            "day": 10
-          }
+        "open": {
+          "from": "1901-06-03T06:00:00.000Z",
+          "to": "9999-09-10T06:00:00.000Z"
         },
         "water": {
           "available": true,
-          "dateRange": {
-            "start": null,
-            "end": null
-          },
-          "type": null
+          "from": null,
+          "to": null
         },
         "maxLength": 24,
         "fees": 130,

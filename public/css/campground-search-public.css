@@ -2,6 +2,7 @@
  * All of the CSS for your public-facing functionality should be
  * included in this file.
  */
+/* Searchform */
 .wl-camps-searchform .field {
     align-items: center;
     display: flex;
@@ -35,4 +36,76 @@
 .wl-camps-searchform .field input:invalid+label,
 .wl-camps-searchform .field select:invalid+label {
     color: rgba(255, 0, 0, 0.5);
+}
+
+/* Search */
+.wl-camps-search article {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+
+.wl-camps-search article:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.wl-camps-search article,
+.wl-camps-search article header {
+    border-radius: 0.5rem;
+}
+
+.wl-camps-search article footer,
+.wl-camps-search article header,
+.wl-camps-search article section {
+    padding: 0.5rem;
+}
+
+.wl-camps-search article header {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    text-align: center;
+}
+
+.wl-camps-search article header h2 {
+    margin-bottom: initial;
+}
+
+.wl-camps-search article .field,
+.wl-camps-search footer .taxonomy {
+    display: flex;
+}
+
+.wl-camps-search article .field {
+    align-items: center;
+    justify-content: center;
+}
+
+.wl-camps-search .field .label,
+.wl-camps-search footer .label {
+    font-weight: bold;
+    flex: 1;
+}
+
+.wl-camps-search .field .value,
+.wl-camps-search footer ul {
+    flex: 2;
+}
+
+.wl-camps-search footer .taxonomy {
+    align-items: stretch;
+    justify-content: space-evenly;
+}
+
+.wl-camps-search footer ul {
+    list-style: none;
+}
+
+
+.wl-camps-search footer li {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 0.2rem;
+    display: inline-block;
+    margin: 0.2rem;
+    padding: 0.1rem;
 }

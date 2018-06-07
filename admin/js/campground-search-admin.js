@@ -1,4 +1,4 @@
-(function( $ ) {
+(function ( $ ) {
 	'use strict';
 
 	/**
@@ -29,4 +29,23 @@
 	 * practising this, we should strive to set a better example in our own work.
 	 */
 
-})( jQuery );
+	$(function () {
+		// use jQuery UI datepicker if type="date" not supported
+		if ( $( '[type="date"]' ).prop( 'type' ) !== 'date' ) {
+			$('[type="date"]').datepicker({
+				dateFormat: "yy-mm-dd",
+			})
+		}
+
+		$( '.wl-camps-meta-box input[type=date]' ).on( 'change', function ( e ) {
+			if ( e.target.value && e.target.value.length > 0 ) {
+				if ( e.target.name.indexOf( 'from' ) >= 0 ) {
+					$( e.target ).val( e.target.value.replace( /\d{4}/, '1901' ) )
+				} else {
+					$( e.target ).val( e.target.value.replace( /\d{4}/, '9999' ) )
+				}
+			}
+		} )
+	})
+
+})(jQuery);

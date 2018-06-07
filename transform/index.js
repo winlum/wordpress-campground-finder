@@ -34,21 +34,14 @@ const parseDateRange = s => {
 	if (str.indexOf('-') >= 0) {
 		const pieces = str.split('-')
 		const sp = parseDateString(pieces[0])
-		start = new Date(1970, sp[0], sp[1])
+		start = new Date(0001, sp[0], sp[1])
 		const ep = parseDateString(pieces[1])
-		end = new Date(2999, ep[0], ep[1])
+		end = new Date(9999, ep[0], ep[1])
 	}
 
 	return {
-		start: start && ({
-			month: start.getUTCMonth() + 1,
-			day: start.getUTCDate(),
-		}),
-		end: end && ({
-			month: end.getUTCMonth() + 1,
-			day: end.getUTCDate(),
-		}),
-
+		from: start && start.toISOString(),
+		to: end && end.toISOString(),
 	}
 }
 
@@ -73,18 +66,17 @@ const campgrounds = seed.campground_finder_updated.map(campground => ({
 							40.7202010588415,
 							(parseAsInt(campground.elevation) === null)
 							? null
-							: parseAsInt(campground.elevation) * 0.3048 // convert to meters
+							: null //parseAsInt(campground.elevation) * 0.3048 // convert to meters
 						],
 					}
 				},
 			],
 		},
 
-		dateRange: parseDateRange(campground.camp_open),
+		open: parseDateRange(campground.camp_open),
 		water: {
 			available: (campground.water.trim().toLowerCase() !== 'no water'),
-			dateRange: parseDateRange(campground.water),
-			type: null,
+			...parseDateRange(campground.water),
 		},
 
 		maxLength: parseAsInt(campground.length),

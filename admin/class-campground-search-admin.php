@@ -27,32 +27,55 @@ class Campground_Search_Admin {
 			'location' => 'normal',
 			'priority' => 'high',
 			'fields' => array(
-				'near_to',
-				'elevation',
-				'start_month',
-				'start_day',
-				'end_month',
-				'end_day',
-				'water_available',
-				'water_start_month',
-				'water_start_day',
-				'water_end_month',
-				'water_end_day',
-				'max_length',
-				'fees',
-				'num_sites',
+				'near_to' => array(),
+				'elevation' => array(
+					'type' => 'numeric',
+				),
+				'open_from' => array(
+					'message' => '"Open From" has an invalid date',
+					'type' => 'date',
+				),
+				'open_to' => array(
+					'message' => '"Open To" has an invalid date',
+					'type' => 'date',
+				),
+				'water_available' => array(),
+				'water_from' => array(
+					'message' => '"Water From" has an invalid date',
+					'type' => 'date',
+				),
+				'water_to' => array(
+					'message' => '"Water To" has an invalid date',
+					'type' => 'date',
+				),
+				'max_length' => array(
+					'type' => 'numeric',
+				),
+				'fees' => array(
+					'type' => 'numeric',
+				),
+				'num_sites' => array(
+					'type' => 'numeric',
+				),
 			),
 		),
 		'geo' => array(
 			'location' => 'normal',
 			'priority' => 'high',
 			'fields' => array(
-				'longitude',
-				'latitude',
-				'elevation',
+				'longitude' => array(
+					'type' => 'numeric',
+				),
+				'latitude' => array(
+					'type' => 'numeric',
+				),
+				'elevation' => array(
+					'type' => 'numeric',
+				),
 			),
 		),
 	);
+	const SETTINGS_ERRORS = 'settings_errors';
 
 	/**
 	 * The ID of this plugin.
@@ -105,6 +128,11 @@ class Campground_Search_Admin {
 		 * class.
 		 */
 
+		// get styling for the datepicker. linknng to cloud hosted jQuery UI CSS
+		$wp_scripts = wp_scripts();
+		wp_register_style( 'jquery-ui', 'https://code.jquery.com/ui/' . $wp_scripts->registered['jquery-ui-core']->ver . '/themes/smoothness/jquery-ui.css' );
+		wp_enqueue_style( 'jquery-ui' );
+
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/campground-search-admin.css', array(), $this->version, 'all' );
 
 	}
@@ -127,6 +155,9 @@ class Campground_Search_Admin {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
+
+		// load the datepicker script (pre-registered in WordPress)
+		wp_enqueue_script( 'jquery-ui-datepicker' );
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/campground-search-admin.js', array( 'jquery' ), $this->version, false );
 
@@ -167,7 +198,7 @@ class Campground_Search_Admin {
 	public function create_settings() {
 		register_setting( Campground_Search_Const::OPTION_GROUP, Campground_Search_Const::SETTINGS );
 
-		$section_name = Campground_Search_Const::PREFIX . '_' . Campground_Search_Const::OPTION_GROUP . '_section';
+		$section_name = Campground_Search_Util::prefix_string( Campground_Search_Const::OPTION_GROUP . '_section' );
 
 		add_settings_section(
 			$section_name,
@@ -266,69 +297,6 @@ class Campground_Search_Admin {
 		}
 	}
 
-	/**
-	 * Registers the provided taxonomy with WP. Will create terms if provided.
-	 *
-	 * @author   WinLum Inc.
-	 * @since    1.0.0
-	 * @access   private
-	 * @param    string    $taxonomy       The taxonomy name.
-	 * @param    array     $meta           Singular/plural text and terms.
-	 */
-	private function create_taxonomy( $taxonomy, array $meta ) {
-		$lplural = strtolower( $meta['plural'] );
-
-        $labels = array(
-			'name' => _x( $meta['plural'], 'taxonomy general name', Campground_Search_Const::TEXT_DOMAIN ),
-			'singular_name' => _x( $meta['singular'], 'taxonomy singular name', Campground_Search_Const::TEXT_DOMAIN ),
-			'search_items' => __( 'Search ' . $meta['plural'], Campground_Search_Const::TEXT_DOMAIN ),
-			'popular_items' => __( 'Popular ' . $meta['plural'], Campground_Search_Const::TEXT_DOMAIN ),
-			'all_items' => __( 'All ' . $meta['plural'], Campground_Search_Const::TEXT_DOMAIN ),
-			'parent_item' => null,
-			'parent_item_colon' => __( 'Parent ' . $meta['singular'] . ':', Campground_Search_Const::TEXT_DOMAIN ),
-			'edit_item' => __( 'Edit ' . $meta['singular'], Campground_Search_Const::TEXT_DOMAIN ),
-			'update_item' => __( 'Update ' . $meta['singular'], Campground_Search_Const::TEXT_DOMAIN ),
-			'add_new_item' => __( 'Add New ' . $meta['singular'], Campground_Search_Const::TEXT_DOMAIN ),
-			'new_item_name' => __( 'New ' . $meta['singular'] . ' Name', Campground_Search_Const::TEXT_DOMAIN ),
-			'separate_items_with_commas' => __( 'Separate ' . $lplural . ' with commas', 'textdomain' ),
-			'add_or_remove_items' => __( 'Add or remove ' . $lplural, 'textdomain' ),
-			'choose_from_most_used' => __( 'Choose from the most used ' . $lplural . '', 'textdomain' ),
-			'not_found' => __( 'No ' . $lplural . ' found.', 'textdomain' ),
-			'menu_name' => __( $meta['plural'], Campground_Search_Const::TEXT_DOMAIN ),
-        );
-
-        $args = array(
-			'labels' => $labels,
-            'public' => true,
-            'exclude_from_search' => false,
-            'publicly_queryable' => true,
-            'show_ui' => true,
-            'show_in_menu' => true,
-			'show_in_nav_menus' => true,
-			// 'show_in_quick_edit' => false,
-			// 'meta_box_cb' => array( $this, 'create_taxonomy_meta_boxes' ),
-            'show_admin_column' => true,
-            'hierarchical' => false,
-            'has_archive' => false,
-			'query_var' => true,
-			'rewrite' => array(
-				'slug' => $taxonomy,
-				'with_front' => true,
-			),
-        );
-
-        register_taxonomy( $taxonomy, array( Campground_Search_Const::POST_TYPE ), $args );
-		register_taxonomy_for_object_type( $taxonomy, Campground_Search_Const::POST_TYPE );
-
-		if ( is_array( $meta['terms'] ) ) {
-			foreach ( $meta['terms'] as $key => $val ) {
-				if ( !term_exists( $val, $taxonomy ) ) {
-					$term_id = wp_insert_term( $val, $taxonomy, array( 'slug' => $key ) );
-				}
-			}
-		}
-    }
-
     /**
      * Adds the Meta Boxes for the Post Type.
      *
@@ -342,34 +310,6 @@ class Campground_Search_Admin {
 	}
 
     /**
-     * Adds the Meta Box for the given key.
-     *
-	 * @author   WinLum Inc.
-	 * @since    1.0.0
-	 * @access   private
-	 * @param    string    $key            The meta box name.
-	 * @param    array     $fields         The fields for the meta box.
-	 * @param    string    $location       Optional. The meta box location. Default is "normal".
-	 * @param    string    $priority       Optional. The meta box location. Default is "normal".
-     */
-    private function create_meta_box( $key, array $fields, $location = 'normal', $priority = 'default' ) {
-		$lkey = strtolower( $key );
-		$ukey = ucwords( $key );
-		$cb = function () use ( $lkey, $fields ) {
-			$this->display_meta_box( $lkey, $fields );
-		};
-
-		add_meta_box(
-			Campground_Search_Const::PREFIX . '_' . $lkey . '_meta_box',
-			__( $ukey, Campground_Search_Const::TEXT_DOMAIN ),
-			$cb,
-			Campground_Search_Const::POST_TYPE,
-			$location,
-			$priority
-		);
-	}
-
-    /**
      * Creates the meta box view.
      *
 	 * @author   WinLum Inc.
@@ -380,13 +320,13 @@ class Campground_Search_Admin {
 	public function display_meta_box( $key, array $fields ) {
 		global $post;
 		
-		$field_key = Campground_Search_Const::PREFIX . '_' . $key;
-		$nonce_name = Campground_Search_Const::PREFIX . '_' . $key . '_meta_box_nonce';
+		$field_key = Campground_Search_Util::prefix_string( $key );
+		$nonce_name = Campground_Search_Util::prefix_string( $key . '_meta_box_nonce' );
 		$file_name = $this->plugin_name . '-' . $key . '-meta-box.php';
 
 		$post_fields = get_post_custom( $post->ID );
 		foreach ( $fields as $field ) {
-			$fkey = '_' . Campground_Search_Const::PREFIX . '_' . $key . '_' . $field;
+			$fkey = '_' . Campground_Search_Util::prefix_string( $key . '_' . $field );
 			${$field} = isset( $post_fields[$fkey][0] )
 				? maybe_unserialize( $post_fields[$fkey][0] )
 				: '';
@@ -462,6 +402,20 @@ class Campground_Search_Admin {
 		$json = json_encode( $output, $json_options );
 	}
 
+	public function meta_box_notices() {
+		$errors = get_site_transient( self::SETTINGS_ERRORS );
+
+		// if there are no errors, just exit
+		if ( empty( $errors ) ) return;
+
+		// display the list of errors that exist in the settings errors
+		include_once( 'partials/' . $this->plugin_name . '-settings-errors.php' );
+
+		// remove the transient and unhook any other notices so we don't see duplicate messages
+		delete_transient( self::SETTINGS_ERRORS );
+		remove_action( 'admin_notices', array( $this, __METHOD__ ) );
+	}
+
     /**
      * Saves the Meta Boxes for the Post Type.
      *
@@ -469,20 +423,15 @@ class Campground_Search_Admin {
 	 * @since    1.0.0
 	 * @param    integer   $post_id        The post ID.
      */
-    public function save_meta_boxes_data( $post_id ) {
+    public function save_meta_boxes( $post_id ) {
 		// check the user's permissions
-		if ( isset( $_POST['post_type'] )
-			&& $_POST['post_type'] === Campground_Search_Const::POST_TYPE 
-			&& ! current_user_can( 'edit_post', $post_id )
-		) {
-			return;
-		}
+		if ( ! current_user_can( 'edit_post', $post_id ) ) return;
 
 		// return if doing an autosave
 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
 
 		foreach ( self::META_BOXES as $key => $val ) {
-			$lkey = Campground_Search_Const::PREFIX . '_' . strtolower( $key );
+			$lkey = Campground_Search_Util::prefix_string( strtolower( $key ) );
 			$nonce_key = $lkey . '_meta_box_nonce';
 
 			// verify each meta box nonce
@@ -494,10 +443,13 @@ class Campground_Search_Admin {
 
 			// get the submitted custom fields' values
 			$fields = ( isset( $_POST[$lkey] ) ) ? (array) $_POST[$lkey] : array();
-			$diff = array_diff( $val['fields'], array_keys( $fields ) );
+
+			// return if no data
+			if ( empty( $fields ) ) return;
 
 			// account for unchecked checkbox(es)
 			// if the key wasn't provided, set the value to null
+			$diff = array_diff( array_keys( $val['fields'] ), array_keys( $fields ) );
 			if ( ! empty( $diff ) ) {
 				foreach ( $diff as $diff_key ) {
 					update_post_meta(
@@ -507,18 +459,191 @@ class Campground_Search_Admin {
 					);
 				}
 			}
-			
-			// return if no data
-			if ( empty( $fields ) ) return;
 
-			foreach ( $fields as $field_key => $field_val ) {
-				$field_val = trim( Campground_Search_Util::sanitizeField( $field_val ) );
-				update_post_meta(
-					$post_id,
-					'_' . $lkey . '_' . $field_key,
-					empty( $field_val ) ? null : $field_val
-				);
+			// validate the data
+			$valid = $this->validate_meta_boxes( $key, $fields );
+
+			if ( $valid === true ) {
+				foreach ( $fields as $field_key => $field_val ) {
+					$field_val = trim( Campground_Search_Util::sanitizeField( $field_val ) );
+					update_post_meta(
+						$post_id,
+						'_' . $lkey . '_' . $field_key,
+						empty( $field_val ) ? null : $field_val
+					);
+				}
 			}
 		}
     }
+
+    /**
+     * Adds the Meta Box for the given key.
+     *
+	 * @author   WinLum Inc.
+	 * @since    1.0.0
+	 * @access   private
+	 * @param    string    $key            The meta box name.
+	 * @param    array     $fields         The fields for the meta box.
+	 * @param    string    $location       Optional. The meta box location. Default is "normal".
+	 * @param    string    $priority       Optional. The meta box location. Default is "normal".
+     */
+    private function create_meta_box( $key, array $fields, $location = 'normal', $priority = 'default' ) {
+		$lkey = strtolower( $key );
+		$ukey = ucwords( $key );
+		$field_keys = array_keys( $fields );
+		$cb = function () use ( $lkey, $field_keys ) {
+			$this->display_meta_box( $lkey, $field_keys );
+		};
+
+		add_meta_box(
+			Campground_Search_Util::prefix_string( $lkey . '_meta_box' ),
+			__( $ukey, Campground_Search_Const::TEXT_DOMAIN ),
+			$cb,
+			Campground_Search_Const::POST_TYPE,
+			$location,
+			$priority
+		);
+	}
+
+	/**
+	 * Registers the provided taxonomy with WP. Will create terms if provided.
+	 *
+	 * @author   WinLum Inc.
+	 * @since    1.0.0
+	 * @access   private
+	 * @param    string    $taxonomy       The taxonomy name.
+	 * @param    array     $meta           Singular/plural text and terms.
+	 */
+	private function create_taxonomy( $taxonomy, array $meta ) {
+		$lplural = strtolower( $meta['plural'] );
+
+        $labels = array(
+			'name' => _x( $meta['plural'], 'taxonomy general name', Campground_Search_Const::TEXT_DOMAIN ),
+			'singular_name' => _x( $meta['singular'], 'taxonomy singular name', Campground_Search_Const::TEXT_DOMAIN ),
+			'search_items' => __( 'Search ' . $meta['plural'], Campground_Search_Const::TEXT_DOMAIN ),
+			'popular_items' => __( 'Popular ' . $meta['plural'], Campground_Search_Const::TEXT_DOMAIN ),
+			'all_items' => __( 'All ' . $meta['plural'], Campground_Search_Const::TEXT_DOMAIN ),
+			'parent_item' => null,
+			'parent_item_colon' => __( 'Parent ' . $meta['singular'] . ':', Campground_Search_Const::TEXT_DOMAIN ),
+			'edit_item' => __( 'Edit ' . $meta['singular'], Campground_Search_Const::TEXT_DOMAIN ),
+			'update_item' => __( 'Update ' . $meta['singular'], Campground_Search_Const::TEXT_DOMAIN ),
+			'add_new_item' => __( 'Add New ' . $meta['singular'], Campground_Search_Const::TEXT_DOMAIN ),
+			'new_item_name' => __( 'New ' . $meta['singular'] . ' Name', Campground_Search_Const::TEXT_DOMAIN ),
+			'separate_items_with_commas' => __( 'Separate ' . $lplural . ' with commas', 'textdomain' ),
+			'add_or_remove_items' => __( 'Add or remove ' . $lplural, 'textdomain' ),
+			'choose_from_most_used' => __( 'Choose from the most used ' . $lplural . '', 'textdomain' ),
+			'not_found' => __( 'No ' . $lplural . ' found.', 'textdomain' ),
+			'menu_name' => __( $meta['plural'], Campground_Search_Const::TEXT_DOMAIN ),
+        );
+
+        $args = array(
+			'labels' => $labels,
+            'public' => true,
+            'exclude_from_search' => false,
+            'publicly_queryable' => true,
+            'show_ui' => true,
+            'show_in_menu' => true,
+			'show_in_nav_menus' => true,
+			// 'show_in_quick_edit' => false,
+			// 'meta_box_cb' => array( $this, 'create_taxonomy_meta_boxes' ),
+            'show_admin_column' => true,
+            'hierarchical' => false,
+            'has_archive' => false,
+			'query_var' => true,
+			'rewrite' => array(
+				'slug' => $taxonomy,
+				'with_front' => true,
+			),
+        );
+
+        register_taxonomy( $taxonomy, array( Campground_Search_Const::POST_TYPE ), $args );
+		register_taxonomy_for_object_type( $taxonomy, Campground_Search_Const::POST_TYPE );
+
+		if ( is_array( $meta['terms'] ) ) {
+			foreach ( $meta['terms'] as $key => $val ) {
+				if ( ! term_exists( $val, $taxonomy ) ) {
+					$term_id = wp_insert_term( $val, $taxonomy, array( 'slug' => $key ) );
+				}
+			}
+		}
+	}
+
+	/**
+	 * Validates the given fields.
+	 *
+	 * @author   WinLum Inc.
+	 * @since    1.0.0
+	 * @access   private
+	 * @param    array     $fields         The fields to validate.
+	 * @return   boolean
+	 */
+	private function validate_meta_boxes( $meta_key, array $fields ) {
+		$valid = true;
+		$meta_fields = self::META_BOXES[$meta_key]['fields'];
+
+		foreach ( $fields as $key => $val ) {
+			$value = trim( Campground_Search_Util::sanitizeField( $val ) );
+			$meta_field = $meta_fields[$key];
+			$meta_type = $meta_field['type'];
+			$meta_func = $meta_field['func'];
+
+			// required and empty is invalid
+			if ( $meta_field['required'] && empty( $value ) ) {
+				$this->create_settings_error( $key, $meta_field );
+				$valid = false;
+				continue;
+			}
+
+			// if it's empty just return
+			if ( empty( $value ) ) continue;
+
+			if ( is_callable( $meta_func ) ) {
+				$retval = $meta_func( $value );
+				if ( $retval === false ) {
+					$this->create_settings_error( $key, $meta_field );
+					$valid = false;
+				}
+				continue;
+			}
+
+			if ( is_string( $meta_type ) ) {
+				switch ( strtolower( $meta_type ) ) {
+					case 'date':
+						$date = date_parse( $value );
+						if ( $date['month'] === false || $date['day'] === false ) {
+							$this->create_settings_error( $key, $meta_field );
+							$valid = false;
+						}
+						break;
+					case 'numeric':
+						if ( ! is_numeric( $value ) ) {
+							$this->create_settings_error( $key, $meta_field );
+							$valid = false;
+						}
+						break;
+				}
+			}
+		}
+
+		return $valid;
+	}
+
+	/**
+	 * Creates an error with the Settings API.
+	 *
+	 * @author   WinLum Inc.
+	 * @since    1.0.0
+	 * @access   private
+	 * @param    string    $key           The field key.
+	 * @param    array     $field         The field to report the error for.
+	 */
+	private function create_settings_error( $key, array $field ) {
+		// $key = Campground_Search_Util::prefix_string( $field );
+		$message = empty( $field['message'] )
+			? __( 'Error processing the field: ' . $key, Campground_Search_Const::TEXT_DOMAIN )
+			: __( $field['message'], Campground_Search_Const::TEXT_DOMAIN );
+		add_settings_error( $key, $key, $message );
+		set_site_transient( self::SETTINGS_ERRORS, get_settings_errors(), 30 );
+	}
+
 }

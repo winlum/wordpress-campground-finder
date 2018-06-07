@@ -35,6 +35,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  */
 define( 'CAMPGROUND_SEARCH_VERSION', '1.0.0' );
+define( 'CAMPGROUND_SEARCH__PLUGIN_BASE_PATH', plugin_dir_path( __FILE__ ) );
 
 /**
  * The class responsible for providing constants.

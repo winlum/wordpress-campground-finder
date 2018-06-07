@@ -29,4 +29,14 @@
 	 * practising this, we should strive to set a better example in our own work.
 	 */
 
+	 $(function () {
+	 	// use jQuery UI datepicker if type="date" not supported
+	 	if ($('[type="date"]').prop('type') !== 'date') {
+	 		$('[type="date"]').datepicker({
+	 			dateFormat: "yy-mm-dd",
+	 		})
+	 	}
+	 })
+
+
 })( jQuery );

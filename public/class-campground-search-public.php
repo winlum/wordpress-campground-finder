@@ -78,6 +78,11 @@ class Campground_Search_Public {
 		 * https://codex.wordpress.org/Plugin_API/Action_Reference/admin_enqueue_scripts
 		 */
 
+		// get styling for the datepicker. linknng to cloud hosted jQuery UI CSS
+		$wp_scripts = wp_scripts();
+		wp_register_style( 'jquery-ui', 'https://code.jquery.com/ui/' . $wp_scripts->registered['jquery-ui-core']->ver . '/themes/smoothness/jquery-ui.css' );
+		wp_enqueue_style( 'jquery-ui' );
+
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/campground-search-public.css', array(), $this->version, 'all' );
 
 	}
@@ -106,6 +111,9 @@ class Campground_Search_Public {
 		 * https://codex.wordpress.org/Plugin_API/Action_Reference/admin_enqueue_scripts
 		 */
 
+		// load the datepicker script (pre-registered in WordPress)
+		wp_enqueue_script( 'jquery-ui-datepicker' );
+
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/campground-search-public.js', array( 'jquery' ), $this->version, false );
 
 	}
@@ -123,7 +131,7 @@ class Campground_Search_Public {
 		$options = get_option( Campground_Search_Const::SETTINGS );
 		$near_to_choices = array_map(
 			'trim',
-			explode( "\n", $options[Campground_Search_Const::PREFIX . '_near_to'] )
+			explode( "\n", $options[Campground_Search_Util::prefix_string( '_near_to' )] )
 		);
 
 		$categories = implode( ',', array_keys( Campground_Search_Const::$taxonomies ) );
@@ -166,17 +174,20 @@ class Campground_Search_Public {
 		// get the relevant query vars, which default to an empty string
 		$meta_query = array();
 
-		foreach ( Campground_Search_Const::$query_vars as $query_var ) {
-			$key = $query_var['key'];
-			$query_key = Campground_Search_Const::PREFIX . '_' . $key;
-			$query_val = get_query_var( $query_key );
-			
-			if ( ! empty( $query_val ) ) {
-				// TODO: remove the hard-coded key 'general'
-				$meta_query[] = array_merge( $query_var, array(
-					'key' => '_' . Campground_Search_Const::PREFIX . '_general_' . $key,
-					'value' => $query_val,
-				) );
+		foreach ( Campground_Search_Const::$query_vars as $parent => $query_vars ) {
+			foreach ( $query_vars as $query_var ) {
+				$query_var_key = Campground_Search_Util::prefix_string( $parent . '_' . $query_var['key'] );
+				$query_val = get_query_var( $query_var_key );
+				
+				if ( ! empty( $query_val ) ) {
+					$meta_query[] = array_merge(
+						$query_var,
+						array(
+							'key' => '_' . $query_var_key,
+							'value' => $query_val,
+						)
+					);
+				}
 			}
 		}
 
@@ -198,11 +209,19 @@ class Campground_Search_Public {
 	 * @return   array
 	 */
 	public function register_query_vars( $vars ) {
-		$query_vars = array_map( function ( $item ) {
-			return Campground_Search_Const::PREFIX . '_' . $item['key'];
-		}, Campground_Search_Const::$query_vars );
+		$output = $vars;
 
-		return array_merge( $vars, $query_vars );
+		foreach ( Campground_Search_Const::$query_vars as $parent => $query_vars ) {
+			$query_vars = array_map(
+				function ( $var ) use ( $parent ) {
+					return Campground_Search_Util::prefix_string( $parent . '_' . $var['key'] );
+				},
+				$query_vars
+			);
+			$output = array_merge( $output, $query_vars );;
+		}
+
+		return $output;
 	}
 
 	/**

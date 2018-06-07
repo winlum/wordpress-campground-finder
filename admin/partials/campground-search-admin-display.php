@@ -14,7 +14,6 @@
 ?>
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
-
 <form action='options.php' method='post'>
 
     <h2><?php _e( 'Campground Search', Campground_Search_Const::TEXT_DOMAIN ); ?></h2>

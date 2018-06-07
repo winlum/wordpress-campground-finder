@@ -67,8 +67,9 @@ class Campground_Search {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'PLUGIN_NAME_VERSION' ) ) {
-			$this->version = PLUGIN_NAME_VERSION;
+		
+		if ( defined( 'CAMPGROUND_SEARCH_VERSION' ) ) {
+			$this->version = CAMPGROUND_SEARCH_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
@@ -122,7 +123,15 @@ class Campground_Search {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-campground-search-public.php';
 
+		/**
+		 * The class responsible for importing.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'transform/class-campground-search-transform.php';
+
 		$this->loader = new Campground_Search_Loader();
+
+		$plugin_transform = new Campground_Search_Transform();
+		// $this->loader->add_action( 'init', $plugin_transform, 'import_from_disk', 99 );
 
 	}
 
@@ -158,12 +167,17 @@ class Campground_Search {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'create_menu' );
+		$this->loader->add_action( 'admin_notices', $plugin_admin, 'meta_box_notices' );
 		$this->loader->add_action( 'admin_init', $plugin_admin, 'create_settings' );
 
 		$this->loader->add_action( 'init', $plugin_admin, 'create_taxonomies', 10 );
         $this->loader->add_action( 'init', $plugin_admin, 'create_post_type', 11 );
 
-		$this->loader->add_action( 'save_post', $plugin_admin, 'save_meta_boxes_data' );
+		$this->loader->add_action(
+			'save_post_' . Campground_Search_Const::POST_TYPE,
+			$plugin_admin,
+			'save_meta_boxes'
+		);
 
 	}
 

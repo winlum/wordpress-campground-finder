@@ -18,6 +18,7 @@
  * @author     WinLum Inc.
  */
 final class Campground_Search_Const {
+
     const CAPABILITY_ACTIVATE = 'activate_plugins';
     const CAPABILTY_OPTIONS = 'manage_options';
     const TEXT_DOMAIN = 'campground-search';
@@ -32,65 +33,47 @@ final class Campground_Search_Const {
     const SHORT_CODE = 'campground_search_form';
 
     public static $query_vars = array(
-        array(
-            'compare' => '>=',
-            'key' => 'elevation',
-            'type' => 'NUMERIC',
-        ),
-        array(
-            'compare' => '<=',
-            'key' => 'fees',
-            'type' => 'NUMERIC',
-        ),
-        array(
-            'compare' => '>=',
-            'key' => 'max_length',
-            'type' => 'NUMERIC',
-        ),
-        array(
-            'compare' => '=',
-            'key' => 'near_to',
-            'type' => 'CHAR',
-        ),
-        array(
-            'compare' => '>=',
-            'key' => 'start_month',
-            'type' => 'NUMERIC',
-        ),
-        array(
-            'compare' => '>=',
-            'key' => 'start_day',
-            'type' => 'NUMERIC',
-        ),
-        array(
-            'compare' => '<=',
-            'key' => 'end_month',
-            'type' => 'NUMERIC',
-        ),
-        array(
-            'compare' => '<=',
-            'key' => 'end_day',
-            'type' => 'NUMERIC',
-        ),
-        array(
-            'compare' => '>=',
-            'key' => 'water_start_month',
-            'type' => 'NUMERIC',
-        ),
-        array(
-            'compare' => '>=',
-            'key' => 'water_start_day',
-            'type' => 'NUMERIC',
-        ),
-        array(
-            'compare' => '<=',
-            'key' => 'water_end_month',
-            'type' => 'NUMERIC',
-        ),
-        array(
-            'compare' => '<=',
-            'key' => 'water_end_day',
-            'type' => 'NUMERIC',
+        'general' => array(
+            array(
+                'compare' => '>=',
+                'key' => 'elevation',
+                'type' => 'NUMERIC',
+            ),
+            array(
+                'compare' => '<=',
+                'key' => 'fees',
+                'type' => 'NUMERIC',
+            ),
+            array(
+                'compare' => '>=',
+                'key' => 'max_length',
+                'type' => 'NUMERIC',
+            ),
+            array(
+                'compare' => '=',
+                'key' => 'near_to',
+                'type' => 'CHAR',
+            ),
+            array(
+                'compare' => '>=',
+                'key' => 'open_from',
+                'type' => 'DATE',
+            ),
+            array(
+                'compare' => '<=',
+                'key' => 'open_to',
+                'type' => 'DATE',
+            ),
+            array(
+                'compare' => '>=',
+                'key' => 'water_from',
+                'type' => 'DATE',
+            ),
+            array(
+                'compare' => '<=',
+                'key' => 'water_to',
+                'type' => 'DATE',
+            ),
         ),
     );
 
@@ -133,4 +116,5 @@ final class Campground_Search_Const {
     );
     
     const TAXONOMY = 'campground_typology';
+
 }
