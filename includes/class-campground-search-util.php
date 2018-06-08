@@ -113,6 +113,41 @@ final class Campground_Search_Util {
 	}
 
 	/**
+	 * Formats the query var near_to.
+	 *
+	 * @author   WinLum Inc.
+	 * @since    1.0.0
+	 * @param    string    $field          The field to sanitize.
+	 */
+	public static function format_query_near_to( $val ) {
+		if ( $val == -1 ) {
+			$options = get_option( Campground_Search_Const::SETTINGS );
+			$near_to_choices = array_map(
+				'trim',
+				explode( "\n", $options[Campground_Search_Util::prefix_string( 'near_to' )] )
+			);
+
+			return $near_to_choices;
+		}
+
+		return $val;
+	}
+
+	/**
+	 * Returns a string of the month, by name, and day.
+	 *
+	 * @author   WinLum Inc.
+	 * @since    1.0.0
+	 * @param    string    $string         The string to update.
+	 * @return   string
+	 */
+	public static function friendly_date_range( $date ) {
+		$dt = DateTime::createFromFormat( Campground_Search_Const::DATETIME_FORMAT, $date );
+		if ( ! $date ) return $date;
+		return $dt->format( 'F j' );
+	}
+
+	/**
 	 * Prepends the provided prefix and separator to the string.
 	 *
 	 * @author   WinLum Inc.
@@ -152,6 +187,28 @@ final class Campground_Search_Util {
 	}
 
 	/**
+	 * Attempts to change the year of a date to a maximum value.
+	 *
+	 * @author   WinLum Inc.
+	 * @since    1.0.0
+	 * @param    string    $val            The date to modify.
+	 */
+	public static function set_max_year ( $val ) {
+		return self::set_year( $val, '9999' );
+	}
+
+	/**
+	 * Attempts to change the year of a date to a minimum value.
+	 *
+	 * @author   WinLum Inc.
+	 * @since    1.0.0
+	 * @param    string    $val            The date to modify.
+	 */
+	public static function set_min_year ( $val ) {
+		return self::set_year( $val, '1901' );
+	}
+
+	/**
 	 * Converts a snake case string into camel case.
 	 *
 	 * @author   WinLum Inc.
@@ -179,6 +236,22 @@ final class Campground_Search_Util {
 				$string
 			)
 		);
+	}
+
+	/**
+	 * Attempts to change the year of a date.
+	 *
+	 * @author   WinLum Inc.
+	 * @since    1.0.0
+	 * @access   private
+	 * @param    string    $val            The date to modify.
+	 * @param    string    $year           The year to change to.
+	 */
+	private static function set_year( $val, $year ) {
+		$date = DateTime::createFromFormat( Campground_Search_Const::DATETIME_FORMAT, $val );
+		if ( ! $date ) return $val;
+		$date->setDate( $year, $date->format( 'm' ), $date->format( 'd' ) );
+		return $date->format( Campground_Search_Const::DATETIME_FORMAT );
 	}
 
 	/**

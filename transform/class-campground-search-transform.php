@@ -43,7 +43,7 @@ final class Campground_Search_Transform {
             die ( 'Error parsing json: ' . $ex->getMessage() );
         }
         
-        $post_date = date( 'Y-m-d', strtotime( '2018-01-01' ) );
+        $post_date = date( Campground_Search_Const::DATETIME_FORMAT, strtotime( '2018-01-01' ) );
         $post_content = '';
         foreach ( $original_json->campground_finder_updated as $campground ) {
             $post_title = trim( $campground->camp_name );
@@ -128,7 +128,7 @@ final class Campground_Search_Transform {
 
             $meta_input = array();
             foreach ( $meta as $key => $val ) {
-                $meta_input['_' . Campground_Search_Util::prefix_string( $key )] = empty( $val ) ? null : $val;
+                $meta_input['_' . Campground_Search_Util::prefix_string( $key )] = empty( $val ) ? '' : $val;
             }
             
             $post_args = array(
@@ -164,20 +164,24 @@ final class Campground_Search_Transform {
         $date_end = date_parse( $date_start_end[1] );
 
         // use the DateTime object to complete the conversion process
-        $start_date = DateTime::createFromFormat('Y-m-d', '1901-' . $date_start['month'] . '-' . $date_start['day'] );
+        $start_date = DateTime::createFromFormat(
+            Campground_Search_Const::DATETIME_FORMAT, '1901-' . $date_start['month'] . '-' . $date_start['day']
+        );
         if ( $start_date === false ) {
             $start_date = DateTime::createFromFormat('Y-m', '1901-' . $date_start['month'] );
             $start_date->modify( 'first day of this month' );
         }
-        $end_date = DateTime::createFromFormat('Y-m-d', '9999-' . $date_end['month'] . '-' . $date_end['day'] );
+        $end_date = DateTime::createFromFormat(
+            Campground_Search_Const::DATETIME_FORMAT, '9999-' . $date_end['month'] . '-' . $date_end['day']
+        );
         if ( $end_date === false ) {
             $end_date = DateTime::createFromFormat('Y-m', '9999-' . $date_end['month'] );
             $end_date->modify( 'last day of this month' );
         }
 
         return array(
-            $start_date->format( 'Y-m-d' ),
-            $end_date->format( 'Y-m-d' ),
+            $start_date->format( Campground_Search_Const::DATETIME_FORMAT ),
+            $end_date->format( Campground_Search_Const::DATETIME_FORMAT ),
         );
     }
 

@@ -61,7 +61,7 @@ $activities = get_query_var( 'activity', array() );
             id="<?php echo Campground_Search_Util::prefix_string( 'general_near_to' ); ?>"
             name="<?php echo Campground_Search_Util::prefix_string( 'general_near_to' ); ?>"
         >
-            <option <?php if ( empty( $near_to ) ) echo 'selected'; ?> value="">
+            <option <?php if ( empty( $near_to ) ) echo 'selected'; ?> value="-1">
                 <?php _e( 'All', Campground_Search_Const::TEXT_DOMAIN ); ?>
             </option>
             <?php foreach ( $near_to_choices as $choice ) : ?>

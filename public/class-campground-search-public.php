@@ -131,7 +131,7 @@ class Campground_Search_Public {
 		$options = get_option( Campground_Search_Const::SETTINGS );
 		$near_to_choices = array_map(
 			'trim',
-			explode( "\n", $options[Campground_Search_Util::prefix_string( '_near_to' )] )
+			explode( "\n", $options[Campground_Search_Util::prefix_string( 'near_to' )] )
 		);
 
 		$categories = implode( ',', array_keys( Campground_Search_Const::$taxonomies ) );
@@ -160,7 +160,7 @@ class Campground_Search_Public {
 	 * @since    1.0.0
 	 * @param    object    $query          The WP_Query instance reference.
 	 */
-	public function pre_get_posts( $query ) {
+	public function pre_get_posts( &$query ) {
 		// return if request is for an admin page or not part of the main query
 		if ( is_admin() || ! $query->is_main_query() ) {
 			return;
@@ -174,21 +174,21 @@ class Campground_Search_Public {
 		// get the relevant query vars, which default to an empty string
 		$meta_query = array();
 
-		foreach ( Campground_Search_Const::$query_vars as $parent => $query_vars ) {
-			foreach ( $query_vars as $query_var ) {
-				$query_var_key = Campground_Search_Util::prefix_string( $parent . '_' . $query_var['key'] );
-				$query_val = get_query_var( $query_var_key );
-				
-				if ( ! empty( $query_val ) ) {
-					$meta_query[] = array_merge(
-						$query_var,
-						array(
-							'key' => '_' . $query_var_key,
-							'value' => $query_val,
-						)
-					);
-				}
-			}
+		foreach ( Campground_Search_Const::$query_vars as $key => $var ) {
+			$query_key = Campground_Search_Util::prefix_string( $key );
+			$query_val = get_query_var( $query_key );
+
+			// if there is no query value, just move to the next
+			if ( empty( $query_val ) ) continue;
+
+			// allow for formatting the query value, before sending off to the db
+			$var_val = is_callable( $var['formatter'] )
+				? call_user_func( $var['formatter'], $query_val )
+				: $query_val;
+
+			$array = ( key_exists( 'query', $var ) ) ? $var['query'] : $var;
+			
+			$meta_query[] = $this->recurse_query_array( $array, '_' . $query_key, $var_val );
 		}
 
 		if ( count( $meta_query ) > 1 ) {
@@ -198,6 +198,9 @@ class Campground_Search_Public {
 		if ( ! empty( $meta_query ) ) {
 			$query->set( 'meta_query', $meta_query );
 		}
+
+		// override the default orderby as post date DESC doesn't make sense
+		$query->set( 'orderby', array( 'post_title' => 'ASC' ) );
 	}
 	
 	/**
@@ -209,19 +212,14 @@ class Campground_Search_Public {
 	 * @return   array
 	 */
 	public function register_query_vars( $vars ) {
-		$output = $vars;
+		$query_vars = array_map(
+			function ( $key ) {
+				return Campground_Search_Util::prefix_string( $key );
+			},
+			array_keys( Campground_Search_Const::$query_vars )
+		);
 
-		foreach ( Campground_Search_Const::$query_vars as $parent => $query_vars ) {
-			$query_vars = array_map(
-				function ( $var ) use ( $parent ) {
-					return Campground_Search_Util::prefix_string( $parent . '_' . $var['key'] );
-				},
-				$query_vars
-			);
-			$output = array_merge( $output, $query_vars );;
-		}
-
-		return $output;
+		return array_merge( $vars, $query_vars );
 	}
 
 	/**
@@ -237,6 +235,7 @@ class Campground_Search_Public {
 		if ( is_search() && is_post_type_archive( Campground_Search_Const::POST_TYPE ) ) {
 			$theme_file = get_stylesheet_directory() . 'search-';
 			$theme_file .= Campground_Search_Const::POST_TYPE . '.php';
+			
 			if ( file_exists( $theme_file ) ) {
 				return $theme_file;
 			}
@@ -247,6 +246,44 @@ class Campground_Search_Public {
 		}
 
 		return $template;
+	}
+
+
+	/**
+	 * Helper method to recuse the query vars array and process it appropriately.
+	 *
+	 * @author   WinLum Inc.
+	 * @since    1.0.0
+	 * @access   private
+	 * @param    array     $array          The array to recurse.
+	 * @param    string    $key            The formatted query var key.
+	 * @param    string    $val            The value of the query var key.
+	 * @return   array
+	 */
+	private function recurse_query_array( array $array, $key, $val ) {
+		$output = array();
+
+		foreach ( $array as $k => $v ) {
+			if ( is_array( $v ) ) {
+				$output[$k] = $this->recurse_query_array( $v, $key, $val );
+			} else {
+				$output[$k] = $k === 'key' ? $key : $v;
+			}
+		}
+
+		// allow for formatting the query value, before sending off to the db
+		if ( is_callable( $output['formatter'] ) ) {
+			$val = call_user_func( $output['formatter'], $val );
+			if ( key_exists( 'key', $output ) ) {
+				unset( $output['formatter'] );
+			}
+		}
+
+		if ( key_exists( 'key', $output ) && ! key_exists( 'value', $output ) ) {
+			$output['value'] = $val;
+		}
+		
+		return $output;
 	}
 
 }

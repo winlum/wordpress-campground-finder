@@ -21,58 +21,139 @@ final class Campground_Search_Const {
 
     const CAPABILITY_ACTIVATE = 'activate_plugins';
     const CAPABILTY_OPTIONS = 'manage_options';
-    const TEXT_DOMAIN = 'campground-search';
+    const DATETIME_FORMAT = 'Y-m-d';
     const MIN_WP_VERSION = '4.6';
     const MIN_PHP_VERSION = '5.4';
     const OPTION_GROUP = 'pluginPage';
     const POST_TYPE = 'campground';
     const PREFIX = 'wl_camps';
     const PREFIX_CSS = 'wl-camps';
+    const SHORT_CODE = 'campground_search_form';
+    const TEXT_DOMAIN = 'campground-search';
 
     const SETTINGS = Campground_Search_Const::PREFIX . '_settings';
-    const SHORT_CODE = 'campground_search_form';
 
+    // TODO: require PHP 5.6 so these can be const
     public static $query_vars = array(
-        'general' => array(
+        'general_elevation' => array(
+            'compare' => '>=',
+            'key' => 'elevation',
+            'type' => 'NUMERIC',
+        ),
+        'general_fees' => array(
             array(
-                'compare' => '>=',
-                'key' => 'elevation',
-                'type' => 'NUMERIC',
+                'relation' => 'OR',
+                array(
+                    'compare' => '=',
+                    'key' => 'fees',
+                    'type' => 'CHAR',
+                    'value' => '',
+                ),
+                array(
+                    'compare' => '<=',
+                    'key' => 'fees',
+                    'type' => 'NUMERIC',
+                ),
             ),
+        ),
+        'general_max_length' => array(
             array(
-                'compare' => '<=',
-                'key' => 'fees',
-                'type' => 'NUMERIC',
+                'relation' => 'OR',
+                array(
+                    'compare' => '=',
+                    'key' => 'max_length',
+                    'type' => 'CHAR',
+                    'value' => '',
+                ),
+                array(
+                    'compare' => '>=',
+                    'key' => 'max_length',
+                    'type' => 'NUMERIC',
+                ),
             ),
-            array(
-                'compare' => '>=',
-                'key' => 'max_length',
-                'type' => 'NUMERIC',
+        ),
+        'general_near_to' => array(
+            'query' => array(
+                'relation' => 'OR',
+                array(
+                    'compare' => 'IN',
+                    'formatter' => array( 'Campground_Search_Util', 'format_query_near_to' ),
+                    'key' => 'general_near_to',
+                    'type' => 'CHAR',
+                ),
+                array(
+                    'compare' => '=',
+                    'key' => 'general_near_to',
+                    'type' => 'CHAR',
+                ),
             ),
-            array(
-                'compare' => '=',
-                'key' => 'near_to',
-                'type' => 'CHAR',
+        ),
+        'general_open_from' => array(
+            'formatter' => array( 'Campground_Search_Util', 'set_min_year' ),
+            'query' => array(
+                'relation' => 'OR',
+                array(
+                    'compare' => '=',
+                    'key' => 'general_open_from',
+                    'type' => 'CHAR',
+                    'value' => '',
+                ),
+                array(
+                    'compare' => '<=',
+                    'key' => 'general_open_from',
+                    'type' => 'DATE',
+                ),
             ),
-            array(
-                'compare' => '>=',
-                'key' => 'open_from',
-                'type' => 'DATE',
+        ),
+        'general_open_to' => array(
+            'formatter' => array( 'Campground_Search_Util', 'set_max_year' ),
+            'query' => array(
+                'relation' => 'OR',
+                array(
+                    'compare' => '=',
+                    'key' => 'general_open_to',
+                    'type' => 'CHAR',
+                    'value' => '',
+                ),
+                array(
+                    'compare' => '>=',
+                    'key' => 'general_open_to',
+                    'type' => 'DATE',
+                ),
             ),
-            array(
-                'compare' => '<=',
-                'key' => 'open_to',
-                'type' => 'DATE',
+        ),
+        'general_water_from' => array(
+            'formatter' => array( 'Campground_Search_Util', 'set_min_year' ),
+            'query' => array(
+                'relation' => 'OR',
+                array(
+                    'compare' => '=',
+                    'key' => 'general_water_from',
+                    'type' => 'CHAR',
+                    'value' => '',
+                ),
+                array(
+                    'compare' => '<=',
+                    'key' => 'general_water_from',
+                    'type' => 'DATE',
+                ),
             ),
-            array(
-                'compare' => '>=',
-                'key' => 'water_from',
-                'type' => 'DATE',
-            ),
-            array(
-                'compare' => '<=',
-                'key' => 'water_to',
-                'type' => 'DATE',
+        ),
+        'general_water_to' => array(
+            'formatter' => array( 'Campground_Search_Util', 'set_max_year' ),
+            'query' => array(
+                'relation' => 'OR',
+                array(
+                    'compare' => '=',
+                    'key' => 'general_water_to',
+                    'type' => 'CHAR',
+                    'value' => '',
+                ),
+                array(
+                    'compare' => '>=',
+                    'key' => 'general_water_to',
+                    'type' => 'DATE',
+                ),
             ),
         ),
     );

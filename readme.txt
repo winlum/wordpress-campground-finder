@@ -2,8 +2,8 @@
 Contributors: winlum
 Donate link: https://winlum.com/
 Tags: comments, campground, search
-Requires at least: 4.9
-Tested up to: 4.9.5
+Requires at least: 4.6
+Tested up to: 4.9.6
 Requires PHP: 5.4
 Stable tag: master
 License: GPLv2 or later
@@ -28,12 +28,12 @@ Upload the Akismet plugin to your blog, Activate it.
 1. ~~create Taxonomies~~
 1. ~~create Meta Boxes~~
 1. ~~create Query vars~~
-1. create search form
-1. display search results
+1. ~~create search form~~
+1. ~~display search results~~
 1. cleanup on deactivate/uninstall
 1. admin options/creation
 1. import/export data
-1. create seed data
+1. ~~create seed data~~
 
 - Multisite support
 - CLI support
@@ -43,6 +43,10 @@ Upload the Akismet plugin to your blog, Activate it.
 - Improved Administration
 - Theme support for search form?
 - Geolocation support
+- Ability to "close" a campground
+- Rework date ranges -- very clunky right now
+- Performance -- reduce the number of queries, update looping/mapping
+- Handle i18n for certain measurement (e.g. elevation), etc values
 
 == Changelog ==
 

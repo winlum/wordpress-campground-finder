@@ -455,7 +455,7 @@ class Campground_Search_Admin {
 					update_post_meta(
 						$post_id,
 						'_' . $lkey . '_' . $diff_key,
-						null
+						''
 					);
 				}
 			}
@@ -469,7 +469,7 @@ class Campground_Search_Admin {
 					update_post_meta(
 						$post_id,
 						'_' . $lkey . '_' . $field_key,
-						empty( $field_val ) ? null : $field_val
+						empty( $field_val ) ? '' : $field_val
 					);
 				}
 			}

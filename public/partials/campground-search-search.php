@@ -10,6 +10,8 @@
  * @subpackage Campground_Search/public/partials
  */
 
+global $wp_query;
+
 get_header();
 ?>
 
@@ -18,6 +20,9 @@ get_header();
     <div class="<?php echo Campground_Search_Util::prefix_css_string('search'); ?>">
 
     <?php if ( have_posts() ) : ?>
+        <div class="query-info">
+            <?php _e( sprintf( 'We found %d campgrounds matching your criteria.', $wp_query->found_posts ) ); ?>
+        </div>
         <?php while ( have_posts() ) : the_post(); ?>
         <?php
             global $post;
@@ -32,11 +37,15 @@ get_header();
                 : null;
 
             $open_from = is_array( $custom_fields[$field_key . '_open_from'] )
-                ? $custom_fields[$field_key . '_open_from'][0]
+                ? Campground_Search_Util::friendly_date_range(
+                    $custom_fields[$field_key . '_open_from'][0]
+                )
                 : null;
 
             $open_to = is_array( $custom_fields[$field_key . '_open_to'] )
-                ? $custom_fields[$field_key . '_open_to'][0]
+                ? Campground_Search_Util::friendly_date_range(
+                    $custom_fields[$field_key . '_open_to'][0]
+                )
                 : null;
             
             $open = ( ! empty( $open_from ) && ! empty ( $open_to ) )
@@ -48,18 +57,26 @@ get_header();
                 : false;
 
             $water_from = is_array( $custom_fields[$field_key . '_water_from'] )
-                ? $custom_fields[$field_key . '_water_from'][0]
+                ? Campground_Search_Util::friendly_date_range(
+                    $custom_fields[$field_key . '_water_from'][0]
+                )
                 : null;
 
             $water_to = is_array( $custom_fields[$field_key . '_water_to'] )
-                ? $custom_fields[$field_key . '_water_to'][0]
+                ? Campground_Search_Util::friendly_date_range(
+                    $custom_fields[$field_key . '_water_to'][0]
+                )
                 : null;
             
             $water = ( ! empty( $water_from ) && ! empty ( $water_to ) )
                 ? $water_from . ' - ' . $water_to
-                : $water_available
+                : null;
+            
+            if ( empty( $water ) ) {
+                $water = $water_available
                     ? __( 'All Year', Campground_Search_Const::TEXT_DOMAIN )
                     : __( 'No Water', Campground_Search_Const::TEXT_DOMAIN );
+            }
 
             $elevation = is_array( $custom_fields[$field_key . '_elevation'] )
                 ? $custom_fields[$field_key . '_elevation'][0]
@@ -69,14 +86,16 @@ get_header();
                 ? $custom_fields[$field_key . '_max_length'][0]
                 : null;
 
-            setlocale( LC_MONETARY, 'en_US.UTF-8' );
             $fees = is_array( $custom_fields[$field_key . '_fees'] )
-                ? function_exists( 'money_format' )
-                    ? money_format( '%.2n', $custom_fields[$field_key . '_fees'][0] )
-                    : $custom_fields[$field_key . '_fees'][0]
-                : __( 'None', Campground_Search_Const::TEXT_DOMAIN );
+                ? $custom_fields[$field_key . '_fees'][0]
+                : null;
+
+            if ( function_exists( 'money_format' ) && ! empty( $fees ) ) {
+                setlocale( LC_MONETARY, 'en_US.UTF-8' );
+                $fees = money_format( '%.2n', $fees );
+            }
         ?>
-        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        <article id="post-<?php the_ID(); ?>" <?php //post_class(); ?>>
             <header>
                 <h2>
                     <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
@@ -86,7 +105,7 @@ get_header();
                    <span class="label">
                        <?php _e( 'near', Campground_Search_Const::TEXT_DOMAIN ); ?>
                     </span>
-                   <span class="near-to">
+                   <span class="value">
                         <?php esc_html_e( $near_to, Campground_Search_Const::TEXT_DOMAIN ); ?>
                     </span>
                 <?php endif; ?>
@@ -116,38 +135,44 @@ get_header();
                     </span>
                 </div>
 
-                <?php if ( ! empty( $elevation ) ) : ?>
                 <div class="field">
                     <span class="label">
                         <?php _e( 'Elevation', Campground_Search_Const::TEXT_DOMAIN ); ?>
                     </span>
                     <span class="value">
-                        <?php esc_html_e( $elevation, Campground_Search_Const::TEXT_DOMAIN ); ?>
+                    <?php if ( empty( $elevation ) ) : ?>
+                        <?php _e( 'Unknown', Campground_Search_Const::TEXT_DOMAIN ); ?>
+                    <?php else : ?>
+                        <?php esc_html_e( $elevation . "'", Campground_Search_Const::TEXT_DOMAIN ); ?>
+                    <?php endif; ?>
                     </span>
                 </div>
-                <?php endif; ?>
 
-                <?php if ( ! empty( $max_length ) ) : ?>
                 <div class="field">
                     <span class="label">
                         <?php _e( 'Average Max Length', Campground_Search_Const::TEXT_DOMAIN ); ?>
                     </span>
                     <span class="value">
-                        <?php esc_html_e( $max_length, Campground_Search_Const::TEXT_DOMAIN ); ?>
+                    <?php if ( empty( $max_length ) ) : ?>
+                        <?php _e( 'None', Campground_Search_Const::TEXT_DOMAIN ); ?>
+                    <?php else : ?>
+                        <?php esc_html_e( $max_length . "'", Campground_Search_Const::TEXT_DOMAIN ); ?>
+                    <?php endif; ?>
                     </span>
                 </div>
-                <?php endif; ?>
 
-                <?php if ( ! empty( $fees ) ) : ?>
                 <div class="field">
                     <span class="label">
                         <?php _e( 'Fees', Campground_Search_Const::TEXT_DOMAIN ); ?>
                     </span>
                     <span class="value">
+                    <?php if ( empty( $fees ) ) : ?>
+                        <?php _e( 'Free', Campground_Search_Const::TEXT_DOMAIN ); ?>
+                    <?php else : ?>
                         <?php esc_html_e( $fees, Campground_Search_Const::TEXT_DOMAIN ); ?>
+                    <?php endif; ?>
                     </span>
                 </div>
-                <?php endif; ?>
             </section>
             <footer>
             <?php foreach ( $taxonomies as $taxonomy ) : ?>
@@ -175,11 +200,10 @@ get_header();
 			the_posts_pagination(
 				array(
                     'mid_size' => 2,
-                    'prev_text' => '<span class="dashicons-before dashicons-arrow-left">' .
+                    'prev_text' => '<span>' .
                         __( 'Previous', Campground_Search_Const::TEXT_DOMAIN ) . '</span>',
                     'next_text' => '<span>' .
-                        __( 'Next', Campground_Search_Const::TEXT_DOMAIN ) . '</span>' .
-                        '<span class="dashicons dashicons-arrow-right"></span>',
+                        __( 'Next', Campground_Search_Const::TEXT_DOMAIN ) . '</span>',
 				)
 			);
         ?>

@@ -130,9 +130,6 @@ class Campground_Search {
 
 		$this->loader = new Campground_Search_Loader();
 
-		$plugin_transform = new Campground_Search_Transform();
-		// $this->loader->add_action( 'init', $plugin_transform, 'import_from_disk', 99 );
-
 	}
 
 	/**
@@ -178,6 +175,9 @@ class Campground_Search {
 			$plugin_admin,
 			'save_meta_boxes'
 		);
+
+		// $plugin_transform = new Campground_Search_Transform();
+		// $this->loader->add_action( 'init', $plugin_transform, 'import_from_disk', 99 );
 
 	}
 
