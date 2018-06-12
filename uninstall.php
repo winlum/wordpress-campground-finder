@@ -45,7 +45,7 @@ if ( is_multisite() ) {
 }
 
 /**
- * Unregisters the taxonomy and post type, and removes the short code with WP
+ * Unregisters the taxonomies and post type, and removes the short code with WP
  *
  * @author WinLum Inc.
  * @since 1.0.0
@@ -56,7 +56,12 @@ function uninstall() {
 	}
 
 	try {
-		unregister_taxonomy( Campground_Search_Const::TAXONOMY );
+		foreach ( Campground_Search_Const::$$taxonomies as $key => $val ) {
+			// TODO: terms?
+            if ( taxonomy_exists( $key ) ) {
+                unregister_taxonomy( $key );
+            }
+		}
 		unregister_post_type( Campground_Search_Const::POST_TYPE );
 		remove_shortcode( Campground_Search_Const::SHORT_CODE );
 	} catch (WP_Error $error) {

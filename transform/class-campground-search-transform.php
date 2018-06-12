@@ -95,7 +95,7 @@ final class Campground_Search_Transform {
                 $tax_input['activity'][] = 'hiking';
             }
             if ( ($campground->swimming) ) {
-                $tax_input['activity'][] = 'swiming';
+                $tax_input['activity'][] = 'swimming';
             }
 
             $toilets = trim( $campground->toilets );

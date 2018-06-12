@@ -57,7 +57,7 @@ $near_to_choices = array_map(
 		</label>
     </div>
 
-    <fieldset class="date-range">
+    <fieldset class="inline">
         <legend><?php _e( 'Open', Campground_Search_Const::TEXT_DOMAIN ); ?></legend>
 
         <div class="field">
@@ -87,7 +87,7 @@ $near_to_choices = array_map(
         </div>
     </fieldset>
 
-    <fieldset class="date-range">
+    <fieldset class="inline">
         <legend><?php _e( 'Water', Campground_Search_Const::TEXT_DOMAIN ); ?></legend>
 
         <div class="field">
@@ -168,6 +168,19 @@ $near_to_choices = array_map(
         >
         <label for="<?php echo Campground_Search_Util::prefix_css_string( 'num_sites' ); ?>">
 			<?php _e( 'Number of Sites', Campground_Search_Const::TEXT_DOMAIN ); ?>
+		</label>
+    </div>
+
+    <div class="field">
+        <input
+            id="<?php echo Campground_Search_Util::prefix_css_string( 'reservation_url' ); ?>"
+            name="<?php echo $field_key; ?>[reservation_url]"
+            placeholder="https://reservation.url"
+            type="url"
+            value="<?php echo esc_attr( $reservation_url ); ?>"
+        >
+        <label for="<?php echo Campground_Search_Util::prefix_css_string( 'reservation_url' ); ?>">
+			<?php _e( 'Reservation URL', Campground_Search_Const::TEXT_DOMAIN ); ?>
 		</label>
     </div>
 </div>

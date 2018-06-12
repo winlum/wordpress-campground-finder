@@ -31,7 +31,7 @@ Upload the Akismet plugin to your blog, Activate it.
 1. ~~create search form~~
 1. ~~display search results~~
 1. cleanup on deactivate/uninstall
-1. admin options/creation
+1. ~~admin options/creation~~
 1. import/export data
 1. ~~create seed data~~
 
@@ -44,9 +44,10 @@ Upload the Akismet plugin to your blog, Activate it.
 - Theme support for search form?
 - Geolocation support
 - Ability to "close" a campground
-- Rework date ranges -- very clunky right now
+- Rework date ranges -- very clunky right now (use type="month"?)
 - Performance -- reduce the number of queries, update looping/mapping
 - Handle i18n for certain measurement (e.g. elevation), etc values
+- Quick Edit Form fields
 
 == Changelog ==
 

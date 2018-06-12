@@ -94,13 +94,19 @@ get_header();
                 setlocale( LC_MONETARY, 'en_US.UTF-8' );
                 $fees = money_format( '%.2n', $fees );
             }
+
+            $reservation_url = is_array( $custom_fields[$field_key . '_reservation_url'] )
+                ? $custom_fields[$field_key . '_reservation_url'][0]
+                : null;
         ?>
         <article id="post-<?php the_ID(); ?>" <?php //post_class(); ?>>
             <header>
                 <h2>
-                    <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
-                        <?php echo get_the_title(); ?>
-                    </a>
+                <?php if ( empty( $reservation_url ) ) : ?>
+                    <?php echo get_the_title(); ?>
+                <?php else : ?>
+                    <a href="<?php echo esc_url( $reservation_url ); ?>" rel="bookmark"><?php echo get_the_title(); ?></a>
+                <?php endif; ?>
                 <?php if ( ! empty( $near_to ) ) : ?>
                    <span class="label">
                        <?php _e( 'near', Campground_Search_Const::TEXT_DOMAIN ); ?>

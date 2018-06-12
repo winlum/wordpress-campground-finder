@@ -44,7 +44,8 @@ class Campground_Search_Deactivator {
 		}
 
         foreach ( Campground_Search_Const::$taxonomies as $key => $val ) {
-            if ( taxonomy_exists( $key )) {
+			// TODO: terms?
+            if ( taxonomy_exists( $key ) ) {
                 unregister_taxonomy( $key );
             }
         }

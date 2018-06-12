@@ -134,7 +134,7 @@ final class Campground_Search_Util {
 	}
 
 	/**
-	 * Returns a string of the month, by name, and day.
+	 * Returns a string of the month, by short name, and day.
 	 *
 	 * @author   WinLum Inc.
 	 * @since    1.0.0
@@ -144,7 +144,7 @@ final class Campground_Search_Util {
 	public static function friendly_date_range( $date ) {
 		$dt = DateTime::createFromFormat( Campground_Search_Const::DATETIME_FORMAT, $date );
 		if ( ! $date ) return $date;
-		return $dt->format( 'F j' );
+		return $dt->format( 'M j' );
 	}
 
 	/**

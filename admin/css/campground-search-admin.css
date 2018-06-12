@@ -3,7 +3,6 @@
  * included in this file.
  */
 .wl-camps-meta-box fieldset {
-    border: 1px solid rgba(0, 0, 0, 0.25);
     margin-bottom: 0.5rem;
     padding: 0.5rem auto;
 }
@@ -12,6 +11,15 @@
     font-weight: bold;
     margin: 0.5rem auto;
     size: 1.2rem;
+}
+
+.wl-camps-meta-box .inline {
+    display: flex;
+    flex-direction: row nowrap;
+}
+
+.wl-camps-meta-box .inline .field {
+    flex: 1;
 }
 
 .wl-camps-meta-box .field {
@@ -32,11 +40,6 @@
     flex: 3;
     order: 2;
 }
-
-.wl-camps-meta-box .field input[type=checkbox] {
-    flex: initial;
-}
-
 
 .wl-camps-meta-box .field input:invalid,
 .wl-camps-meta-box .field select:invalid {

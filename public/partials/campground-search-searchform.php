@@ -46,9 +46,8 @@ $activities = get_query_var( 'activity', array() );
     <div class="field">
         <input
             id="s"
-            maxlength="255"
             name="s"
-            placeholder="Search for phrases..."
+            placeholder="Search by name..."
             value="<?php get_search_query(); ?>"
         >
         <label for="s">
@@ -78,7 +77,7 @@ $activities = get_query_var( 'activity', array() );
         </label>
     </div>
 
-    <fieldset class="date-range">
+    <fieldset class="inline">
         <legend><?php _e( 'Open', Campground_Search_Const::TEXT_DOMAIN ); ?></legend>
 
         <div class="field">
@@ -221,8 +220,17 @@ $activities = get_query_var( 'activity', array() );
     </div>
     <?php endif; ?>
 
-    <button type="submit">
-        <?php _e( 'Search', Campground_Search_Const::TEXT_DOMAIN ); ?>
-        <i class="dashicons dashicons-search"></i>
-    </button>
+    <div class="actions">
+        <button type="reset">
+            <span class="dashicons-before dashicons-undo">
+                <?php _e( 'Reset', Campground_Search_Const::TEXT_DOMAIN ); ?>
+            <span>
+        </button>
+
+        <button type="submit">
+            <span class="dashicons-before dashicons-search">
+                <?php _e( 'Search', Campground_Search_Const::TEXT_DOMAIN ); ?>
+            <span>
+        </button>
+    </div>
 </form>

@@ -57,6 +57,7 @@ class Campground_Search_Admin {
 				'num_sites' => array(
 					'type' => 'numeric',
 				),
+				'reservation_url' => array(),
 			),
 		),
 		'geo' => array(
