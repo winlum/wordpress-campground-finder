@@ -64,14 +64,14 @@ class Campground_Search {
 	 * Load the dependencies, define the locale, and set the hooks for the admin area and
 	 * the public-facing side of the site.
 	 *
-	 * @since    1.0.0
+	 * @since    1.1.0
 	 */
 	public function __construct() {
-		
+
 		if ( defined( 'CAMPGROUND_SEARCH_VERSION' ) ) {
 			$this->version = CAMPGROUND_SEARCH_VERSION;
 		} else {
-			$this->version = '1.0.0';
+			$this->version = '1.1.0';
 		}
 		$this->plugin_name = 'campground-search';
 
@@ -199,7 +199,7 @@ class Campground_Search {
 		$this->loader->add_action( 'template_include', $plugin_public, 'template_include' );
 
 		$this->loader->add_filter( 'query_vars', $plugin_public, 'register_query_vars' );
-		
+
 		$this->loader->add_shortcode( Campground_Search_Const::SHORT_CODE, $plugin_public, 'display_search_form' );
 
 	}

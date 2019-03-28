@@ -4,13 +4,17 @@
  * Provide a admin area view for the plugin meta box.
  *
  * @link       https://winlum.com
- * @since      1.0.0
+ * @since      1.1.0
  *
  * @package    Campground_Search
  * @subpackage Campground_Search/admin/partials
  */
 
 $options = get_option( Campground_Search_Const::SETTINGS );
+$district_choices = array_map(
+    'trim',
+    explode( "\n", $options[Campground_Search_Const::PREFIX . '_district'] )
+);
 $near_to_choices = array_map(
     'trim',
     explode( "\n", $options[Campground_Search_Const::PREFIX . '_near_to'] )
@@ -20,6 +24,34 @@ $near_to_choices = array_map(
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
 <div class="general <?php echo Campground_Search_Util::prefix_css_string('meta-box'); ?>">
     <div class="field">
+        <label for="<?php echo Campground_Search_Util::prefix_css_string( 'district' ); ?>">
+            <?php _e( 'District', Campground_Search_Const::TEXT_DOMAIN ); ?>
+        </label>
+        <select
+            id="<?php echo Campground_Search_Util::prefix_css_string( 'district' ); ?>"
+            name="<?php echo $field_key; ?>[district]"
+        >
+            <option
+                <?php if ( ! in_array( $district, $district_choices ) ) echo 'selected'; ?>
+                value=""
+            >
+                <?php _e( 'None', Campground_Search_Const::TEXT_DOMAIN ); ?>
+            </option>
+            <?php foreach ( $district_choices as $choice ) : ?>
+            <option
+                <?php if ( $district === $choice ) echo 'selected'; ?>
+                value="<?php esc_attr_e( $choice, Campground_Search_Const::TEXT_DOMAIN ); ?>"
+            >
+                <?php _e( $choice, Campground_Search_Const::TEXT_DOMAIN ); ?>
+            </option>
+            <?php endforeach; ?>
+        </select>
+    </div>
+
+    <div class="field">
+        <label for="<?php echo Campground_Search_Util::prefix_css_string( 'near_to' ); ?>">
+            <?php _e( 'Near To', Campground_Search_Const::TEXT_DOMAIN ); ?>
+        </label>
         <select
             id="<?php echo Campground_Search_Util::prefix_css_string( 'near_to' ); ?>"
             name="<?php echo $field_key; ?>[near_to]"
@@ -39,12 +71,12 @@ $near_to_choices = array_map(
             </option>
             <?php endforeach; ?>
         </select>
-        <label for="<?php echo Campground_Search_Util::prefix_css_string( 'near_to' ); ?>">
-            <?php _e( 'Near To', Campground_Search_Const::TEXT_DOMAIN ); ?>
-        </label>
     </div>
 
     <div class="field">
+        <label for="<?php echo Campground_Search_Util::prefix_css_string( 'elevation' ); ?>">
+			<?php _e( 'Elevation', Campground_Search_Const::TEXT_DOMAIN ); ?>
+		</label>
         <input
             id="<?php echo Campground_Search_Util::prefix_css_string( 'elevation' ); ?>"
             name="<?php echo $field_key; ?>[elevation]"
@@ -52,15 +84,15 @@ $near_to_choices = array_map(
             type="number"
             value="<?php echo esc_attr( $elevation ); ?>"
         >
-        <label for="<?php echo Campground_Search_Util::prefix_css_string( 'elevation' ); ?>">
-			<?php _e( 'Elevation', Campground_Search_Const::TEXT_DOMAIN ); ?>
-		</label>
     </div>
 
     <fieldset class="inline">
         <legend><?php _e( 'Open', Campground_Search_Const::TEXT_DOMAIN ); ?></legend>
 
         <div class="field">
+            <label for="<?php echo Campground_Search_Util::prefix_css_string( 'open_from' ); ?>">
+                <?php _e( 'From', Campground_Search_Const::TEXT_DOMAIN ); ?>
+            </label>
             <input
                 id="<?php echo Campground_Search_Util::prefix_css_string( 'open_from' ); ?>"
                 name="<?php echo $field_key; ?>[open_from]"
@@ -68,12 +100,12 @@ $near_to_choices = array_map(
                 type="date"
                 value="<?php echo esc_attr( $open_from ); ?>"
             >
-            <label for="<?php echo Campground_Search_Util::prefix_css_string( 'open_from' ); ?>">
-                <?php _e( 'From', Campground_Search_Const::TEXT_DOMAIN ); ?>
-            </label>
         </div>
 
         <div class="field">
+            <label for="<?php echo Campground_Search_Util::prefix_css_string( 'open_to' ); ?>">
+                <?php _e( 'To', Campground_Search_Const::TEXT_DOMAIN ); ?>
+            </label>
             <input
                 id="<?php echo Campground_Search_Util::prefix_css_string( 'open_to' ); ?>"
                 name="<?php echo $field_key; ?>[open_to]"
@@ -81,9 +113,6 @@ $near_to_choices = array_map(
                 type="date"
                 value="<?php echo esc_attr( $open_to ); ?>"
             >
-            <label for="<?php echo Campground_Search_Util::prefix_css_string( 'open_to' ); ?>">
-                <?php _e( 'To', Campground_Search_Const::TEXT_DOMAIN ); ?>
-            </label>
         </div>
     </fieldset>
 
@@ -103,6 +132,9 @@ $near_to_choices = array_map(
         </div>
 
         <div class="field">
+            <label for="<?php echo Campground_Search_Util::prefix_css_string( 'water_from' ); ?>">
+                <?php _e( 'From', Campground_Search_Const::TEXT_DOMAIN ); ?>
+            </label>
             <input
                 id="<?php echo Campground_Search_Util::prefix_css_string( 'water_from' ); ?>"
                 name="<?php echo $field_key; ?>[water_from]"
@@ -110,12 +142,12 @@ $near_to_choices = array_map(
                 type="date"
                 value="<?php echo esc_attr( $water_from ); ?>"
             >
-            <label for="<?php echo Campground_Search_Util::prefix_css_string( 'water_from' ); ?>">
-                <?php _e( 'From', Campground_Search_Const::TEXT_DOMAIN ); ?>
-            </label>
         </div>
 
         <div class="field">
+            <label for="<?php echo Campground_Search_Util::prefix_css_string( 'water_to' ); ?>">
+                <?php _e( 'To', Campground_Search_Const::TEXT_DOMAIN ); ?>
+            </label>
             <input
                 id="<?php echo Campground_Search_Util::prefix_css_string( 'water_to' ); ?>"
                 name="<?php echo $field_key; ?>[water_to]"
@@ -123,13 +155,13 @@ $near_to_choices = array_map(
                 type="date"
                 value="<?php echo esc_attr( $water_to ); ?>"
             >
-            <label for="<?php echo Campground_Search_Util::prefix_css_string( 'water_to' ); ?>">
-                <?php _e( 'To', Campground_Search_Const::TEXT_DOMAIN ); ?>
-            </label>
         </div>
     </fieldset>
 
     <div class="field">
+        <label for="<?php echo Campground_Search_Util::prefix_css_string( 'max_length' ); ?>">
+			<?php _e( 'Average Max Length', Campground_Search_Const::TEXT_DOMAIN ); ?>
+		</label>
         <input
             id="<?php echo Campground_Search_Util::prefix_css_string( 'max_length' ); ?>"
             min="0"
@@ -138,12 +170,12 @@ $near_to_choices = array_map(
             type="number"
             value="<?php echo esc_attr( $max_length ); ?>"
         >
-        <label for="<?php echo Campground_Search_Util::prefix_css_string( 'max_length' ); ?>">
-			<?php _e( 'Average Max Length', Campground_Search_Const::TEXT_DOMAIN ); ?>
-		</label>
     </div>
 
     <div class="field">
+        <label for="<?php echo Campground_Search_Util::prefix_css_string( 'fees' ); ?>">
+			<?php _e( 'Fees', Campground_Search_Const::TEXT_DOMAIN ); ?>
+		</label>
         <input
             id="<?php echo Campground_Search_Util::prefix_css_string( 'fees' ); ?>"
             min="0"
@@ -152,12 +184,12 @@ $near_to_choices = array_map(
             type="number"
             value="<?php echo esc_attr( $fees ); ?>"
         >
-        <label for="<?php echo Campground_Search_Util::prefix_css_string( 'fees' ); ?>">
-			<?php _e( 'Fees', Campground_Search_Const::TEXT_DOMAIN ); ?>
-		</label>
     </div>
 
     <div class="field">
+        <label for="<?php echo Campground_Search_Util::prefix_css_string( 'num_sites' ); ?>">
+			<?php _e( 'Number of Sites', Campground_Search_Const::TEXT_DOMAIN ); ?>
+		</label>
         <input
             id="<?php echo Campground_Search_Util::prefix_css_string( 'num_sites' ); ?>"
             min="0"
@@ -166,12 +198,26 @@ $near_to_choices = array_map(
             type="number"
             value="<?php echo esc_attr( $num_sites ); ?>"
         >
-        <label for="<?php echo Campground_Search_Util::prefix_css_string( 'num_sites' ); ?>">
-			<?php _e( 'Number of Sites', Campground_Search_Const::TEXT_DOMAIN ); ?>
-		</label>
     </div>
 
     <div class="field">
+        <label for="<?php echo Campground_Search_Util::prefix_css_string( 'num_group_sites' ); ?>">
+			<?php _e( 'Number of Group Sites', Campground_Search_Const::TEXT_DOMAIN ); ?>
+		</label>
+        <input
+            id="<?php echo Campground_Search_Util::prefix_css_string( 'num_group_sites' ); ?>"
+            min="0"
+            name="<?php echo $field_key; ?>[num_group_sites]"
+            placeholder=""
+            type="number"
+            value="<?php echo esc_attr( $num_group_sites ); ?>"
+        >
+    </div>
+
+    <div class="field">
+        <label for="<?php echo Campground_Search_Util::prefix_css_string( 'reservation_url' ); ?>">
+			<?php _e( 'Reservation URL', Campground_Search_Const::TEXT_DOMAIN ); ?>
+		</label>
         <input
             id="<?php echo Campground_Search_Util::prefix_css_string( 'reservation_url' ); ?>"
             name="<?php echo $field_key; ?>[reservation_url]"
@@ -179,8 +225,5 @@ $near_to_choices = array_map(
             type="url"
             value="<?php echo esc_attr( $reservation_url ); ?>"
         >
-        <label for="<?php echo Campground_Search_Util::prefix_css_string( 'reservation_url' ); ?>">
-			<?php _e( 'Reservation URL', Campground_Search_Const::TEXT_DOMAIN ); ?>
-		</label>
     </div>
 </div>

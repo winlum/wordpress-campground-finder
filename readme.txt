@@ -3,7 +3,7 @@ Contributors: winlum
 Donate link: https://winlum.com/
 Tags: comments, campground, search
 Requires at least: 4.6
-Tested up to: 4.9.6
+Tested up to: 5.1.1
 Requires PHP: 5.4
 Stable tag: master
 License: GPLv2 or later
@@ -51,11 +51,19 @@ Upload the Akismet plugin to your blog, Activate it.
 
 == Changelog ==
 
+= 1.1.0 =
+
+- Add district, description, # group sites as options.
+
 = 1.0.0 =
 
 - Initial version.
 
 == Upgrade Notice ==
+
+= 1.1.0 =
+
+There should be no changes as only added options.
 
 = 1.0.0 =
 

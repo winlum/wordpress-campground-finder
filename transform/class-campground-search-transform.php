@@ -4,7 +4,7 @@
  * Class of constants
  *
  * @link       https://winlum.com
- * @since      1.0.0
+ * @since      1.1.0
  *
  * @package    Campground_Search
  * @subpackage Campground_Search/includes
@@ -42,7 +42,7 @@ final class Campground_Search_Transform {
         } catch( Exception $ex ) {
             die ( 'Error parsing json: ' . $ex->getMessage() );
         }
-        
+
         $post_date = date( Campground_Search_Const::DATETIME_FORMAT, strtotime( '2018-01-01' ) );
         $post_content = '';
         foreach ( $original_json->campground_finder_updated as $campground ) {
@@ -121,7 +121,9 @@ final class Campground_Search_Transform {
             $meta['general_max_length'] = trim( $campground->length );
             $meta['general_fees'] = trim( $campground->fees );
             $meta['general_num_sites'] = trim( $campground->num_sites );
+            $meta['general_num_group_sites'] = trim( $campground->num_group_sites );
 
+            $meta['geo_address'] = '';
             $meta['geo_longitude'] = '';
             $meta['geo_latitude'] = '';
             $meta['geo_elevation'] = '';
@@ -130,7 +132,7 @@ final class Campground_Search_Transform {
             foreach ( $meta as $key => $val ) {
                 $meta_input['_' . Campground_Search_Util::prefix_string( $key )] = empty( $val ) ? '' : $val;
             }
-            
+
             $post_args = array(
                 'post_date' => $post_date,
                 'post_content' => $post_content,

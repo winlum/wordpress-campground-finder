@@ -4,7 +4,7 @@
  * The admin-specific functionality of the plugin.
  *
  * @link       https://winlum.com
- * @since      1.0.0
+ * @since      1.1.0
  *
  * @package    Campground_Search
  * @subpackage Campground_Search/admin
@@ -27,6 +27,7 @@ class Campground_Search_Admin {
 			'location' => 'normal',
 			'priority' => 'high',
 			'fields' => array(
+				'district' => array(),
 				'near_to' => array(),
 				'elevation' => array(
 					'type' => 'numeric',
@@ -57,6 +58,9 @@ class Campground_Search_Admin {
 				'num_sites' => array(
 					'type' => 'numeric',
 				),
+				'num_group_sites' => array(
+					'type' => 'numeric',
+				),
 				'reservation_url' => array(),
 			),
 		),
@@ -64,6 +68,7 @@ class Campground_Search_Admin {
 			'location' => 'normal',
 			'priority' => 'high',
 			'fields' => array(
+				'address' => array(),
 				'longitude' => array(
 					'type' => 'numeric',
 				),
@@ -179,7 +184,7 @@ class Campground_Search_Admin {
 			array( $this, 'display_options' )
 		);
 	}
-	
+
     /**
      * Creates the options view.
      *
@@ -189,12 +194,12 @@ class Campground_Search_Admin {
 	public function display_options() {
 		include_once( 'partials/campground-search-admin-display.php' );
 	}
-	
+
     /**
      * Registers the settings with WP.
      *
 	 * @author   WinLum Inc.
-	 * @since    1.0.0
+	 * @since    1.1.0
      */
 	public function create_settings() {
 		register_setting( Campground_Search_Const::OPTION_GROUP, Campground_Search_Const::SETTINGS );
@@ -209,16 +214,31 @@ class Campground_Search_Admin {
 		);
 
 		add_settings_field(
-			Campground_Search_Const::PREFIX . '_near_to', 
-			__( 'Nearest To Choices (place each choice on its own line)', Campground_Search_Const::TEXT_DOMAIN ), 
-			array( $this, 'display_setting_near_to' ), 
-			Campground_Search_Const::OPTION_GROUP, 
-			$section_name 
+			Campground_Search_Const::PREFIX . '_district',
+			__( 'District the Campground is in (place each choice on its own line)', Campground_Search_Const::TEXT_DOMAIN ),
+			array( $this, 'display_setting_district' ),
+			Campground_Search_Const::OPTION_GROUP,
+			$section_name
+		);
+
+		add_settings_field(
+			Campground_Search_Const::PREFIX . '_near_to',
+			__( 'Nearest To Choices (place each choice on its own line)', Campground_Search_Const::TEXT_DOMAIN ),
+			array( $this, 'display_setting_near_to' ),
+			Campground_Search_Const::OPTION_GROUP,
+			$section_name
 		);
 	}
 
 	public function display_settings_section() {
 		// _e( 'Settings Description', Campground_Search_Const::TEXT_DOMAIN );
+	}
+
+	public function display_setting_district() {
+		$options = get_option( Campground_Search_Const::SETTINGS );
+		$field_name = Campground_Search_Const::PREFIX . '_district';
+		$name = Campground_Search_Const::SETTINGS . '[' . $field_name . ']';
+		echo '<textarea cols="40" name="' . $name . '" rows="4">' . $options[$field_name] . '</textarea>';
 	}
 
 	public function display_setting_near_to() {
@@ -320,7 +340,7 @@ class Campground_Search_Admin {
      */
 	public function display_meta_box( $key, array $fields ) {
 		global $post;
-		
+
 		$field_key = Campground_Search_Util::prefix_string( $key );
 		$nonce_name = Campground_Search_Util::prefix_string( $key . '_meta_box_nonce' );
 		$file_name = $this->plugin_name . '-' . $key . '-meta-box.php';
@@ -371,7 +391,7 @@ class Campground_Search_Admin {
 							$taxonomy_names
 						),
 					);
-					
+
 					return array_merge( (array) $campground, $output );
 				},
 				$campgrounds
@@ -399,7 +419,7 @@ class Campground_Search_Admin {
 			JSON_NUMERIC_CHECK |
 			JSON_HEX_TAG | JSON_HEX_APOS | JSON_HEX_QUOT | JSON_HEX_AMP |
 			JSON_UNESCAPED_UNICODE;
-		
+
 		$json = json_encode( $output, $json_options );
 	}
 

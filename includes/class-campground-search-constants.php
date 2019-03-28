@@ -4,7 +4,7 @@
  * Class of constants
  *
  * @link       https://winlum.com
- * @since      1.0.0
+ * @since      1.1.0
  *
  * @package    Campground_Search
  * @subpackage Campground_Search/includes
@@ -35,6 +35,22 @@ final class Campground_Search_Const {
 
     // TODO: require PHP 5.6 so these can be const
     public static $query_vars = array(
+        'general_district' => array(
+            'query' => array(
+                'relation' => 'OR',
+                array(
+                    'compare' => 'IN',
+                    'formatter' => array( 'Campground_Search_Util', 'format_query_field', 'district' ),
+                    'key' => 'general_district',
+                    'type' => 'CHAR',
+                ),
+                array(
+                    'compare' => '=',
+                    'key' => 'general_district',
+                    'type' => 'CHAR',
+                ),
+            ),
+        ),
         'general_elevation' => array(
             'compare' => '>=',
             'key' => 'elevation',
@@ -77,7 +93,7 @@ final class Campground_Search_Const {
                 'relation' => 'OR',
                 array(
                     'compare' => 'IN',
-                    'formatter' => array( 'Campground_Search_Util', 'format_query_near_to' ),
+                    'formatter' => array( 'Campground_Search_Util', 'format_query_field', 'near_to' ),
                     'key' => 'general_near_to',
                     'type' => 'CHAR',
                 ),
@@ -175,14 +191,23 @@ final class Campground_Search_Const {
             'terms' => array(
                 'bear_boxes' => 'Bear Boxes',
                 'boat_ramps' => 'Boat Ramps',
+                'cabins' => 'Cabins',
                 'camp_host' => 'Camp Host',
+                'drinking_water' => 'Drinking Water',
                 'dump_station' => 'Sanitary Dump Station',
+                'equestrian_trail' => 'Equestrian Trail',
+                'field' => 'Field',
                 'groups' => 'Available for Groups',
                 'hookups' => 'Hookups',
+                'marina' => 'Marina',
+                'mountains' => 'By Mountains',
                 'reservable' => 'Reservable',
                 'shoreline' => 'Shoreline',
                 'showers' => 'Showers',
+                'store' => 'Store',
                 'tents' => 'Tents',
+                'trailhead' => 'Trailhead',
+                'trailhead_atv' => 'ATV Trailhead',
                 'wheelchair_access' => 'Wheelchair Access',
             ),
         ),
@@ -195,7 +220,7 @@ final class Campground_Search_Const {
             ),
         ),
     );
-    
+
     const TAXONOMY = 'campground_typology';
 
 }

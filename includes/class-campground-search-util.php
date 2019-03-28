@@ -4,7 +4,7 @@
  * Static class of utility methods
  *
  * @link       https://winlum.com
- * @since      1.0.0
+ * @since      1.1.0
  *
  * @package    Campground_Search
  * @subpackage Campground_Search/includes
@@ -42,7 +42,7 @@ final class Campground_Search_Util {
 	public static function array_type( array $array ) {
 		$last_key = -1;
 		$type = 'index';
-		
+
 		foreach ( $array as $key => $val ) {
 			if ( ! is_int( $key ) || $key < 0 ) {
 				return 'assoc';
@@ -52,7 +52,7 @@ final class Campground_Search_Util {
 			}
 			$last_key = $key;
 		}
-		
+
 		return $type;
 	}
 
@@ -113,21 +113,22 @@ final class Campground_Search_Util {
 	}
 
 	/**
-	 * Formats the query var near_to.
+	 * Formats the query field.
 	 *
 	 * @author   WinLum Inc.
-	 * @since    1.0.0
+	 * @since    1.1.0
+	 * @param    string    $val            The default value.
 	 * @param    string    $field          The field to sanitize.
 	 */
-	public static function format_query_near_to( $val ) {
+	public static function format_query_field( $val, $field = 'district' ) {
 		if ( $val == -1 ) {
 			$options = get_option( Campground_Search_Const::SETTINGS );
-			$near_to_choices = array_map(
+			$choices = array_map(
 				'trim',
-				explode( "\n", $options[Campground_Search_Util::prefix_string( 'near_to' )] )
+				explode( "\n", $options[Campground_Search_Util::prefix_string( $field )] )
 			);
 
-			return $near_to_choices;
+			return $choices;
 		}
 
 		return $val;
