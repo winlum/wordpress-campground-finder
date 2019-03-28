@@ -51,6 +51,10 @@ Upload the Akismet plugin to your blog, Activate it.
 
 == Changelog ==
 
+= 1.1.1 =
+
+- Add a couple of beach and picnic features
+
 = 1.1.0 =
 
 - Add district and # group sites as options
@@ -62,9 +66,13 @@ Upload the Akismet plugin to your blog, Activate it.
 
 == Upgrade Notice ==
 
+= 1.1.1 =
+
+No changes required, just added an option
+
 = 1.1.0 =
 
-There should be no changes as only added options.
+There should be no changes required, as only added options.
 
 = 1.0.0 =
 

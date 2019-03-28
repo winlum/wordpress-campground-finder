@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              https://winlum.com
- * @since             1.1.0
+ * @since             1.1.1
  * @package           Campground_Search
  *
  * @wordpress-plugin
  * Plugin Name:       Campground Search
  * Plugin URI:        https://winlum.com/wordpress-plugins/campground-search/
  * Description:       see readme.txt
- * Version:           1.1.0
+ * Version:           1.1.1
  * Author:            WinLum Inc.
  * Author URI:        https://winlum.com/
  * License:           GPL-2.0+
@@ -32,9 +32,9 @@ if ( ! defined( 'WPINC' ) ) {
 
 /**
  * Currently plugin version.
- * Start at version 1.0.0 and use SemVer - https://semver.org
+ * Start at version 1.1.1 and use SemVer - https://semver.org
  */
-define( 'CAMPGROUND_SEARCH_VERSION', '1.0.0' );
+define( 'CAMPGROUND_SEARCH_VERSION', '1.1.1' );
 define( 'CAMPGROUND_SEARCH__PLUGIN_BASE_PATH', plugin_dir_path( __FILE__ ) );
 
 /**

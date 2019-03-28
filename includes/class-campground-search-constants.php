@@ -4,7 +4,7 @@
  * Class of constants
  *
  * @link       https://winlum.com
- * @since      1.1.0
+ * @since      1.1.1
  *
  * @package    Campground_Search
  * @subpackage Campground_Search/includes
@@ -189,6 +189,7 @@ final class Campground_Search_Const {
             'singular' => 'Feature',
             'plural' => 'Features',
             'terms' => array(
+                'beach' => 'Beach Area',
                 'bear_boxes' => 'Bear Boxes',
                 'boat_ramps' => 'Boat Ramps',
                 'cabins' => 'Cabins',
@@ -201,6 +202,7 @@ final class Campground_Search_Const {
                 'hookups' => 'Hookups',
                 'marina' => 'Marina',
                 'mountains' => 'By Mountains',
+                'picnic' => 'Picnic Area',
                 'reservable' => 'Reservable',
                 'shoreline' => 'Shoreline',
                 'showers' => 'Showers',
