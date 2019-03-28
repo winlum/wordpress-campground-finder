@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              https://winlum.com
- * @since             1.0.0
+ * @since             1.1.0
  * @package           Campground_Search
  *
  * @wordpress-plugin
  * Plugin Name:       Campground Search
  * Plugin URI:        https://winlum.com/wordpress-plugins/campground-search/
  * Description:       see readme.txt
- * Version:           1.0.0
+ * Version:           1.1.0
  * Author:            WinLum Inc.
  * Author URI:        https://winlum.com/
  * License:           GPL-2.0+

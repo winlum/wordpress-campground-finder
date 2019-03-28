@@ -53,7 +53,8 @@ Upload the Akismet plugin to your blog, Activate it.
 
 = 1.1.0 =
 
-- Add district, description, # group sites as options.
+- Add district and # group sites as options
+- Add more activity and feature taxonomies
 
 = 1.0.0 =
 
