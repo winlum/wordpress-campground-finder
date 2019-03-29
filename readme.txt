@@ -51,6 +51,10 @@ Upload the Akismet plugin to your blog, Activate it.
 
 == Changelog ==
 
+= 1.1.2 =
+
+- Add campground url option
+
 = 1.1.1 =
 
 - Add a couple of beach and picnic features
@@ -65,6 +69,10 @@ Upload the Akismet plugin to your blog, Activate it.
 - Initial version.
 
 == Upgrade Notice ==
+
+= 1.1.2 =
+
+No changes required, just added an option
 
 = 1.1.1 =
 

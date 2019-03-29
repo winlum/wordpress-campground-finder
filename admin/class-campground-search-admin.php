@@ -4,7 +4,7 @@
  * The admin-specific functionality of the plugin.
  *
  * @link       https://winlum.com
- * @since      1.1.0
+ * @since      1.1.2
  *
  * @package    Campground_Search
  * @subpackage Campground_Search/admin
@@ -62,6 +62,7 @@ class Campground_Search_Admin {
 					'type' => 'numeric',
 				),
 				'reservation_url' => array(),
+				'url' => array(),
 			),
 		),
 		'geo' => array(

@@ -4,7 +4,7 @@
  * Provide a admin area view for the plugin meta box.
  *
  * @link       https://winlum.com
- * @since      1.1.0
+ * @since      1.1.2
  *
  * @package    Campground_Search
  * @subpackage Campground_Search/admin/partials
@@ -224,6 +224,19 @@ $near_to_choices = array_map(
             placeholder="https://reservation.url"
             type="url"
             value="<?php echo esc_attr( $reservation_url ); ?>"
+        >
+    </div>
+
+    <div class="field">
+        <label for="<?php echo Campground_Search_Util::prefix_css_string( 'url' ); ?>">
+			<?php _e( 'URL', Campground_Search_Const::TEXT_DOMAIN ); ?>
+		</label>
+        <input
+            id="<?php echo Campground_Search_Util::prefix_css_string( 'url' ); ?>"
+            name="<?php echo $field_key; ?>[url]"
+            placeholder="https://campground.url"
+            type="url"
+            value="<?php echo esc_attr( $url ); ?>"
         >
     </div>
 </div>

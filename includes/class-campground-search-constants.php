@@ -4,7 +4,7 @@
  * Class of constants
  *
  * @link       https://winlum.com
- * @since      1.1.1
+ * @since      1.1.2
  *
  * @package    Campground_Search
  * @subpackage Campground_Search/includes
@@ -200,6 +200,7 @@ final class Campground_Search_Const {
                 'field' => 'Field',
                 'groups' => 'Available for Groups',
                 'hookups' => 'Hookups',
+                'lake' => 'By Lake',
                 'marina' => 'Marina',
                 'mountains' => 'By Mountains',
                 'picnic' => 'Picnic Area',
