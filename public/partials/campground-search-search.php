@@ -23,17 +23,6 @@ get_header();
         <div class="query-info">
             <?php _e( sprintf( 'We found %d campgrounds matching your criteria.', $wp_query->found_posts ) ); ?>
         </div>
-        <?php
-            the_posts_pagination(
-                array(
-                    'mid_size' => 2,
-                    'prev_text' => '<span>' .
-                        __( 'Previous', Campground_Search_Const::TEXT_DOMAIN ) . '</span>',
-                    'next_text' => '<span>' .
-                        __( 'Next', Campground_Search_Const::TEXT_DOMAIN ) . '</span>',
-                )
-            );
-        ?>
         <div class="<?php echo Campground_Search_Util::prefix_css_string('search-container'); ?>">
             <?php while ( have_posts() ) : the_post(); ?>
             <?php
