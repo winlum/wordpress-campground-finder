@@ -245,15 +245,13 @@ $activities = get_query_var( 'activity', array() );
 
     <div class="actions">
         <button type="reset">
-            <span class="dashicons-before dashicons-undo">
-                <?php _e( 'Reset', Campground_Search_Const::TEXT_DOMAIN ); ?>
-            <span>
+            <i class="fas fa-undo"></i>
+            <?php _e( 'Reset', Campground_Search_Const::TEXT_DOMAIN ); ?>
         </button>
 
         <button type="submit">
-            <span class="dashicons-before dashicons-search">
-                <?php _e( 'Search', Campground_Search_Const::TEXT_DOMAIN ); ?>
-            <span>
+            <i class="fas fa-search"></i>
+            <?php _e( 'Search', Campground_Search_Const::TEXT_DOMAIN ); ?>
         </button>
     </div>
 </form>

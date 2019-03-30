@@ -81,6 +81,10 @@
  * Search
  */
 
+ .wl-camps-search {
+     margin: 1em;
+ }
+
  .wl-camps-search .nav-links {
     margin: 1em auto;
     text-align: right;
@@ -111,9 +115,10 @@
     text-align: center;
 }
 
-.wl-camps-search article,
-.wl-camps-search article header {
+.wl-camps-search article {
     border-radius: 0.5em;
+    border-style: solid;
+    border-width: 1px;
 }
 
 .wl-camps-search article footer,
@@ -123,13 +128,12 @@
 }
 
 .wl-camps-search article header {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
 }
 
-.wl-camps-search article header h2 {
-    margin: initial;
+.wl-camps-search article header .toolbar {
+    margin-right: 1rem;
 }
 
 .wl-camps-search article .field,
@@ -174,7 +178,4 @@
     display: inline-block;
     margin: 0.2em;
     padding: 0.1em;
-}
-
-.wl-camps-search nav.pagination {
 }

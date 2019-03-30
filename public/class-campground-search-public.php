@@ -96,6 +96,8 @@ class Campground_Search_Public {
 		wp_register_style( 'jquery-ui', 'https://code.jquery.com/ui/' . $jquery_ui_ver . '/themes/' . $jquery_ui_theme . '/jquery-ui.min.css' );
 		wp_enqueue_style( 'jquery-ui' );
 
+		wp_enqueue_style( 'font-awesome-5', 'https://use.fontawesome.com/releases/v5.8.1/css/all.css', array(), '5.8.1' );
+
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/campground-search-public.css', array(), $this->version, 'all' );
 
 		// if a theme is set add its respective stylesheet
@@ -139,6 +141,25 @@ class Campground_Search_Public {
 		wp_enqueue_script( 'jquery-ui-datepicker' );
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/campground-search-public.js', array( 'jquery' ), $this->version, false );
+
+	}
+
+	/**
+	 * Adds stylesheet attributes, where applicable.
+	 *
+	 * @author   WinLum Inc.
+	 * @since    1.2.0
+	 * @param    string    $html           The html for the stylesheet link.
+	 * @param    string    $handle         An array of registered query vars.
+	 * @return   string
+	 */
+	public function add_style_attributes( $html, $handle ) {
+
+		if ( 'font-awesome-5' === $handle ) {
+			return str_replace( "media='all'", "media='all' integrity='sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf' crossorigin='anonymous'", $html );
+		}
+
+		return $html;
 
 	}
 

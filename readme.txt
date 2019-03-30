@@ -58,6 +58,7 @@ Upload the Akismet plugin to your blog, Activate it.
 - Use geo elevation for search
 - Update search layout
 - Add theme
+- Add icons, where applicable
 
 = 1.1.2 =
 

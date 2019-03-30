@@ -572,7 +572,7 @@ class Campground_Search_Admin {
 	 * Registers the provided taxonomy with WP. Will create terms if provided.
 	 *
 	 * @author   WinLum Inc.
-	 * @since    1.0.0
+	 * @since    1.2.0
 	 * @access   private
 	 * @param    string    $taxonomy       The taxonomy name.
 	 * @param    array     $meta           Singular/plural text and terms.
@@ -625,7 +625,8 @@ class Campground_Search_Admin {
 		if ( is_array( $meta['terms'] ) ) {
 			foreach ( $meta['terms'] as $key => $val ) {
 				if ( ! term_exists( $val, $taxonomy ) ) {
-					$term_id = wp_insert_term( $val, $taxonomy, array( 'slug' => $key ) );
+					$term_name = ( is_array( $val ) ? $val['name'] : $val );
+					$term_id = wp_insert_term( $term_name, $taxonomy, array( 'slug' => $key ) );
 				}
 			}
 		}

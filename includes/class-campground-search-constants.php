@@ -176,50 +176,96 @@ final class Campground_Search_Const {
 
     public static $taxonomies = array(
         'activity' => array(
-            'singular' => 'Activity',
             'plural' => 'Activities',
+            'singular' => 'Activity',
             'terms' => array(
-                'boating' => 'Boating',
-                'fishing' => 'Fishing',
-                'hiking' => 'Hiking',
-                'swimming' => 'Swimming',
+                'boating' => array(
+                    'icon' => 'fa-ship',
+                    'name' => 'Boating',
+                ),
+                'fishing' => array(
+                    'icon' => 'fa-fish',
+                    'name' => 'Fishing',
+                ),
+                'hiking' => array(
+                    'icon' => 'fa-hiking',
+                    'name' => 'Hiking',
+                ),
+                'swimming' => array(
+                    'icon' => 'fa-swimmer',
+                    'name' => 'Swimming',
+                ),
             ),
         ),
         'feature' => array(
-            'singular' => 'Feature',
             'plural' => 'Features',
+            'singular' => 'Feature',
             'terms' => array(
                 'ampitheatre' => 'Ampithreatre',
-                'beach' => 'Beach Area',
+                'beach' => array(
+                    'icon' => 'fa-beach',
+                    'name' => 'Beach Area',
+                ),
                 'bear_boxes' => 'Bear Boxes',
                 'boat_ramps' => 'Boat Ramps',
-                'cabins' => 'Cabins',
-                'camp_host' => 'Camp Host',
+                'cabins' => array(
+                    'icon' => 'fa-bed',
+                    'name' => 'Cabins',
+                ),
+                'camp_host' => array(
+                    'icon' => 'fa-grin',
+                    'name' => 'Camp Host',
+                ),
+                'drinking_water' => array(
+                    'icon' => 'fa-water',
+                    'name' => 'Drinking Water',
+                ),
                 'drinking_water' => 'Drinking Water',
-                'dump_station' => 'Sanitary Dump Station',
-                'equestrian_trail' => 'Equestrian Trail',
+                'dump_station' => array(
+                    'icon' => 'fa-dumpster',
+                    'name' => 'Sanitary Dump Station',
+                ),
+                'equestrian_trail' => array(
+                    'icon' => 'fa-horse',
+                    'name' => 'Equestrian Trail',
+                ),
                 'groups' => 'Available for Groups',
                 'hookups' => 'Hookups',
                 'lake' => 'By Lake',
                 'marina' => 'Marina',
-                'mountains' => 'By Mountains',
+                'mountains' => array(
+                    'icon' => 'fa-mountain',
+                    'name' => 'By Mountains',
+                ),
                 'picnic' => 'Picnic Area',
                 'playground' => 'Playground',
-                'reservable' => 'Reservable',
+                'reservable' => array(
+                    'icon' => 'fa-calendar',
+                    'name' => 'Reservable',
+                ),
                 'shoreline' => 'Shoreline',
                 'showers' => 'Showers',
-                'store' => 'Store',
+                'store' => array(
+                    'icon' => 'fa-store-alt',
+                    'name' => 'Store',
+                ),
                 'tents' => 'Tents',
                 'trailhead' => 'Trailhead',
                 'trailhead_atv' => 'ATV Trailhead',
-                'wheelchair_access' => 'Wheelchair Access',
+                'wheelchair_access' => array(
+                    'icon' => 'fa-wheelchair',
+                    'name' => 'Wheelchair Access',
+                ),
             ),
         ),
         'toilet' => array(
-            'singular' => 'Toilet',
             'plural' => 'Toilets',
+            'singular' => 'Toilet',
             'terms' => array(
-                'flush' => 'Flush',
+                'flush' => array(
+                    'icon' => 'fa-toilet',
+                    'name' => 'Flush',
+                ),
                 'vault' => 'Vault',
             ),
         ),

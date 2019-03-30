@@ -34,6 +34,10 @@ get_header();
 
                 $taxonomies = get_object_taxonomies( $post );
 
+                $district = is_array( $custom_fields[$field_key . '_district'] )
+                    ? $custom_fields[$field_key . '_district'][0]
+                    : null;
+
                 $near_to = is_array( $custom_fields[$field_key . '_near_to'] )
                     ? $custom_fields[$field_key . '_near_to'][0]
                     : null;
@@ -108,20 +112,22 @@ get_header();
             <article id="post-<?php the_ID(); ?>" <?php //post_class(); ?>>
                 <header>
                     <h2>
-                    <?php if ( empty( $reservation_url ) ) : ?>
+                    <?php if ( empty( $url ) ) : ?>
                         <?php echo get_the_title(); ?>
-                    <?php else : ?>
-                        <a href="<?php echo esc_url( $reservation_url ); ?>" rel="bookmark"><?php echo get_the_title(); ?></a>
-                    <?php endif; ?>
-                    <?php if ( ! empty( $near_to ) ) : ?>
-                    <span class="label">
-                        <?php _e( 'near', Campground_Search_Const::TEXT_DOMAIN ); ?>
-                        </span>
-                    <span class="value">
-                            <?php esc_html_e( $near_to, Campground_Search_Const::TEXT_DOMAIN ); ?>
-                        </span>
+                    <?php else: ?>
+                        <a href="<?php echo esc_url( $url ); ?>" rel="bookmark" title="View">
+                            <?php echo get_the_title(); ?>
+                        </a>
                     <?php endif; ?>
                     </h2>
+                    <div class="toolbar">
+                    <?php if ( ! empty( $reservation_url ) ) : ?>
+                        <a href="<?php echo esc_url( $url ); ?>"><i class="fas fa-campground"></i></a>
+                    <?php endif; ?>
+                    <?php if ( ! empty( $reservation_url ) ) : ?>
+                        <a href="<?php echo esc_url( $reservation_url ); ?>"><i class="fas fa-store"></i></a>
+                    <?php endif; ?>
+                    </div>
                 </header>
                 <?php if ( ! empty( get_the_excerpt( $post ) ) ) : ?>
                 <section class="excerpt">
@@ -129,9 +135,31 @@ get_header();
                 </section>
                 <?php endif; ?>
                 <section class="custom">
+                <?php if ( ! empty( $district ) ) : ?>
                     <div class="field">
                         <span class="label">
-                            <?php _e( 'Open', Campground_Search_Const::TEXT_DOMAIN ); ?>
+                            <?php _e( 'District', campground_search_const::TEXT_DOMAIN ); ?>
+                        </span>
+                        <span class="value">
+                            <?php esc_html_e( $district ); ?>
+                        </span>
+                    </div>
+                <?php endif; ?>
+
+                <?php if ( ! empty( $near_to ) ) : ?>
+                    <div class="field">
+                        <span class="label">
+                            <?php _e( 'Near', campground_search_const::TEXT_DOMAIN ); ?>
+                        </span>
+                        <span class="value">
+                            <?php esc_html_e( $near_to ); ?>
+                        </span>
+                    </div>
+                <?php endif; ?>
+
+                    <div class="field">
+                        <span class="label">
+                            <?php _e( 'Open', campground_search_const::TEXT_DOMAIN ); ?>
                         </span>
                         <span class="value">
                             <?php esc_html_e( $open ); ?>
@@ -188,18 +216,37 @@ get_header();
                 </section>
                 <footer>
                 <?php foreach ( $taxonomies as $taxonomy ) : ?>
+                    <?php
+                        $taxonomy_obj = Campground_Search_Const::$taxonomies[$taxonomy];
+                    ?>
                     <div class="taxonomy">
                         <span class="label">
-                            <?php echo Campground_Search_Const::$taxonomies[$taxonomy]['plural']; ?>
+                        <?php if ( array_key_exists( 'icon', $taxonomy_obj ) ) : ?>
+                            <i class="fas <?php echo $taxonomy_obj['icon']; ?>"></i>
+                        <?php endif; ?>
+                            <?php echo $taxonomy_obj['plural']; ?>
                         </span>
                         <ul class="value">
                         <?php $terms = get_the_terms( $post, $taxonomy ); if ( empty( $terms ) ) : ?>
-                            <li class="dashicons-before dashicons-thumbs-down">
+                            <li>
+                                <i class="fas fa-minus-square"></i>
                                 <?php _e( 'None', Campground_Search_Const::TEXT_DOMAIN ); ?>
                             </li>
                         <?php else : ?>
                             <?php foreach ( $terms as $term ) : ?>
-                            <li class="dashicons-before dashicons-thumbs-up"><?php esc_html_e( $term->name ); ?></li>
+                                <?php
+                                    $term_obj = $taxonomy_obj['terms'][$term->slug];
+                                    unset( $term_icon );
+                                    if ( is_array( $term_obj ) && array_key_exists( 'icon', $term_obj ) ) {
+                                        $term_icon = $term_obj['icon'];
+                                    }
+                                ?>
+                            <li>
+                            <?php if ( ! empty( $term_icon ) ) : ?>
+                                <i class="fas <?php echo $term_icon; ?>"></i>
+                            <?php endif; ?>
+                                <?php esc_html_e( $term->name ); ?>
+                            </li>
                             <? endforeach; ?>
                         <?php endif; ?>
                         </ul>
