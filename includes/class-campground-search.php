@@ -7,7 +7,7 @@
  * public-facing side of the site and the admin area.
  *
  * @link       https://winlum.com
- * @since      1.0.0
+ * @since      1.2.0
  *
  * @package    Campground_Search
  * @subpackage Campground_Search/includes
@@ -22,7 +22,7 @@
  * Also maintains the unique identifier of this plugin as well as the current
  * version of the plugin.
  *
- * @since      1.0.0
+ * @since      1.2.0
  * @package    Campground_Search
  * @subpackage Campground_Search/includes
  * @author     WinLum Inc.
@@ -64,14 +64,14 @@ class Campground_Search {
 	 * Load the dependencies, define the locale, and set the hooks for the admin area and
 	 * the public-facing side of the site.
 	 *
-	 * @since    1.1.0
+	 * @since    1.2.0
 	 */
 	public function __construct() {
 
 		if ( defined( 'CAMPGROUND_SEARCH_VERSION' ) ) {
 			$this->version = CAMPGROUND_SEARCH_VERSION;
 		} else {
-			$this->version = '1.1.0';
+			$this->version = '1.2.0';
 		}
 		$this->plugin_name = 'campground-search';
 

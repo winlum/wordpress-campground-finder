@@ -4,7 +4,7 @@
  * Class of constants
  *
  * @link       https://winlum.com
- * @since      1.1.2
+ * @since      1.2.0
  *
  * @package    Campground_Search
  * @subpackage Campground_Search/includes
@@ -50,11 +50,6 @@ final class Campground_Search_Const {
                     'type' => 'CHAR',
                 ),
             ),
-        ),
-        'general_elevation' => array(
-            'compare' => '>=',
-            'key' => 'elevation',
-            'type' => 'NUMERIC',
         ),
         'general_fees' => array(
             array(
@@ -172,6 +167,11 @@ final class Campground_Search_Const {
                 ),
             ),
         ),
+        'geo_elevation' => array(
+            'compare' => '>=',
+            'key' => 'elevation',
+            'type' => 'NUMERIC',
+        ),
     );
 
     public static $taxonomies = array(
@@ -189,6 +189,7 @@ final class Campground_Search_Const {
             'singular' => 'Feature',
             'plural' => 'Features',
             'terms' => array(
+                'ampitheatre' => 'Ampithreatre',
                 'beach' => 'Beach Area',
                 'bear_boxes' => 'Bear Boxes',
                 'boat_ramps' => 'Boat Ramps',
@@ -197,13 +198,13 @@ final class Campground_Search_Const {
                 'drinking_water' => 'Drinking Water',
                 'dump_station' => 'Sanitary Dump Station',
                 'equestrian_trail' => 'Equestrian Trail',
-                'field' => 'Field',
                 'groups' => 'Available for Groups',
                 'hookups' => 'Hookups',
                 'lake' => 'By Lake',
                 'marina' => 'Marina',
                 'mountains' => 'By Mountains',
                 'picnic' => 'Picnic Area',
+                'playground' => 'Playground',
                 'reservable' => 'Reservable',
                 'shoreline' => 'Shoreline',
                 'showers' => 'Showers',

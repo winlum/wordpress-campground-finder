@@ -4,7 +4,7 @@
  * Provide a admin area view for the plugin meta box.
  *
  * @link       https://winlum.com
- * @since      1.1.2
+ * @since      1.2.0
  *
  * @package    Campground_Search
  * @subpackage Campground_Search/admin/partials
@@ -71,19 +71,6 @@ $near_to_choices = array_map(
             </option>
             <?php endforeach; ?>
         </select>
-    </div>
-
-    <div class="field">
-        <label for="<?php echo Campground_Search_Util::prefix_css_string( 'elevation' ); ?>">
-			<?php _e( 'Elevation', Campground_Search_Const::TEXT_DOMAIN ); ?>
-		</label>
-        <input
-            id="<?php echo Campground_Search_Util::prefix_css_string( 'elevation' ); ?>"
-            name="<?php echo $field_key; ?>[elevation]"
-            placeholder=""
-            type="number"
-            value="<?php echo esc_attr( $elevation ); ?>"
-        >
     </div>
 
     <fieldset class="inline">

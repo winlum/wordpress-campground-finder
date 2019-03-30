@@ -2,68 +2,75 @@
  * All of the CSS for your public-facing functionality should be
  * included in this file.
  */
+
 /*
  * Searchform
  */
-.wl-camps-searchform {
-    max-width: 60rem;
-    margin: auto;
-}
 
-.wl-camps-searchform input[type="text"],
-.wl-camps-searchform input[type="email"],
-.wl-camps-searchform input[type="date"] {
-    height: 2.375rem;
+.wl-camps-searchform {
+    margin: auto;
+    padding: 1em;
 }
 
 .wl-camps-searchform .inline {
     display: flex;
     flex-direction: row nowrap;
 }
+.wl-camps-searchform fieldset {
+    border-radius: 0.25em;
+    border-style: solid;
+    border-width: 1px;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+}
+
+.wl-camps-searchform fieldset legend {
+    font-weight: bold;
+    margin: 0.5em auto;
+    size: 1.2em;
+}
+
+.wl-camps-searchform .inline {
+    display: flex;
+    flex-direction: row nowrap;
+    padding-left: 1em;
+    padding-right: 1em;
+}
 
 .wl-camps-searchform .inline .field {
     flex: 1;
+    margin-right: 1em;
 }
-
-.wl-camps-searchform .inline .field:first-of-type {
-    margin-right: 1rem;
+.wl-camps-searchform .inline .field:last-child {
+    margin-right: inherit;
 }
 
 .wl-camps-searchform .field {
     align-items: center;
     display: flex;
-    justify-content: space-between;
-    margin: 0.5rem auto;
+    margin-bottom: 0.5em;
 }
 
 .wl-camps-searchform .field label {
     flex: 1;
-    flex-wrap: nowrap;
-    order: 1;
+    margin-bottom: 0.2em;
+    margin-top: 0.2em;
+    padding-bottom: 0.2em;
+    padding-top: 0.2em;
 }
 
 .wl-camps-searchform .field input,
 .wl-camps-searchform .field select {
     flex: 2;
-    order: 2;
 }
 
-.wl-camps-searchform .field input[type=checkbox] {
-    flex: initial;
-}
-
-.wl-camps-searchform .field input:invalid,
-.wl-camps-searchform .field select:invalid {
-    border-color: red;
+.wl-camps-searchform .field input[type=checkbox],
+.wl-camps-searchform .field input[type=radio] {
+    flex: 0 1 auto;
 }
 
 .wl-camps-searchform .field select[multiple] {
     height: initial;
-}
-
-.wl-camps-searchform .field input:invalid+label,
-.wl-camps-searchform .field select:invalid+label {
-    color: rgba(255, 0, 0, 0.5);
 }
 
 .wl-camps-searchform .actions {
@@ -73,48 +80,49 @@
 /*
  * Search
  */
-.wl-camps-search {
-    max-width: 60rem;
-    margin: auto;
+
+ .wl-camps-search .nav-links {
+    margin: 1em auto;
+    text-align: right;
+}
+
+ .wl-camps-search .nav-links .page-numbers {
+    border-radius: 0.25em;
+    border-style: solid;
+    border-width: 1px;
+    display: inline-block;
+    line-height: 1;
+    margin: 0 0.1em 0 0;
+    padding: 0.25em 0.5em;
+    text-decoration: none;
+}
+
+.wl-camps-search .wl-camps-search-container {
+    align-items: stretch;
+    display: grid;
+    grid-gap: 1em;
+    grid-template-columns: repeat(auto-fill, minmax(20em, 1fr));
 }
 
 .wl-camps-search .query-info {
-    font-size: 1.5rem;
+    font-size: 1.5em;
     font-weight: bold;
-    margin: 2rem auto;
+    margin: 1em auto;
     text-align: center;
-}
-
-.wl-camps-search article {
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    margin: 2rem auto;
-}
-
-.wl-camps-search article:first-of-type {
-    margin-top: 0;
-}
-
-.wl-camps-search article:last-of-type {
-    margin-bottom: 0;
-}
-
-.wl-camps-search article:nth-of-type(odd) {
-    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .wl-camps-search article,
 .wl-camps-search article header {
-    border-radius: 0.5rem;
+    border-radius: 0.5em;
 }
 
 .wl-camps-search article footer,
 .wl-camps-search article header,
 .wl-camps-search article section {
-    padding: 0.5rem;
+    padding: 0.5em;
 }
 
 .wl-camps-search article header {
-    background-color: rgba(0, 0, 0, 0.1);
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     text-align: center;
@@ -129,10 +137,6 @@
     display: flex;
 }
 
-.wl-camps-search article .field:nth-of-type(even) {
-    background-color: rgba(0, 0, 0, 0.05);
-}
-
 .wl-camps-search article .field {
     align-items: center;
     justify-content: center;
@@ -142,7 +146,7 @@
 .wl-camps-search article footer .label {
     font-weight: bold;
     flex: 1;
-    margin-right: 1rem;
+    margin-right: 1em;
 }
 
 .wl-camps-search article .field .value,
@@ -166,11 +170,10 @@
 }
 
 .wl-camps-search article footer li {
-    background-color: rgba(0, 0, 0, 0.1);
-    border-radius: 0.2rem;
+    border-radius: 0.2em;
     display: inline-block;
-    margin: 0.2rem;
-    padding: 0.1rem;
+    margin: 0.2em;
+    padding: 0.1em;
 }
 
 .wl-camps-search nav.pagination {

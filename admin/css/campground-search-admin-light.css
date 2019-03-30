@@ -1,0 +1,21 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+
+.wl-camps-meta-box fieldset {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.wl-camps-meta-box input:invalid,
+.wl-camps-meta-box select:invalid,
+.wl-camps-meta-box textarea:invalid {
+    border-color: rgba(255, 0, 0, 0.5);
+}
+
+.wl-camps-meta-box .field label + input:invalid,
+.wl-camps-meta-box .field label + select:invalid,
+.wl-camps-meta-box .field label + textarea:invalid {
+    color: rgba(255, 0, 0, 0.5);
+}

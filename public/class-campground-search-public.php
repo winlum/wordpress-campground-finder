@@ -4,7 +4,7 @@
  * The public-facing functionality of the plugin.
  *
  * @link       https://winlum.com
- * @since      1.0.0
+ * @since      1.2.0
  *
  * @package    Campground_Search
  * @subpackage Campground_Search/public
@@ -57,7 +57,7 @@ class Campground_Search_Public {
 	/**
 	 * Register the stylesheets for the public-facing side of the site.
 	 *
-	 * @since    1.0.0
+	 * @since    1.2.0
 	 * @param    string    $hook           A screen id to filter the current admin page.
 	 */
 	public function enqueue_styles( $hook ) {
@@ -72,18 +72,42 @@ class Campground_Search_Public {
 		 * The Campground_Search_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
-		 * 
+		 *
 		 * You can use the $hook parameter to filter for a particular admin page,
 		 * for more information see the codex,
 		 * https://codex.wordpress.org/Plugin_API/Action_Reference/admin_enqueue_scripts
 		 */
 
-		// get styling for the datepicker. linknng to cloud hosted jQuery UI CSS
+		// get the theme from settings
+		$options = get_option( Campground_Search_Const::SETTINGS );
+		$theme = $options[Campground_Search_Util::prefix_string( 'theme' )];
+
+		// get styling for the datepicker--linking to cloud hosted jQuery UI CSS
 		$wp_scripts = wp_scripts();
-		wp_register_style( 'jquery-ui', 'https://code.jquery.com/ui/' . $wp_scripts->registered['jquery-ui-core']->ver . '/themes/smoothness/jquery-ui.css' );
+		$jquery_ui_ver = $wp_scripts->registered['jquery-ui-core']->ver;
+
+		$jquery_ui_theme = 'smoothness';
+		if ( $theme === 'dark' ) {
+			$jquery_ui_theme = 'ui-darkness';
+		} else if ( $theme === 'light' ) {
+			$jquery_ui_theme = 'ui-lightness';
+		}
+
+		wp_register_style( 'jquery-ui', 'https://code.jquery.com/ui/' . $jquery_ui_ver . '/themes/' . $jquery_ui_theme . '/jquery-ui.min.css' );
 		wp_enqueue_style( 'jquery-ui' );
 
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/campground-search-public.css', array(), $this->version, 'all' );
+
+		// if a theme is set add its respective stylesheet
+		if ( $theme !== '' ) {
+			wp_enqueue_style(
+				$this->plugin_name . '-' . $theme,
+				plugin_dir_url( __FILE__ ) . 'css/campground-search-public-' . $theme . '.css',
+				array(),
+				$this->version,
+				'all'
+			);
+		}
 
 	}
 
@@ -105,7 +129,7 @@ class Campground_Search_Public {
 		 * The Campground_Search_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
-		 * 
+		 *
 		 * You can use the $hook parameter to filter for a particular admin page,
 		 * for more information see the codex,
 		 * https://codex.wordpress.org/Plugin_API/Action_Reference/admin_enqueue_scripts
@@ -122,13 +146,18 @@ class Campground_Search_Public {
 	 * Renders the search form shortcode.
 	 *
 	 * @author   WinLum Inc.
-	 * @since    1.0.0
+	 * @since    1.2.0
 	 * @param    array     $atts           An array of attributes provided to the shortcode.
 	 * @param    string    $content        Any text provided in the shortcode "body".
 	 * @return   string
 	 */
 	public function display_search_form( $atts, $content = null ) {
 		$options = get_option( Campground_Search_Const::SETTINGS );
+		$district_choices = array_map(
+			'trim',
+			explode( "\n", $options[Campground_Search_Util::prefix_string( 'district' )] )
+		);
+
 		$near_to_choices = array_map(
 			'trim',
 			explode( "\n", $options[Campground_Search_Util::prefix_string( 'near_to' )] )
@@ -187,7 +216,7 @@ class Campground_Search_Public {
 				: $query_val;
 
 			$array = ( key_exists( 'query', $var ) ) ? $var['query'] : $var;
-			
+
 			$meta_query[] = $this->recurse_query_array( $array, '_' . $query_key, $var_val );
 		}
 
@@ -202,7 +231,7 @@ class Campground_Search_Public {
 		// override the default orderby as post date DESC doesn't make sense
 		$query->set( 'orderby', array( 'post_title' => 'ASC' ) );
 	}
-	
+
 	/**
 	 * Register the query variables for the search form.
 	 *
@@ -235,7 +264,7 @@ class Campground_Search_Public {
 		if ( is_search() && is_post_type_archive( Campground_Search_Const::POST_TYPE ) ) {
 			$theme_file = get_stylesheet_directory() . 'search-';
 			$theme_file .= Campground_Search_Const::POST_TYPE . '.php';
-			
+
 			if ( file_exists( $theme_file ) ) {
 				return $theme_file;
 			}
@@ -282,7 +311,7 @@ class Campground_Search_Public {
 		if ( key_exists( 'key', $output ) && ! key_exists( 'value', $output ) ) {
 			$output['value'] = $val;
 		}
-		
+
 		return $output;
 	}
 

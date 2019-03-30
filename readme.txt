@@ -51,6 +51,14 @@ Upload the Akismet plugin to your blog, Activate it.
 
 == Changelog ==
 
+= 1.2.0 =
+
+- Remove general elevation option, in lieu of geo elevation option
+- Add district to search form
+- Use geo elevation for search
+- Update search layout
+- Add theme
+
 = 1.1.2 =
 
 - Add campground url option
@@ -69,6 +77,10 @@ Upload the Akismet plugin to your blog, Activate it.
 - Initial version.
 
 == Upgrade Notice ==
+
+= 1.2.0 =
+
+General elevation was removed, use geo elevation
 
 = 1.1.2 =
 

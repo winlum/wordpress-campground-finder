@@ -4,7 +4,7 @@
  * The admin-specific functionality of the plugin.
  *
  * @link       https://winlum.com
- * @since      1.1.2
+ * @since      1.2.0
  *
  * @package    Campground_Search
  * @subpackage Campground_Search/admin
@@ -28,8 +28,17 @@ class Campground_Search_Admin {
 			'priority' => 'high',
 			'fields' => array(
 				'district' => array(),
+				'fees' => array(
+					'type' => 'numeric',
+				),
+				'max_length' => array(
+					'type' => 'numeric',
+				),
 				'near_to' => array(),
-				'elevation' => array(
+				'num_sites' => array(
+					'type' => 'numeric',
+				),
+				'num_group_sites' => array(
 					'type' => 'numeric',
 				),
 				'open_from' => array(
@@ -40,6 +49,8 @@ class Campground_Search_Admin {
 					'message' => '"Open To" has an invalid date',
 					'type' => 'date',
 				),
+				'reservation_url' => array(),
+				'url' => array(),
 				'water_available' => array(),
 				'water_from' => array(
 					'message' => '"Water From" has an invalid date',
@@ -49,20 +60,6 @@ class Campground_Search_Admin {
 					'message' => '"Water To" has an invalid date',
 					'type' => 'date',
 				),
-				'max_length' => array(
-					'type' => 'numeric',
-				),
-				'fees' => array(
-					'type' => 'numeric',
-				),
-				'num_sites' => array(
-					'type' => 'numeric',
-				),
-				'num_group_sites' => array(
-					'type' => 'numeric',
-				),
-				'reservation_url' => array(),
-				'url' => array(),
 			),
 		),
 		'geo' => array(
@@ -70,13 +67,13 @@ class Campground_Search_Admin {
 			'priority' => 'high',
 			'fields' => array(
 				'address' => array(),
-				'longitude' => array(
+				'elevation' => array(
 					'type' => 'numeric',
 				),
 				'latitude' => array(
 					'type' => 'numeric',
 				),
-				'elevation' => array(
+				'longitude' => array(
 					'type' => 'numeric',
 				),
 			),
@@ -119,7 +116,7 @@ class Campground_Search_Admin {
 	/**
 	 * Register the stylesheets for the admin area.
 	 *
-	 * @since    1.0.0
+	 * @since    1.2.0
 	 */
 	public function enqueue_styles() {
 
@@ -135,12 +132,36 @@ class Campground_Search_Admin {
 		 * class.
 		 */
 
-		// get styling for the datepicker. linknng to cloud hosted jQuery UI CSS
+		// get the theme from settings
+		$options = get_option( Campground_Search_Const::SETTINGS );
+		$theme = $options[Campground_Search_Util::prefix_string( 'theme' )];
+
+		// get styling for the datepicker--linking to cloud hosted jQuery UI CSS
 		$wp_scripts = wp_scripts();
-		wp_register_style( 'jquery-ui', 'https://code.jquery.com/ui/' . $wp_scripts->registered['jquery-ui-core']->ver . '/themes/smoothness/jquery-ui.css' );
+		$jquery_ui_ver = $wp_scripts->registered['jquery-ui-core']->ver;
+
+		$jquery_ui_theme = 'smoothness';
+		if ( $theme === 'dark' ) {
+			$jquery_ui_theme = 'ui-darkness';
+		} else if ( $theme === 'light' ) {
+			$jquery_ui_theme = 'ui-lightness';
+		}
+
+		wp_register_style( 'jquery-ui', 'https://code.jquery.com/ui/' . $jquery_ui_ver . '/themes/' . $jquery_ui_theme . '/jquery-ui.min.css' );
 		wp_enqueue_style( 'jquery-ui' );
 
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/campground-search-admin.css', array(), $this->version, 'all' );
+
+		// if a theme is set add its respective stylesheet
+		if ( $theme !== '' ) {
+			wp_enqueue_style(
+				$this->plugin_name . '-' . $theme,
+				plugin_dir_url( __FILE__ ) . 'css/campground-search-admin-' . $theme . '.css',
+				array(),
+				$this->version,
+				'all'
+			);
+		}
 
 	}
 
@@ -200,7 +221,7 @@ class Campground_Search_Admin {
      * Registers the settings with WP.
      *
 	 * @author   WinLum Inc.
-	 * @since    1.1.0
+	 * @since    1.2.0
      */
 	public function create_settings() {
 		register_setting( Campground_Search_Const::OPTION_GROUP, Campground_Search_Const::SETTINGS );
@@ -212,6 +233,14 @@ class Campground_Search_Admin {
 			__( 'Settings', Campground_Search_Const::TEXT_DOMAIN ),
 			array( $this, 'display_settings_section' ),
 			Campground_Search_Const::OPTION_GROUP
+		);
+
+		add_settings_field(
+			Campground_Search_Const::PREFIX . '_theme',
+			__( 'The theme to use (use none if you do not want a theme)', Campground_Search_Const::TEXT_DOMAIN ),
+			array( $this, 'display_setting_theme' ),
+			Campground_Search_Const::OPTION_GROUP,
+			$section_name
 		);
 
 		add_settings_field(
@@ -233,6 +262,18 @@ class Campground_Search_Admin {
 
 	public function display_settings_section() {
 		// _e( 'Settings Description', Campground_Search_Const::TEXT_DOMAIN );
+	}
+
+	public function display_setting_theme() {
+		$options = get_option( Campground_Search_Const::SETTINGS );
+		$field_name = Campground_Search_Const::PREFIX . '_theme';
+		$theme = $options[$field_name];
+		$name = Campground_Search_Const::SETTINGS . '[' . $field_name . ']';
+		echo '<select name="' . $name . '">';
+		echo '	<option value=""' . ( !$theme || $theme === '' ? ' selected' : '') . '>None</option>';
+		echo '	<option value="dark"' . ( $theme === 'dark' ? ' selected' : '') . '>Dark</option>';
+		echo '	<option value="light"' . ( $theme === 'light' ? ' selected' : '') . '>Light</option>';
+		echo '</select>';
 	}
 
 	public function display_setting_district() {

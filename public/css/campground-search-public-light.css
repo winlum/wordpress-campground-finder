@@ -1,0 +1,48 @@
+/**
+ * Color specific styles
+ */
+
+/*
+ * Searchform
+ */
+
+.wl-camps-searchform fieldset {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.wl-camps-searchform .field input:invalid,
+.wl-camps-searchform .field select:invalid,
+.wl-camps-searchform .field textarea:invalid {
+    border-color: rgba(255, 0, 0, 0.5);
+}
+
+.wl-camps-searchform .field label + input:invalid,
+.wl-camps-searchform .field label + select:invalid,
+.wl-camps-searchform .field label + textarea:invalid {
+    color: rgba(255, 0, 0, 0.5);
+}
+
+/*
+ * Search
+ */
+
+.wl-camps-search article {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.wl-camps-search article:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.wl-camps-search article header {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.wl-camps-search article .field:nth-of-type(even) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.wl-camps-search article footer li {
+    background-color: rgba(0, 0, 0, 0.1);
+}

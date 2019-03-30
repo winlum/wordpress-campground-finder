@@ -4,18 +4,19 @@
  * Provide a public-facing view for the plugin's search form.
  *
  * @link       https://winlum.com
- * @since      1.0.0
+ * @since      1.2.0
  *
  * @package    Campground_Search
  * @subpackage Campground_Search/public/partials
  */
 
+$district = get_query_var( Campground_Search_Util::prefix_string( 'general_district' ) );
 $near_to = get_query_var( Campground_Search_Util::prefix_string( 'general_near_to' ) );
 
 $open_from = get_query_var( Campground_Search_Util::prefix_string( 'general_open_from' ) );
 $open_to = get_query_var( Campground_Search_Util::prefix_string( 'general_open_to' ) );
 
-$elevation = get_query_var( Campground_Search_Util::prefix_string( 'general_elevation' ) );
+$elevation = get_query_var( Campground_Search_Util::prefix_string( 'geo_elevation' ) );
 $max_length = get_query_var( Campground_Search_Util::prefix_string( 'general_max_length' ) );
 $fees = get_query_var( Campground_Search_Util::prefix_string( 'general_fees' ) );
 
@@ -44,23 +45,48 @@ $activities = get_query_var( 'activity', array() );
     <input name="sentence" type="hidden" value="1">
 
     <div class="field">
+        <label for="s">
+            <?php _e( 'Search', Campground_Search_Const::TEXT_DOMAIN ); ?>
+        </label>
         <input
             id="s"
             name="s"
             placeholder="Search by name..."
             value="<?php get_search_query(); ?>"
         >
-        <label for="s">
-            <?php _e( 'Search', Campground_Search_Const::TEXT_DOMAIN ); ?>
-        </label>
     </div>
 
     <div class="field">
+        <label for="<?php echo Campground_Search_Util::prefix_string( 'general_district' ); ?>">
+            <?php _e( 'District', Campground_Search_Const::TEXT_DOMAIN ); ?>
+        </label>
+        <select
+            id="<?php echo Campground_Search_Util::prefix_string( 'general_district' ); ?>"
+            name="<?php echo Campground_Search_Util::prefix_string( 'general_district' ); ?>"
+        >
+            <option <?php if ( empty( $district ) ) echo 'selected'; ?> value="">
+                <?php _e( 'All', Campground_Search_Const::TEXT_DOMAIN ); ?>
+            </option>
+            <?php foreach ( $district_choices as $choice ) : ?>
+            <option
+                <?php if ( $district == $choice ) echo 'selected'; ?>
+                value="<?php esc_attr_e( $choice, Campground_Search_Const::TEXT_DOMAIN ); ?>"
+            >
+                <?php _e( $choice, Campground_Search_Const::TEXT_DOMAIN ); ?>
+            </option>
+            <?php endforeach; ?>
+        </select>
+    </div>
+
+    <div class="field">
+        <label for="<?php echo Campground_Search_Util::prefix_string( 'general_near_to' ); ?>">
+            <?php _e( 'Nearest To', Campground_Search_Const::TEXT_DOMAIN ); ?>
+        </label>
         <select
             id="<?php echo Campground_Search_Util::prefix_string( 'general_near_to' ); ?>"
             name="<?php echo Campground_Search_Util::prefix_string( 'general_near_to' ); ?>"
         >
-            <option <?php if ( empty( $near_to ) ) echo 'selected'; ?> value="-1">
+            <option <?php if ( empty( $near_to ) ) echo 'selected'; ?> value="">
                 <?php _e( 'All', Campground_Search_Const::TEXT_DOMAIN ); ?>
             </option>
             <?php foreach ( $near_to_choices as $choice ) : ?>
@@ -72,15 +98,15 @@ $activities = get_query_var( 'activity', array() );
             </option>
             <?php endforeach; ?>
         </select>
-        <label for="<?php echo Campground_Search_Util::prefix_string( 'general_near_to' ); ?>">
-            <?php _e( 'Nearest To', Campground_Search_Const::TEXT_DOMAIN ); ?>
-        </label>
     </div>
 
     <fieldset class="inline">
         <legend><?php _e( 'Open', Campground_Search_Const::TEXT_DOMAIN ); ?></legend>
 
         <div class="field">
+            <label for="<?php echo Campground_Search_Util::prefix_string( 'general_open_from' ); ?>">
+                <?php _e( 'From', Campground_Search_Const::TEXT_DOMAIN ); ?>
+            </label>
             <input
                 id="<?php echo Campground_Search_Util::prefix_string( 'general_open_from' ); ?>"
                 name="<?php echo Campground_Search_Util::prefix_string( 'general_open_from' ); ?>"
@@ -88,12 +114,12 @@ $activities = get_query_var( 'activity', array() );
                 type="date"
                 value="<?php echo $open_from; ?>"
             >
-            <label for="<?php echo Campground_Search_Util::prefix_string( 'general_open_from' ); ?>">
-                <?php _e( 'From', Campground_Search_Const::TEXT_DOMAIN ); ?>
-            </label>
         </div>
 
         <div class="field">
+            <label for="<?php echo Campground_Search_Util::prefix_string( 'general_open_to' ); ?>">
+                <?php _e( 'To', Campground_Search_Const::TEXT_DOMAIN ); ?>
+            </label>
             <input
                 id="<?php echo Campground_Search_Util::prefix_string( 'general_open_to' ); ?>"
                 name="<?php echo Campground_Search_Util::prefix_string( 'general_open_to' ); ?>"
@@ -101,27 +127,27 @@ $activities = get_query_var( 'activity', array() );
                 type="date"
                 value="<?php echo $open_to; ?>"
             >
-            <label for="<?php echo Campground_Search_Util::prefix_string( 'general_open_to' ); ?>">
-                <?php _e( 'To', Campground_Search_Const::TEXT_DOMAIN ); ?>
-            </label>
         </div>
     </fieldset>
 
     <div class="field">
+        <label for="<?php echo Campground_Search_Util::prefix_string( 'geo_elevation' ); ?>">
+            <?php _e( 'Minimum Elevation', Campground_Search_Const::TEXT_DOMAIN ); ?>
+        </label>
         <input
-            id="<?php echo Campground_Search_Util::prefix_string( 'general_elevation' ); ?>"
-            name="<?php echo Campground_Search_Util::prefix_string( 'general_elevation' ); ?>"
+            id="<?php echo Campground_Search_Util::prefix_string( 'geo_elevation' ); ?>"
+            name="<?php echo Campground_Search_Util::prefix_string( 'geo_elevation' ); ?>"
             step="1"
             placeholder="0"
             type="number"
             value="<?php echo $elevation; ?>"
         >
-        <label for="<?php echo Campground_Search_Util::prefix_string( 'general_elevation' ); ?>">
-            <?php _e( 'Minimum Elevation', Campground_Search_Const::TEXT_DOMAIN ); ?>
-        </label>
     </div>
 
     <div class="field">
+        <label for="<?php echo Campground_Search_Util::prefix_string( 'general_max_length' ); ?>">
+            <?php _e( 'Average Maximum Length', Campground_Search_Const::TEXT_DOMAIN ); ?>
+        </label>
         <input
             id="<?php echo Campground_Search_Util::prefix_string( 'general_max_length' ); ?>"
             min="0"
@@ -131,12 +157,12 @@ $activities = get_query_var( 'activity', array() );
             type="number"
             value="<?php echo $max_length; ?>"
         >
-        <label for="<?php echo Campground_Search_Util::prefix_string( 'general_max_length' ); ?>">
-            <?php _e( 'Average Maximum Length', Campground_Search_Const::TEXT_DOMAIN ); ?>
-        </label>
     </div>
 
     <div class="field">
+        <label for="<?php echo Campground_Search_Util::prefix_string( 'general_fees' ); ?>">
+            <?php _e( 'Maximum Fees', Campground_Search_Const::TEXT_DOMAIN ); ?>
+        </label>
         <input
             id="<?php echo Campground_Search_Util::prefix_string( 'general_fees' ); ?>"
             min="0"
@@ -146,13 +172,13 @@ $activities = get_query_var( 'activity', array() );
             type="number"
             value="<?php echo $fees; ?>"
         >
-        <label for="<?php echo Campground_Search_Util::prefix_string( 'general_fees' ); ?>">
-            <?php _e( 'Maximum Fees', Campground_Search_Const::TEXT_DOMAIN ); ?>
-        </label>
     </div>
 
     <?php if ( is_array( $toilet ) ) : ?>
     <div class="field">
+        <label for="<?php echo Campground_Search_Util::prefix_string( 'general_toilet' ); ?>">
+            <?php _e( 'Toilets', Campground_Search_Const::TEXT_DOMAIN ); ?>
+        </label>
         <select
             id="<?php echo Campground_Search_Util::prefix_string( 'general_toilet' ); ?>"
             multiple
@@ -168,14 +194,14 @@ $activities = get_query_var( 'activity', array() );
             </option>
             <?php endforeach; ?>
         </select>
-        <label for="<?php echo Campground_Search_Util::prefix_string( 'general_toilet' ); ?>">
-            <?php _e( 'Toilets', Campground_Search_Const::TEXT_DOMAIN ); ?>
-        </label>
     </div>
     <?php endif; ?>
 
     <?php if ( is_array( $feature ) ) : ?>
     <div class="field">
+        <label for="<?php echo Campground_Search_Util::prefix_string( 'general_feature' ); ?>">
+            <?php _e( 'Features', Campground_Search_Const::TEXT_DOMAIN ); ?>
+        </label>
         <select
             id="<?php echo Campground_Search_Util::prefix_string( 'general_feature' ); ?>"
             multiple
@@ -191,14 +217,14 @@ $activities = get_query_var( 'activity', array() );
             </option>
             <?php endforeach; ?>
         </select>
-        <label for="<?php echo Campground_Search_Util::prefix_string( 'general_feature' ); ?>">
-            <?php _e( 'Features', Campground_Search_Const::TEXT_DOMAIN ); ?>
-        </label>
     </div>
     <?php endif; ?>
 
     <?php if ( is_array( $activity ) ) : ?>
     <div class="field">
+        <label for="<?php echo Campground_Search_Util::prefix_string( 'general_activity' ); ?>">
+            <?php _e( 'Activities', Campground_Search_Const::TEXT_DOMAIN ); ?>
+        </label>
         <select
             id="<?php echo Campground_Search_Util::prefix_string( 'general_activity' ); ?>"
             multiple
@@ -214,9 +240,6 @@ $activities = get_query_var( 'activity', array() );
             </option>
             <?php endforeach; ?>
         </select>
-        <label for="<?php echo Campground_Search_Util::prefix_string( 'general_activity' ); ?>">
-            <?php _e( 'Activities', Campground_Search_Const::TEXT_DOMAIN ); ?>
-        </label>
     </div>
     <?php endif; ?>
 

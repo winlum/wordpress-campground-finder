@@ -4,7 +4,7 @@
  * Provide a admin area view for the plugin meta box.
  *
  * @link       https://winlum.com
- * @since      1.1.0
+ * @since      1.2.0
  *
  * @package    Campground_Search
  * @subpackage Campground_Search/admin/partials
@@ -27,16 +27,16 @@
     </div>
 
     <div class="field">
-        <label for="<?php echo Campground_Search_Util::prefix_css_string( 'longitude' ); ?>">
-			<?php _e( 'Longitude', Campground_Search_Const::TEXT_DOMAIN ); ?>
+        <label for="<?php echo Campground_Search_Util::prefix_css_string( 'elevation' ); ?>">
+			<?php _e( 'Elevation', Campground_Search_Const::TEXT_DOMAIN ); ?>
 		</label>
         <input
-            id="<?php echo Campground_Search_Util::prefix_css_string( 'longitude' ); ?>"
-            name="<?php echo $field_key; ?>[longitude]"
-            placeholder="0.00000000000001"
-            step="0.00000000000001"
+            id="<?php echo Campground_Search_Util::prefix_css_string( 'elevation' ); ?>"
+            name="<?php echo $field_key; ?>[elevation]"
+            placeholder=""
+            step="0.001"
             type="number"
-            value="<?php echo esc_attr( $longitude ); ?>"
+            value="<?php echo esc_attr( $elevation ); ?>"
         >
     </div>
 
@@ -55,16 +55,16 @@
     </div>
 
     <div class="field">
-        <label for="<?php echo Campground_Search_Util::prefix_css_string( 'elevation' ); ?>">
-			<?php _e( 'Elevation', Campground_Search_Const::TEXT_DOMAIN ); ?>
+        <label for="<?php echo Campground_Search_Util::prefix_css_string( 'longitude' ); ?>">
+			<?php _e( 'Longitude', Campground_Search_Const::TEXT_DOMAIN ); ?>
 		</label>
         <input
-            id="<?php echo Campground_Search_Util::prefix_css_string( 'elevation' ); ?>"
-            name="<?php echo $field_key; ?>[elevation]"
-            placeholder=""
-            step="0.001"
+            id="<?php echo Campground_Search_Util::prefix_css_string( 'longitude' ); ?>"
+            name="<?php echo $field_key; ?>[longitude]"
+            placeholder="0.00000000000001"
+            step="0.00000000000001"
             type="number"
-            value="<?php echo esc_attr( $elevation ); ?>"
+            value="<?php echo esc_attr( $longitude ); ?>"
         >
     </div>
 </div>
