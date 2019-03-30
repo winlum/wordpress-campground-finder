@@ -624,8 +624,8 @@ class Campground_Search_Admin {
 
 		if ( is_array( $meta['terms'] ) ) {
 			foreach ( $meta['terms'] as $key => $val ) {
-				if ( ! term_exists( $val, $taxonomy ) ) {
-					$term_name = ( is_array( $val ) ? $val['name'] : $val );
+				$term_name = ( is_array( $val ) ? $val['name'] : $val );
+				if ( ! term_exists( $term_name, $taxonomy ) ) {
 					$term_id = wp_insert_term( $term_name, $taxonomy, array( 'slug' => $key ) );
 				}
 			}
