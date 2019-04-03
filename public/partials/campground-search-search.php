@@ -206,9 +206,7 @@ get_header();
                             <?php _e( 'Fees', Campground_Search_Const::TEXT_DOMAIN ); ?>
                         </span>
                         <span class="value">
-                        <?php if ( empty( $fees ) ) : ?>
-                            <?php _e( 'Free', Campground_Search_Const::TEXT_DOMAIN ); ?>
-                        <?php else : ?>
+                        <?php if ( ! empty( $fees ) ) : ?>
                             <?php esc_html_e( $fees, Campground_Search_Const::TEXT_DOMAIN ); ?>
                         <?php endif; ?>
                         </span>
